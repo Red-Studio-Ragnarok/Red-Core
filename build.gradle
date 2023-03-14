@@ -1,0 +1,73 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name 'Forge'
+            url 'https://maven.minecraftforge.net'
+        }
+    }
+    dependencies {
+        classpath 'com.anatawa12.forge:ForgeGradle:2.3-1.0.7'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+// Add version to the jar name
+version project.version
+
+minecraft {
+    version = '1.12.2-14.23.5.2847'
+    mappings = 'stable_39'
+    runDir = 'run'
+
+    def args = ['-Dforge.logging.console.level=debug']
+
+    replace('@ID@', project.id)
+    replace('@NAME@', project.name)
+    replace('@VERSION@', project.version)
+    replaceIn('ModReference.java')
+}
+
+runClient {
+    args '--username=RedDev'
+}
+
+// Replace id, name, and version in `mcmod.info`
+processResources {
+    duplicatesStrategy 'include'
+
+    inputs.property 'id', project.id
+    inputs.property 'name', project.name
+    inputs.property 'version', project.version
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'id': project.id, 'name': project.name, 'version': project.version
+    }
+}
+
+// Create configuration to include embedded dependencies into the jar
+configurations {
+    implementation
+    compile.extendsFrom(embed)
+}
+
+dependencies {
+    implementation 'net.jafama:jafama:2.+'
+    embed 'net.jafama:jafama:2.+'
+}
+
+jar {
+    // Add all embedded dependencies into the jar
+    from(configurations.embed.collect {it.isDirectory() ? it : zipTree(it)})
+
+    manifest.attributes([
+            'ModSide': 'BOTH',
+    ])
+}
+
+idea {
+    module {
+        excludeDirs = [file(".github"), file(".gradle"), file(".idea"), file("build"), file("gradle"), file("run")]
+    }
+}
