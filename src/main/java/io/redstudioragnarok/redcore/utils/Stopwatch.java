@@ -1,5 +1,6 @@
 package io.redstudioragnarok.redcore.utils;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,7 +39,57 @@ public class Stopwatch {
      * @param id The ID of the stopwatch to stop
      */
     public static void stop(int id) {
-        ModReference.log.info("Time elapsed for chronometer with id " + id + ": " + (System.nanoTime() - startTimes.get(id)) / 1_000_000 + "ms");
+        double elapsed = (System.nanoTime() - startTimes.get(id)) / 1_000_000.0;
+        String elapsedFormatted = String.format("%.2f", elapsed);
+
+        ModReference.log.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
         startTimes.remove(id);
+    }
+
+    /**
+     * Stops the stopwatch with the given ID and writes the elapsed time of the stopwatch with the given ID to the specified file.
+     *
+     * @param id The ID of the stopwatch to write to file
+     * @param filePath The path of the file to write to
+     */
+    public static void stopAndWriteToFile(int id, String filePath) {
+        double elapsed = (System.nanoTime() - startTimes.get(id)) / 1_000_000.0;
+        String elapsedFormatted = String.format("%.2f", elapsed);
+
+        ModReference.log.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
+        startTimes.remove(id);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
+            writer.write(elapsedFormatted);
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Reads a file containing elapsed times and calculates their average.
+     *
+     * @param filePath The path of the file to read
+     */
+    public static void calculateAverage(String filePath) {
+        long sum = 0;
+        int count = 0;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                long elapsed = Long.parseLong(line);
+                sum += elapsed;
+                count++;
+            }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
+        if (count > 0)
+            ModReference.log.info("Average elapsed time between " + count + " entries:" + (double) sum / count + "ms");
+        else
+            ModReference.log.warn("No elapsed times found in file.");
     }
 }
