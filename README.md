@@ -6,7 +6,7 @@
 
 # Red-Core
 
-Core of Red Studio projects or Red Studio related projects, currently only for GUI code.
+Core of Red Studio projects or Red Studio related projects, currently only for GUI code and various development utilities.
 
 ## Want to have your own mod or support me?
 
