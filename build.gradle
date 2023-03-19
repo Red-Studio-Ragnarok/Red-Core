@@ -30,7 +30,7 @@ minecraft {
 }
 
 runClient {
-    args '--username=RedDev'
+    args '--username=Dev'
 }
 
 // Replace id, name, and version in `mcmod.info`
