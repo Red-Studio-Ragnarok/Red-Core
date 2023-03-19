@@ -24,7 +24,6 @@ minecraft {
     def args = ['-Dforge.logging.console.level=debug']
 
     replace('@ID@', project.id)
-    replace('@NAME@', project.name)
     replace('@VERSION@', project.version)
     replaceIn('ModReference.java')
 }
@@ -38,11 +37,10 @@ processResources {
     duplicatesStrategy 'include'
 
     inputs.property 'id', project.id
-    inputs.property 'name', project.name
     inputs.property 'version', project.version
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-        expand 'id': project.id, 'name': project.name, 'version': project.version
+        expand 'id': project.id, 'version': project.version
     }
 }
 

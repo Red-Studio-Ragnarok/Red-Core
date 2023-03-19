@@ -1,7 +1,7 @@
 [
   {
     "modid": "${id}",
-    "name": "${name}",
+    "name": "Red Core",
     "description": "A utility for Red Studio's mods",
     "version": "${version}",
     "mcversion": "1.12.2",
