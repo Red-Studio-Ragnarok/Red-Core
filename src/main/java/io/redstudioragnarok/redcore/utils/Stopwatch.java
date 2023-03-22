@@ -73,23 +73,23 @@ public class Stopwatch {
      * @param filePath The path of the file to read
      */
     public static void calculateAverage(String filePath) {
-        long sum = 0;
+        double sum = 0;
         int count = 0;
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                long elapsed = Long.parseLong(line);
-                sum += elapsed;
+                sum += Double.parseDouble(line);
                 count++;
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
 
-        if (count > 0)
-            ModReference.log.info("Average elapsed time between " + count + " entries:" + (double) sum / count + "ms");
-        else
+        if (count > 0) {
+            String averageFormatted = String.format("%.2f", sum / count);
+            ModReference.log.info("Average elapsed time between " + count + " entries: " + averageFormatted + "ms");
+        } else
             ModReference.log.warn("No elapsed times found in file.");
     }
 }
