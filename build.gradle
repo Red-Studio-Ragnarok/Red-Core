@@ -1,12 +1,11 @@
-import com.gtnewhorizons.retrofuturagradle.mcp.ReobfuscatedJar
 import org.jetbrains.gradle.ext.Gradle
 
 plugins {
-    id("java")
-    id("java-library")
-    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.7"
-    id("com.gtnewhorizons.retrofuturagradle") version "1.+"
-    id("com.matthewprenger.cursegradle") version "1.4.0"
+    id 'java'
+    id 'java-library'
+    id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.7'
+    id 'com.gtnewhorizons.retrofuturagradle' version '1.+'
+    id 'com.matthewprenger.cursegradle' version '1.4.0'
 }
 
 // Add version to the jar name
@@ -23,15 +22,15 @@ java {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = "UTF-8"
+    options.encoding = 'UTF-8'
     options.fork = true
-    options.forkOptions.jvmArgs += ["-Xmx4G"]
+    options.forkOptions.jvmArgs += ['-Xmx4G']
 }
 
 minecraft {
     mcVersion = '1.12.2'
 
-    username = "Desoroxxx"
+    username = 'Desoroxxx'
 
     injectedTags.put('ID', project.id)
     injectedTags.put('VERSION', project.version)
@@ -42,15 +41,15 @@ tasks.injectTags.configure {
     outputClassName.set("io.redstudioragnarok.${project.id}.Tags")
 }
 
-// Create configuration to include embedded dependencies into Valkyrie jar
+// Create configuration to include embedded dependencies into the jar
 configurations {
     implementation
     compile.extendsFrom(embed)
 }
 
 dependencies {
-    implementation 'net.jafama:jafama:2.+'
-    embed 'net.jafama:jafama:2.+'
+    implementation 'net.jafama:jafama:2.3.2'
+    embed 'net.jafama:jafama:2.3.2'
 }
 
 // Replace version and id in `mcmod.info`
@@ -68,10 +67,6 @@ processResources {
 }
 
 jar {
-    manifest.attributes([
-            'ModSide': 'BOTH',
-    ])
-
     // Add all embedded dependencies into the jar
     from(provider{ configurations.embed.collect {it.isDirectory() ? it : zipTree(it)} })
 }
@@ -79,43 +74,39 @@ jar {
 idea {
     module { inheritOutputDirs = true }
 
-    module {
-        excludeDirs = [file(".github"), file(".gradle"), file(".idea"), file("build"), file("gradle"), file("run")]
-    }
+    module { excludeDirs = [file('.github'), file('.gradle'), file('.idea'), file('build'), file('gradle'), file('run')] }
 
     project { settings {
         runConfigurations {
-            "Client"(Gradle) {
-                taskNames = ["runClient"]
+            'Client'(Gradle) {
+                taskNames = ['runClient']
             }
-            "Server"(Gradle) {
-                taskNames = ["runServer"]
+            'Server'(Gradle) {
+                taskNames = ['runServer']
             }
-            "Obfuscated Client"(Gradle) {
-                taskNames = ["runObfClient"]
+            'Obfuscated Client'(Gradle) {
+                taskNames = ['runObfClient']
             }
-            "Obfuscated Server"(Gradle) {
-                taskNames = ["runObfServer"]
+            'Obfuscated Server'(Gradle) {
+                taskNames = ['runObfServer']
             }
-            "Vanilla Client"(Gradle) {
-                taskNames = ["runVanillaClient"]
+            'Vanilla Client'(Gradle) {
+                taskNames = ['runVanillaClient']
             }
-            "Vanilla Server"(Gradle) {
-                taskNames = ["runVanillaServer"]
+            'Vanilla Server'(Gradle) {
+                taskNames = ['runVanillaServer']
             }
         }
 
         compiler.javac {
             afterEvaluate {
-                javacAdditionalOptions = "-encoding utf8"
-                moduleJavacAdditionalOptions = [
-                        (project.id + ".main"): tasks.compileJava.options.compilerArgs.collect { '"' + it + '"' }.join(' ')
-                ]
+                javacAdditionalOptions = '-encoding utf8'
+                moduleJavacAdditionalOptions = [ (project.id + '.main'): tasks.compileJava.options.compilerArgs.collect { ''' + it + ''' }.join(' ') ]
             }
         }
     }}
 }
 
-tasks.named("processIdeaSettings").configure {
-    dependsOn("injectTags")
+tasks.named('processIdeaSettings').configure {
+    dependsOn('injectTags')
 }

@@ -9,7 +9,8 @@ and this project follows to [Ragnarök Versioning Convention](https://gist.githu
 
 ## Added
 
-- Stopwatch is now able to output result to a file and then average all the results
+- Included [Jafama]https://github.com/jeffhain/jafama
+- Stopwatch is now able to output results to a file and then average all the results
 
 ## Changed
 
