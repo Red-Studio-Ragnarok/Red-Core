@@ -9,9 +9,12 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+/**
+ * This class provides a logging utility, with an emphasis on ease of use and user-friendliness.
+ * <p>
+ * The logger is equipped with custom messages and error frames that make error reporting more user-friendly.
+ */
 public class RedLogger {
-
-    private static final Random RANDOM = new Random();
 
     /**
      * A list of recomfort messages to be displayed when an error occurs.
@@ -25,14 +28,43 @@ public class RedLogger {
             "Rome wasn't built in a day"
     ));
 
+    /**
+     * The maximum length of a line used in the formatted error output.
+     * <p>
+     * It is updated dynamically based on the size of the error details.
+     */
     private static int maxLineLength;
 
+    /**
+     * The maximum length of a line used in the formatted error output.
+     * It is updated dynamically based on the size of the error details.
+     */
     private final String modName;
+    /**
+     * The URI link where new issues related to the mod can be reported.
+     * <p>
+     * Typically, a link to a GitHub issue creation page.
+     */
     private final URI newIssueLink;
+    /**
+     * The underlying logger which will output the error messages.
+     */
     private final Logger logger;
-
+    /**
+     * A list of custom comforting messages specified during the creation of this logger.
+     */
     private final List<String> customRecomfortMessages = new ArrayList<>();
 
+    /**
+     * Constructor for the RedLogger class.
+     * <p>
+     * Allows for the specification of custom comforting messages in addition to the default ones.
+     *
+     * @param modName The name of the Minecraft mod.
+     * @param newIssueLink The URI link to report new issues.
+     * @param logger The underlying logger to use.
+     * @param customRecomfortMessages Optional custom comforting messages.
+     */
     public RedLogger(final String modName, final URI newIssueLink, final Logger logger, final String... customRecomfortMessages) {
         this.modName = modName;
         this.newIssueLink = newIssueLink;
@@ -62,13 +94,13 @@ public class RedLogger {
         combinedRecomfortMessages.addAll(RECOMFORT_MESSAGES);
 
         // Get a random recomfort message from the combined list
-        final String recomfort = combinedRecomfortMessages.get(RANDOM.nextInt(combinedRecomfortMessages.size()));
+        final String recomfort = combinedRecomfortMessages.get(new Random().nextInt(combinedRecomfortMessages.size()));
 
         // Calculate the maximum line length for the framed error message
         getMaxLineLength(header, category, formattedTextLines, recomfort);
 
         // Create a horizontal border for the framed error message
-        final String horizontalBorder = createBorder();
+        final String horizontalBorder = "+" + repeatString("-", maxLineLength + 2) + "+";
 
         // Format the header, category, and recomfort message to be centered within the frame
         final String centeredHeader = centeredText(header);
@@ -76,7 +108,7 @@ public class RedLogger {
         final String recomfortText = centeredText(recomfort);
 
         // Format the lines of text to fit within the framed error message
-        final String formattedText = formatTextLines(formattedTextLines);
+        final String formattedText = formattedTextLines.stream().map(line -> "| " + line + repeatString(" ", maxLineLength - line.length()) + " |").collect(Collectors.joining("\n"));
 
         // Format the report message and link to be centered within the frame
         final String reportMessage = centeredText("Please report this error");
@@ -102,15 +134,6 @@ public class RedLogger {
     }
 
     /**
-     * Creates a border for the framed error message.
-     *
-     * @return The horizontal border as a string.
-     */
-    private static String createBorder() {
-        return "+" + repeatString("-", maxLineLength + 2) + "+";
-    }
-
-    /**
      * Formats the given text to be centered within the framed error message.
      *
      * @param text The text to be centered.
@@ -119,16 +142,6 @@ public class RedLogger {
     private static String centeredText(final String text) {
         int padding = (maxLineLength - text.length()) / 2;
         return "| " + repeatString(" ", padding) + text + repeatString(" ", maxLineLength - text.length() - padding) + " |";
-    }
-
-    /**
-     * Formats the given lines of text to fit within the framed error message.
-     *
-     * @param lines The lines of text to be formatted.
-     * @return The formatted lines as a string.
-     */
-    private static String formatTextLines(final List<String> lines) {
-        return lines.stream().map(line -> "| " + line + repeatString(" ", maxLineLength - line.length()) + " |").collect(Collectors.joining("\n"));
     }
 
     /**
