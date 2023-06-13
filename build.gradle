@@ -24,13 +24,15 @@ java {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     options.fork = true
-    options.forkOptions.jvmArgs += ['-Xmx4G']
+    options.forkOptions.jvmArgs += '-Xmx4G'
 }
 
 minecraft {
     mcVersion = '1.12.2'
 
     username = 'Desoroxxx'
+
+    extraRunJvmArguments.addAll('-Xmx6G', '-Xms4G', '-Dforge.logging.console.level=debug')
 
     injectedTags.put('ID', project.id)
     injectedTags.put('VERSION', project.version)
