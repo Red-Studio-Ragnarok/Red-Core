@@ -13,7 +13,7 @@ public class Vector2F {
     public float y;
 
     /**
-     * Constructs a new empty vector.
+     * Constructs a new "empty" vector.
      */
     public Vector2F() {
     }

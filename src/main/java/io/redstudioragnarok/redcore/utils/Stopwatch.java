@@ -28,7 +28,7 @@ public class Stopwatch {
         int id = nextId++;
 
         startTimes.put(id, System.nanoTime());
-        ModReference.log.info("Started chronometer with " + id);
+        ModReference.LOG.info("Started chronometer with " + id);
 
         return id;
     }
@@ -42,7 +42,7 @@ public class Stopwatch {
         double elapsed = (System.nanoTime() - startTimes.get(id)) / 1_000_000.0;
         String elapsedFormatted = String.format("%.2f", elapsed);
 
-        ModReference.log.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
+        ModReference.LOG.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
         startTimes.remove(id);
     }
 
@@ -56,7 +56,7 @@ public class Stopwatch {
         double elapsed = (System.nanoTime() - startTimes.get(id)) / 1_000_000.0;
         String elapsedFormatted = String.format("%.2f", elapsed);
 
-        ModReference.log.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
+        ModReference.LOG.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
         startTimes.remove(id);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
@@ -88,8 +88,8 @@ public class Stopwatch {
 
         if (count > 0) {
             String averageFormatted = String.format("%.2f", sum / count);
-            ModReference.log.info("Average elapsed time between " + count + " entries: " + averageFormatted + "ms");
+            ModReference.LOG.info("Average elapsed time between " + count + " entries: " + averageFormatted + "ms");
         } else
-            ModReference.log.warn("No elapsed times found in file.");
+            ModReference.LOG.warn("No elapsed times found in file.");
     }
 }

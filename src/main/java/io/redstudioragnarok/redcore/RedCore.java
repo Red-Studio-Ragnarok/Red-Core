@@ -11,6 +11,6 @@ import net.minecraftforge.fml.common.Mod;
 //  | $$  \ $$| $$_____/| $$  | $$      | $$    $$| $$  | $$| $$      | $$_____/
 //  | $$  | $$|  $$$$$$$|  $$$$$$$      |  $$$$$$/|  $$$$$$/| $$      |  $$$$$$$
 //  |__/  |__/ \_______/ \_______/       \______/  \______/ |__/       \_______/
-@Mod(modid = ModReference.id, name = ModReference.name, version = ModReference.version)
+@Mod(modid = ModReference.ID, name = ModReference.NAME, version = ModReference.VERSION, updateJSON = "https://raw.githubusercontent.com/Red-Studio-Ragnarok/Red-Core/main/update.json")
 public class RedCore {
 }

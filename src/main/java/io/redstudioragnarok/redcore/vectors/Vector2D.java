@@ -13,7 +13,7 @@ public class Vector2D {
     public double y;
 
     /**
-     * Constructs a new empty vector.
+     * Constructs a new "empty" vector.
      */
     public Vector2D() {
     }

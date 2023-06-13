@@ -14,10 +14,10 @@ Red-Core is the foundational framework for Red Studio projects and associated pr
 
 ## Features
 
-- **RedLogger:** A powerful error logger that makes logging error cleaner and easier to understand for users
-- **Vectors:** A complete suite of vectors they are fast and clean, new features are added to them when needed
-- **MathUtil** A class that provides mathematical methods, with an emphasis on speed.
-- **Stopwatch:** A stopwatch targeted at profiling, my attempt at jumping in the overgrowing list of stopwatch made in Java
+- **RedLogger:** This robust error logger elevates error tracking, offering a clean, user-friendly experience that demystifies complex error data.
+- **Vectors:** Introducing a comprehensive vector suite that is sleek and speedy, continuously evolving with new features as per necessity.
+- **MathUtil:** A purpose-built class providing an array of mathematical methods, engineered with a steadfast focus on rapid processing and calculations.
+- **Stopwatch:** Tailored for precise profiling, this stopwatch sets itself apart in the burgeoning roster of Java-based stopwatch solutions, by its simplicity and easy of use.
 
 ## Why Red-Core?
 

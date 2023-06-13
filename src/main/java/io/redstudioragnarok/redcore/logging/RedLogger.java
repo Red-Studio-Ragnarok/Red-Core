@@ -13,6 +13,8 @@ import java.util.stream.Collectors;
  * This class provides a logging utility, with an emphasis on ease of use and user-friendliness.
  * <p>
  * The logger is equipped with custom messages and error frames that make error reporting more user-friendly.
+ *
+ * @author Desoroxxx
  */
 public class RedLogger {
 
@@ -60,7 +62,7 @@ public class RedLogger {
      * <p>
      * Allows for the specification of custom comforting messages in addition to the default ones.
      *
-     * @param modName The name of the Minecraft mod.
+     * @param modName The name to be used for the logger.
      * @param newIssueLink The URI link to report new issues.
      * @param logger The underlying logger to use.
      * @param customRecomfortMessages Optional custom comforting messages.
@@ -73,7 +75,9 @@ public class RedLogger {
     }
 
     /**
-     * Prints a framed error message with a category, information on what happened, optional additional information and information on what will happen now.
+     * Prints a framed error message with a category, description of what happened, what's going to happen now, and optional additional information.
+     * <p>
+     * This method formats the message in a user-friendly manner, including a comforting message and the link to report the error.
      *
      * @param category The error category.
      * @param whatHappened A description of what happened.
@@ -122,12 +126,14 @@ public class RedLogger {
     }
 
     /**
-     * Determines the maximum line length for the framed error message, and sets maxLineLength to the result.
+     * Determines the maximum line length for the framed error message, based on the provided content.
+     * <p>
+     * The result is stored in the maxLineLength static variable.
      *
      * @param header The header message.
      * @param category The error category.
      * @param lines The lines of text to be displayed.
-     * @param recomfort The recomfort message.
+     * @param recomfort The comforting message.
      */
     private static void getMaxLineLength(final String header, final String category, final List<String> lines, final String recomfort) {
         maxLineLength = Math.max(Math.max(Math.max(Math.max(lines.stream().mapToInt(String::length).max().orElse(0), category.length()), lines.get(lines.size() - 1).length()), recomfort.length()), header.length());
@@ -146,6 +152,8 @@ public class RedLogger {
 
     /**
      * Repeats the given string for the specified number of times.
+     * <p>
+     * This method is used to create padding spaces for the error message formatting.
      *
      * @param string The string to be repeated.
      * @param count The number of times to repeat the string.
