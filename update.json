@@ -1,11 +1,13 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/red-core",
   "promos": {
-    "1.12.2-latest": "0.2",
-    "1.12.2-recommended": "0.2"
+    "1.12.2-latest": "0.3.1",
+    "1.12.2-recommended": "0.3.1"
   },
   "1.12.2":{
-    "0.2":"https://github.com/Red-Studio-Ragnarok/Red-Core/blob/main/Changelog.md#red-core-version-02-changelog---2023-6-13",
-    "0.1":"Initial release"
+    "0.3.1": "https://github.com/Red-Studio-Ragnarok/Red-Core/blob/main/Changelog.md#red-core-version-031-changelog---2023-7-16-yanked",
+    "0.3": "https://github.com/Red-Studio-Ragnarok/Red-Core/blob/main/Changelog.md#red-core-version-03-changelog---2023-7-16",
+    "0.2": "https://github.com/Red-Studio-Ragnarok/Red-Core/blob/main/Changelog.md#red-core-version-02-changelog---2023-6-13",
+    "0.1": "Initial release"
   }
 }
