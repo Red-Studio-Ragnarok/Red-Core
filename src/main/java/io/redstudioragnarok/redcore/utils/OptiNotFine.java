@@ -75,7 +75,8 @@ public class OptiNotFine {
             if (fastRenderField == null)
                 fastRenderField = Class.forName("net.minecraft.client.settings.GameSettings").getDeclaredField("ofFastRender");
 
-            fastRenderField.set(Minecraft.getMinecraft().gameSettings, false);
+            if (fastRenderField.getBoolean(Minecraft.getMinecraft().gameSettings))
+                fastRenderField.set(Minecraft.getMinecraft().gameSettings, false);
         } catch (IllegalAccessException | ClassNotFoundException | NoSuchFieldException exception) {
             RED_LOG.printFramedError("OptiNotFine", "Could not disable OptiFine fast renderer", "Things will break", exception.getMessage());
         }
