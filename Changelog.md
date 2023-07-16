@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Fixed Forge not being able to subscribe the RedClientTicker causing a crash
 
+---
+
 ## Red Core Version 0.3 Changelog - 2023-7-16
 
 ### Added
