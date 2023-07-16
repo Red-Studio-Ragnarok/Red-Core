@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Changed
 
 - RedLogger now uses a String instead of a URI for the `newIssueLink` parameter, the old constructor has been deprecated and is due for removal for 0.4
+- RedLogger recomfort messages might be more random
+### Optimized
+
+- Optimized `RedLogger#printFramedError` it should now use slightly less memory and thus have less GC pressure
 
 ---
 

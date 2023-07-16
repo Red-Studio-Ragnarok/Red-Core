@@ -18,6 +18,8 @@ import java.util.stream.Collectors;
  */
 public class RedLogger {
 
+    public static final Random RANDOM = new Random();
+
     /**
      * A list of recomfort messages to be displayed when an error occurs.
      */
@@ -118,7 +120,7 @@ public class RedLogger {
         combinedRecomfortMessages.addAll(RECOMFORT_MESSAGES);
 
         // Get a random recomfort message from the combined list
-        final String recomfort = combinedRecomfortMessages.get(new Random().nextInt(combinedRecomfortMessages.size()));
+        final String recomfort = combinedRecomfortMessages.get(RANDOM.nextInt(combinedRecomfortMessages.size()));
 
         // Calculate the maximum line length for the framed error message
         getMaxLineLength(header, category, formattedTextLines, recomfort);
