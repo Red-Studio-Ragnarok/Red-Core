@@ -43,11 +43,11 @@ public class RedLogger {
      */
     private final String modName;
     /**
-     * The URI link where new issues related to the mod can be reported.
+     * The link where new issues related to the mod can be reported.
      * <p>
      * Typically, a link to a GitHub issue creation page.
      */
-    private final URI newIssueLink;
+    private final String newIssueLink;
     /**
      * The underlying logger which will output the error messages.
      */
@@ -63,13 +63,33 @@ public class RedLogger {
      * Allows for the specification of custom comforting messages in addition to the default ones.
      *
      * @param modName The name to be used for the logger.
-     * @param newIssueLink The URI link to report new issues.
+     * @param newIssueLink The link to report new issues.
      * @param logger The underlying logger to use.
      * @param customRecomfortMessages Optional custom comforting messages.
      */
-    public RedLogger(final String modName, final URI newIssueLink, final Logger logger, final String... customRecomfortMessages) {
+    public RedLogger(final String modName, final String newIssueLink, final Logger logger, final String... customRecomfortMessages) {
         this.modName = modName;
         this.newIssueLink = newIssueLink;
+        this.logger = logger;
+        this.customRecomfortMessages.addAll(Arrays.asList(customRecomfortMessages));
+    }
+
+    /**
+     * Constructor for the RedLogger class.
+     * <p>
+     * Allows for the specification of custom comforting messages in addition to the default ones.
+     *
+     * @param modName The name to be used for the logger.
+     * @param newIssueLink The URI link to report new issues.
+     * @param logger The underlying logger to use.
+     * @param customRecomfortMessages Optional custom comforting messages.
+     *
+     * @deprecated Use a String instead of an URI for the newIssueLink parameter. To be removed in 0.4
+     */
+    @Deprecated // Use a String instead of an URI for the newIssueLink parameter. To be removed in 0.4
+    public RedLogger(final String modName, final URI newIssueLink, final Logger logger, final String... customRecomfortMessages) {
+        this.modName = modName;
+        this.newIssueLink = newIssueLink.toString();
         this.logger = logger;
         this.customRecomfortMessages.addAll(Arrays.asList(customRecomfortMessages));
     }
@@ -116,7 +136,7 @@ public class RedLogger {
 
         // Format the report message and link to be centered within the frame
         final String reportMessage = centeredText("Please report this error");
-        final String reportLink = centeredText(String.valueOf(newIssueLink));
+        final String reportLink = centeredText(newIssueLink);
 
         // Assemble the framed error message with all the formatted components
         final String framedText = "\n" + horizontalBorder + "\n" + centeredHeader + "\n" + centeredCategory + "\n" + horizontalBorder + "\n" + recomfortText + "\n" + horizontalBorder + "\n" + formattedText + "\n" + horizontalBorder + "\n" + reportMessage + "\n" + reportLink + "\n" + horizontalBorder;

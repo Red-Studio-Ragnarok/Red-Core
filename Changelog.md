@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project follows to [Ragnarök Versioning Convention](https://shor.cz/ragnarok_versioning_convention).
 
+## [Unreleased] Red Core Version 0.3 Changelog
+
+### Changed
+
+- RedLogger now uses a String instead of a URI for the `newIssueLink` parameter, the old constructor has been deprecated and is due for removal for 0.4
+
+---
+
 ## Red Core Version 0.2 Changelog - 2023-6-13
 
 ## Added
