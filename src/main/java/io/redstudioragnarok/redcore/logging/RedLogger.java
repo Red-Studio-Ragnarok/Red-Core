@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
  * The logger is equipped with custom messages and error frames that make error reporting more user-friendly.
  *
  * @author Desoroxxx
+ * @since 0.2
  */
 public class RedLogger {
 

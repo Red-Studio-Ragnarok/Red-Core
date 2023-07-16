@@ -9,6 +9,7 @@ import net.minecraft.util.math.Vec3d;
  * All operations are directly performed on the vector.
  *
  * @author Desoroxxx
+ * @since 0.2
  */
 public class Vector3D {
 

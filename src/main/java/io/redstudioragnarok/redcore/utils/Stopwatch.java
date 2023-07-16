@@ -6,6 +6,9 @@ import java.util.Map;
 
 /**
  * A utility class for measuring elapsed time in milliseconds between two points in the code.
+ *
+ * @author Desoroxxx
+ * @since 0.2
  */
 public class Stopwatch {
 

@@ -18,6 +18,8 @@ Red-Core is the foundational framework for Red Studio projects and associated pr
 - **Vectors:** Introducing a comprehensive vector suite that is sleek and speedy, continuously evolving with new features as per necessity.
 - **MathUtil:** A purpose-built class providing an array of mathematical methods, engineered with a steadfast focus on rapid processing and calculations.
 - **Stopwatch:** Tailored for precise profiling, this stopwatch sets itself apart in the burgeoning roster of Java-based stopwatch solutions, by its simplicity and easy of use.
+- **RedClientTicker:** A useful ticker that allows you to have ticks every 2, 5 or 10 normal ticks, for things that shouldn't run 20 times a second.
+- **OptiNotFine:** A must-have when working with OptiFine compatibility, it allows you to know if OptiFine is installed, whether shaders are loaded, and to force fast render off.
 
 ## Why Red-Core?
 

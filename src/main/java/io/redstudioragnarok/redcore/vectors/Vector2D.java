@@ -4,6 +4,7 @@ package io.redstudioragnarok.redcore.vectors;
  * Represents a two-dimensional vector with `x` and `y` coordinates using double.
  *
  * @author Desoroxxx
+ * @since 0.2
  */
 public class Vector2D {
 

@@ -10,6 +10,7 @@ import static io.redstudioragnarok.redcore.utils.ModReference.LOG;
  * These functions are optimized for speed and provided for both float and double data types.
  *
  * @author Desoroxxx
+ * @since 0.2
  */
 public class MathUtil {
 
