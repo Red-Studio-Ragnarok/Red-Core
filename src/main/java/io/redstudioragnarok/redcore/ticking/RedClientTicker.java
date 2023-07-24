@@ -19,7 +19,7 @@ public class RedClientTicker {
     private static int biTickCount, pentaTickCount, decaTickCount;
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    private static void onClientTickEvent(TickEvent.ClientTickEvent clientTickEvent) {
+    public static void onClientTickEvent(TickEvent.ClientTickEvent clientTickEvent) {
         if (clientTickEvent.phase == TickEvent.Phase.START) {
 
             biTickCount++;
