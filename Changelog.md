@@ -6,9 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased] Red Core Version 0.3.2 Changelog
 
-## Added
+### Added
 
 - Added `read` and `write` methods to all vectors that allows for easy networking
+
+### Changed
+
+- `RedLogger#printFramedError` will not add empty lines if `whatNow` and/or `additionalInformation` is empty
 
 ---
 

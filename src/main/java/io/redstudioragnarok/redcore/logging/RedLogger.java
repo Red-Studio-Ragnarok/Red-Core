@@ -110,8 +110,10 @@ public class RedLogger {
     public void printFramedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
         // Create a list of formatted text lines containing the descriptions of what happened and what's happening now, as well as optional additional information.
         final List<String> formattedTextLines = new ArrayList<>(Arrays.asList(whatHappened, ""));
-        formattedTextLines.addAll(Arrays.asList(additionalInformation));
-        formattedTextLines.addAll(Arrays.asList("", whatNow));
+        if (additionalInformation.length != 0)
+            formattedTextLines.addAll(Arrays.asList(additionalInformation));
+        if (!whatNow.isEmpty())
+            formattedTextLines.addAll(Arrays.asList("", whatNow));
 
         final String header = modName + " had an exception, category:";
 
