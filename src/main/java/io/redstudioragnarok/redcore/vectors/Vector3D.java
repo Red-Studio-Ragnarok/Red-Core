@@ -1,5 +1,6 @@
 package io.redstudioragnarok.redcore.vectors;
 
+import io.netty.buffer.ByteBuf;
 import net.jafama.FastMath;
 import net.minecraft.util.math.Vec3d;
 
@@ -193,5 +194,27 @@ public class Vector3D {
 		final double yDelta = target.y - y;
 		final double zDelta = target.z - z;
 		return FastMath.sqrt(xDelta * xDelta + yDelta * yDelta + zDelta * zDelta);
+	}
+
+	/**
+	 * Writes the x, y, and z coordinates of this vector to the given `byteBuf`.
+	 *
+	 * @param byteBuf The ByteBuf to which the coordinates are written
+	 */
+	public void write(ByteBuf byteBuf) {
+		byteBuf.writeDouble(x);
+		byteBuf.writeDouble(y);
+		byteBuf.writeDouble(z);
+	}
+
+	/**
+	 * Reads the x, y, and z coordinates from the given `byteBuf` and assigns them to the coordinate of this vector.
+	 *
+	 * @param byteBuf The ByteBuf from which the coordinates are read
+	 */
+	public void read(ByteBuf byteBuf) {
+		x = byteBuf.readDouble();
+		y = byteBuf.readDouble();
+		z = byteBuf.readDouble();
 	}
 }

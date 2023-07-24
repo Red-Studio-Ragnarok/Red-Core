@@ -1,5 +1,6 @@
 package io.redstudioragnarok.redcore.vectors;
 
+import io.netty.buffer.ByteBuf;
 import net.jafama.FastMath;
 import net.minecraft.util.math.Vec3d;
 
@@ -66,7 +67,7 @@ public class Vector3F {
 	 *
 	 * @param input The Vec3d to copy the coordinates from
 	 */
-	public Vector3F(Vec3d input) {
+	public Vector3F(final Vec3d input) {
 		x = (float) input.x;
 		y = (float) input.y;
 		z = (float) input.z;
@@ -175,7 +176,7 @@ public class Vector3F {
 	 * @param target A vector to which the distance is calculated
 	 * @return The distance between this target and `target`
 	 */
-	public float distanceTo(Vector3F target) {
+	public float distanceTo(final Vector3F target) {
 		final float xDelta = target.x - x;
 		final float yDelta = target.y - y;
 		final float zDelta = target.z - z;
@@ -188,10 +189,32 @@ public class Vector3F {
 	 * @param target A vector to which the distance is calculated
 	 * @return The distance between this target and `target`
 	 */
-	public float distanceTo(Vector3D target) {
+	public float distanceTo(final Vector3D target) {
 		final float xDelta = (float) (target.x - x);
 		final float yDelta = (float) (target.y - y);
 		final float zDelta = (float) (target.z - z);
 		return (float) FastMath.sqrt(xDelta * xDelta + yDelta * yDelta + zDelta * zDelta);
 	}
+
+	/**
+	 * Writes the x, y, and z coordinates of this vector to the given `byteBuf`.
+	 *
+	 * @param byteBuf The ByteBuf to which the coordinates are written
+	 */
+	public void write(ByteBuf byteBuf) {
+		byteBuf.writeFloat(x);
+		byteBuf.writeFloat(y);
+		byteBuf.writeFloat(z);
+	}
+
+	/**
+	 * Reads the x, y, and z coordinates from the given `byteBuf` and assigns them to the coordinate of this vector.
+	 *
+	 * @param byteBuf The ByteBuf from which the coordinates are read
+	 */
+	public void read(ByteBuf byteBuf) {
+        x = byteBuf.readFloat();
+        y = byteBuf.readFloat();
+        z = byteBuf.readFloat();
+    }
 }
