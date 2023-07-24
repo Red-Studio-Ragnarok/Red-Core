@@ -8,13 +8,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Highlight
 
+#### Networking with Vectors just got a lot easier and cleaner too!
+You now have `read` and `write` methods for all Vectors from Red Core, it simply take in `ByteBuf` and takes care of the rest.
+
+##### Before
+<img src="https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/d9545629-bb67-4aa2-8410-ec8ddcf01319" alt="Before" height="480">
+
+##### After
+<img src="https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/adbc756a-3d33-474d-8e63-498e35873cca" alt="After" height="420">
+
 `RedLogger#printFramedError` will not add empty lines if `whatNow` and/or `additionalInformation` is empty
 
-#### Before:
-![image](https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/69d6f955-a1f3-4da9-a74d-c927023f2b20)
-  
-#### After:
-![image](https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/dcf72281-e730-4d64-be45-5960af6b49e2)
+##### Before
+<img src="https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/69d6f955-a1f3-4da9-a74d-c927023f2b20" alt="Before" height="200">
+
+#### After
+<img src="https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/dcf72281-e730-4d64-be45-5960af6b49e2" alt="After" height="200">
 
 ### Added
 
