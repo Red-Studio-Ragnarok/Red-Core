@@ -4,7 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project follows to [Ragnarök Versioning Convention](https://shor.cz/ragnarok_versioning_convention).
 
-## [Unreleased] Red Core Version 0.3.2 Changelog
+## Red Core Version 0.3.2 Changelog - 2023-7-24
+
+### Highlight
+
+`RedLogger#printFramedError` will not add empty lines if `whatNow` and/or `additionalInformation` is empty
+
+#### Before:
+![image](https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/69d6f955-a1f3-4da9-a74d-c927023f2b20)
+  
+#### After:
+![image](https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/dcf72281-e730-4d64-be45-5960af6b49e2)
 
 ### Added
 
