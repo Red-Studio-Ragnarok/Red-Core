@@ -3,10 +3,7 @@ package io.redstudioragnarok.redcore.logging;
 import org.apache.logging.log4j.Logger;
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -109,12 +106,26 @@ public class RedLogger {
      */
     public void printFramedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
         // Create a list of formatted text lines containing the descriptions of what happened and what's happening now, as well as optional additional information.
-        final List<String> formattedTextLines = new ArrayList<>(Arrays.asList(whatHappened, ""));
+        final List<String> formattedTextLines = new ArrayList<>(Collections.singletonList(whatHappened));
+
+        // If there is another text apart from what happened, add a blank line
+        if (!whatNow.isEmpty() || additionalInformation.length != 0)
+            formattedTextLines.add("");
+
+        // If there is additional information, add it
         if (additionalInformation.length != 0)
             formattedTextLines.addAll(Arrays.asList(additionalInformation));
-        if (!whatNow.isEmpty())
-            formattedTextLines.addAll(Arrays.asList("", whatNow));
 
+        // If what now is not empty, add it
+        if (!whatNow.isEmpty()) {
+            // If there is additional information, add a blank line
+            if (additionalInformation.length != 0)
+                formattedTextLines.add("");
+
+            formattedTextLines.add(whatNow);
+        }
+
+        // Create the header
         final String header = modName + " had an exception, category:";
 
         // Combine the custom and standard comfort messages into a new list
