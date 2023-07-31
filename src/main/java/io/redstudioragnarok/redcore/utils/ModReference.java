@@ -5,8 +5,6 @@ import io.redstudioragnarok.redcore.logging.RedLogger;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.net.URI;
-
 /**
  * This class defines constants for Red Core.
  * <p>

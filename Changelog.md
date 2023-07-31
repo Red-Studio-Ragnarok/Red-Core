@@ -34,6 +34,7 @@ You now have `read` and `write` methods for all Vectors from Red Core, it simply
 
 ### Added
 
+- **NetworkUtil:** Designed to streamline network coding practices, this utility makes writing cleaner, safer, and more efficient networking code effortless.
 - Added `read` and `write` methods to all vectors that allows for easy networking
 
 ### Changed
