@@ -33,7 +33,7 @@ minecraft {
 
     username = 'Desoroxxx'
 
-    extraRunJvmArguments.addAll('-Xmx6G', '-Xms4G', '-Dforge.logging.console.level=debug')
+    extraRunJvmArguments.addAll('-Xmx6G', '-Xms4G', '-Dforge.logging.console.level=debug', '-Dfml.coreMods.load=io.redstudioragnarok.redcore.asm.RedCorePlugin')
 
     injectedTags.put('ID', project.id)
     injectedTags.put('VERSION', project.version)
@@ -70,6 +70,13 @@ processResources {
 }
 
 jar {
+    manifest.attributes([
+            'ModSide': 'BOTH',
+            'FMLCorePlugin': 'io.redstudioragnarok.redcore.asm.RedCorePlugin',
+            'FMLCorePluginContainsFMLMod': true,
+            'ForceLoadAsMod': true
+    ])
+
     // Add all embedded dependencies into the jar
     from(provider{ configurations.embed.collect {it.isDirectory() ? it : zipTree(it)} })
 }
