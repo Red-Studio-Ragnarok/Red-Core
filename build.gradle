@@ -79,6 +79,9 @@ jar {
 
     // Add all embedded dependencies into the jar
     from(provider{ configurations.embed.collect {it.isDirectory() ? it : zipTree(it)} })
+
+    // Add ! to the name of the jar to make sure we get loaded first
+    jar.archiveBaseName.set("!Red-Core")
 }
 
 idea {
