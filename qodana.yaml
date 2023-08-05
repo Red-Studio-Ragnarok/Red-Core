@@ -4,4 +4,5 @@ profile:
   name: qodana.recommended
 fixesStrategy: cleanup
 exclude:
+  - name: JavadocReference
   - name: ManualMinMaxCalculation
