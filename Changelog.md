@@ -28,7 +28,7 @@ You now have `read` and `write` methods for all Vectors from Red Core, it simply
 
 <img src="https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/69d6f955-a1f3-4da9-a74d-c927023f2b20" alt="Before" height="256">
 
-#### After
+##### After
 
 <img src="https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/dcf72281-e730-4d64-be45-5960af6b49e2" alt="After" height="256">
 
@@ -36,6 +36,7 @@ You now have `read` and `write` methods for all Vectors from Red Core, it simply
 
 - **NetworkUtil:** Designed to streamline network coding practices, this utility makes writing cleaner, safer, and more efficient networking code effortless.
 - Added `read` and `write` methods to all vectors that allows for easy networking
+- Added `int` versions of `clampTest`, `clampMinFirst` and `clampMaxFirst` in `MathUtil`
 
 ### Changed
 

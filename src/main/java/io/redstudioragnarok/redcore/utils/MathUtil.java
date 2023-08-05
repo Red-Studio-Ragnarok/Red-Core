@@ -133,6 +133,65 @@ public class MathUtil {
 	}
 
 	/**
+	 * Clamps a value within a specified range [min, max], checking for the minimum value first.
+	 * <p>
+	 * If the input is less than min, it returns min. If the input is greater than max, it returns max.
+	 * <p>
+	 * Otherwise, it returns the input.
+	 *
+	 * @param input The input value to clamp
+	 * @param min The minimum value to clamp to
+	 * @param max The maximum value to clamp to
+	 * @return The clamped value
+	 */
+	public static double clampMinFirst(final int input, final int min, final int max) {
+		return input < min ? min : input > max ? max : input;
+	}
+
+	/**
+	 * Clamps a value within a specified range [min, max], checking for the maximum value first.
+	 * <p>
+	 * If the input is greater than max, it returns max. If the input is less than min, it returns min.
+	 * <p>
+	 * Otherwise, it returns the input.
+	 *
+	 * @param input The input value to clamp
+	 * @param min The minimum value to clamp to
+	 * @param max The maximum value to clamp to
+	 * @return The clamped value
+	 */
+	public static double clampMaxFirst(final int input, final int min, final int max) {
+		return input > max ? max : input < min ? min : input;
+	}
+
+	/**
+	 * Clamps a value within a specified range [min, max], checking for the maximum value first.
+	 * <p>
+	 * If the input is greater than max, it returns max. If the input is less than min, it returns min.
+	 * <p>
+	 * Otherwise, it returns the input.
+	 * <p>
+	 * This will log the result to check if clampMinFirst or clampMaxFirst should be used.
+	 *
+	 * @param input The input value to clamp
+	 * @param min The minimum value to clamp to
+	 * @param max The maximum value to clamp to
+	 * @return The clamped value
+	 */
+	public static double clampTest(final int input, final int min, final int max) {
+		if (input < min) {
+			LOG.info("Clamped to minimum");
+			return min;
+		} else if (input > max) {
+			LOG.info("Clamped to maximum");
+			return max;
+		} else {
+			LOG.info("Did not clamp");
+			return input;
+		}
+	}
+
+	/**
 	 * Returns the absolute value of a number.
 	 * <p>
 	 * The absolute value of a number is the number without its sign, so it is always a positive number.
