@@ -1,0 +1,11 @@
+version: "1.0"
+linter: jetbrains/qodana-jvm:2023.2
+profile:
+  name: qodana.recommended
+fixesStrategy: cleanup
+include:
+  - name: VulnerableLibrariesGlobal
+  - name: CheckDependencyLicenses
+exclude:
+  - name: JavadocReference
+  - name: ManualMinMaxCalculation
