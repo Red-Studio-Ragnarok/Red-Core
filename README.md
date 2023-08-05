@@ -21,6 +21,9 @@ Red-Core is the foundational framework for Red Studio projects and associated pr
 - **RedClientTicker:** A useful ticker that allows you to have ticks every 2, 5 or 10 normal ticks, for things that shouldn't run 20 times a second.
 - **OptiNotFine:** A must-have when working with OptiFine compatibility, it allows you to know if OptiFine is installed, whether shaders are loaded, and to force fast render off.
 - **NetworkUtil:** Designed to streamline network coding practices, this utility makes writing cleaner, safer, and more efficient networking code effortless.
+- **[Jafama]:** Red Core embeds [Jafama] allowing you to use it in your mods
+
+[Jafama]: https://github.com/jeffhain/jafama
 
 ## Why Red-Core?
 
