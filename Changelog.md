@@ -41,6 +41,7 @@ You now have `read` and `write` methods for all Vectors from Red Core, it simply
 
 - Red Core is now a core-mod making it load as early as possible, so Red Core can now be used in Mixins for example
 - `RedLogger#printFramedError` will not add empty lines if `whatNow` and/or `additionalInformation` is empty
+- Improved error logging of the Stopwatch
 
 ### Fixed
 

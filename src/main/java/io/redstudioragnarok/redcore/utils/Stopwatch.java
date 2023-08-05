@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import static io.redstudioragnarok.redcore.utils.ModReference.RED_LOG;
+
 /**
  * A utility class for measuring elapsed time in milliseconds between two points in the code.
  *
@@ -65,8 +67,8 @@ public class Stopwatch {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
             writer.write(elapsedFormatted);
             writer.newLine();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ioException) {
+            RED_LOG.printFramedError("Stopwatch", "Failed to write file", "", ioException.getMessage(), ioException.getStackTrace()[3].toString());
         }
     }
 
@@ -86,7 +88,7 @@ public class Stopwatch {
                 count++;
             }
         } catch (IOException ioException) {
-            ioException.printStackTrace();
+            RED_LOG.printFramedError("Stopwatch", "Failed to read file", "", ioException.getMessage(), ioException.getStackTrace()[3].toString());
         }
 
         if (count > 0) {
