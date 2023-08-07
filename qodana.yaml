@@ -7,3 +7,4 @@ exclude:
   - name: DuplicatedCode
   - name: JavadocReference
   - name: ManualMinMaxCalculation
+  - name: QodanaSanity
