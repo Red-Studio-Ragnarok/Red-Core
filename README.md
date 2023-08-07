@@ -72,6 +72,8 @@ Integrating Red-Core into your project is a straightforward process that involve
 
 And there you have it! Red-Core is now integrated into your project and ready to use.
 
+[![BisectHostingPromoBanner](https://www.bisecthosting.com/partners/custom-banners/d410513a-9aee-467a-96eb-88eb0976af9d.webp)](https://bisecthosting.com/Desoroxxx)
+
 ## Want to have your own mod or support me?
 
 If you're looking for a mod but don't have the development skills or time, consider commissioning me!
