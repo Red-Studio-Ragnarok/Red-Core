@@ -40,6 +40,7 @@ You now have `read` and `write` methods for all Vectors from Red Core, it simply
 - Added `int` versions of the vectors
 - Added a `Vec2f` constructor for the 2-dimensional vectors
 - Added a `zero` method for the 2-dimensional vector
+- Added missing `pack.mcmeta`
 
 ### Changed
 
