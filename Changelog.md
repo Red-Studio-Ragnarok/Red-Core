@@ -38,6 +38,8 @@ You now have `read` and `write` methods for all Vectors from Red Core, it simply
 - Added `read` and `write` methods to all vectors that allows for easy networking
 - Added `int` versions of `clampTest`, `clampMinFirst` and `clampMaxFirst` in `MathUtil`
 - Added `int` versions of the vectors
+- Added a `Vec2f` constructor for the 2-dimensional vectors
+- Added a `zero` method for the 2-dimensional vector
 
 ### Changed
 
@@ -45,6 +47,7 @@ You now have `read` and `write` methods for all Vectors from Red Core, it simply
 - `RedLogger#printFramedError` will not add empty lines if `whatNow` and/or `additionalInformation` is empty
 - Improved error logging of the Stopwatch
 - Red Core jar name now has a `!` at the start so that it gets loaded earlier than mods using it
+- Cleaned up the vectors they might be slightly more performant as a result
 
 ### Fixed
 

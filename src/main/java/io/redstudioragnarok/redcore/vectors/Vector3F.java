@@ -12,7 +12,7 @@ import net.minecraft.util.math.Vec3d;
  * @author Desoroxxx
  * @since 0.2
  */
-public class Vector3F {
+public final class Vector3F {
 
 	/** The X coordinate */
 	public float x;
@@ -180,6 +180,7 @@ public class Vector3F {
 		final float xDelta = target.x - x;
 		final float yDelta = target.y - y;
 		final float zDelta = target.z - z;
+
 		return (float) FastMath.sqrt(xDelta * xDelta + yDelta * yDelta + zDelta * zDelta);
 	}
 
@@ -193,6 +194,7 @@ public class Vector3F {
 		final float xDelta = (float) (target.x - x);
 		final float yDelta = (float) (target.y - y);
 		final float zDelta = (float) (target.z - z);
+
 		return (float) FastMath.sqrt(xDelta * xDelta + yDelta * yDelta + zDelta * zDelta);
 	}
 
@@ -201,7 +203,7 @@ public class Vector3F {
 	 *
 	 * @param byteBuf The ByteBuf to which the coordinates are written
 	 */
-	public void write(ByteBuf byteBuf) {
+	public void write(final ByteBuf byteBuf) {
 		byteBuf.writeFloat(x);
 		byteBuf.writeFloat(y);
 		byteBuf.writeFloat(z);
@@ -212,7 +214,7 @@ public class Vector3F {
 	 *
 	 * @param byteBuf The ByteBuf from which the coordinates are read
 	 */
-	public void read(ByteBuf byteBuf) {
+	public void read(final ByteBuf byteBuf) {
         x = byteBuf.readFloat();
         y = byteBuf.readFloat();
         z = byteBuf.readFloat();

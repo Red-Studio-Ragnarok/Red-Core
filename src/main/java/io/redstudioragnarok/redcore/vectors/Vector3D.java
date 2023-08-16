@@ -12,7 +12,7 @@ import net.minecraft.util.math.Vec3d;
  * @author Desoroxxx
  * @since 0.2
  */
-public class Vector3D {
+public final class Vector3D {
 
 	/** The X coordinate */
 	public double x;
@@ -67,7 +67,7 @@ public class Vector3D {
 	 *
 	 * @param input The Vec3d to copy the coordinates from
 	 */
-	public Vector3D(Vec3d input) {
+	public Vector3D(final Vec3d input) {
 		x = input.x;
 		y = input.y;
 		z = input.z;
@@ -164,7 +164,7 @@ public class Vector3D {
 	 * @param partialTicks The fraction of the tick that has passed.
 	 * @param target The target vector.
 	 */
-	public void lerp(final Vector3D input, final double partialTicks, final Vector3D target) {
+	public void lerp(final Vector3D input, final float partialTicks, final Vector3D target) {
 		x = input.x + (target.x - input.x) * partialTicks;
 		y = input.y + (target.y - input.y) * partialTicks;
 		z = input.z + (target.z - input.z) * partialTicks;
@@ -176,10 +176,11 @@ public class Vector3D {
 	 * @param target A vector to which the distance is calculated
 	 * @return The distance between this target and `target`
 	 */
-	public double distanceTo(Vector3D target) {
+	public double distanceTo(final Vector3D target) {
 		final double xDelta = target.x - x;
 		final double yDelta = target.y - y;
 		final double zDelta = target.z - z;
+
 		return FastMath.sqrt(xDelta * xDelta + yDelta * yDelta + zDelta * zDelta);
 	}
 
@@ -189,10 +190,11 @@ public class Vector3D {
 	 * @param target A vector to which the distance is calculated
 	 * @return The distance between this target and `target`
 	 */
-	public double distanceTo(Vector3F target) {
+	public double distanceTo(final Vector3F target) {
 		final double xDelta = target.x - x;
 		final double yDelta = target.y - y;
 		final double zDelta = target.z - z;
+
 		return FastMath.sqrt(xDelta * xDelta + yDelta * yDelta + zDelta * zDelta);
 	}
 
@@ -201,7 +203,7 @@ public class Vector3D {
 	 *
 	 * @param byteBuf The ByteBuf to which the coordinates are written
 	 */
-	public void write(ByteBuf byteBuf) {
+	public void write(final ByteBuf byteBuf) {
 		byteBuf.writeDouble(x);
 		byteBuf.writeDouble(y);
 		byteBuf.writeDouble(z);
@@ -212,7 +214,7 @@ public class Vector3D {
 	 *
 	 * @param byteBuf The ByteBuf from which the coordinates are read
 	 */
-	public void read(ByteBuf byteBuf) {
+	public void read(final ByteBuf byteBuf) {
 		x = byteBuf.readDouble();
 		y = byteBuf.readDouble();
 		z = byteBuf.readDouble();

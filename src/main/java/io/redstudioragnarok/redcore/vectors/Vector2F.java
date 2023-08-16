@@ -1,18 +1,25 @@
 package io.redstudioragnarok.redcore.vectors;
 
 import io.netty.buffer.ByteBuf;
+import net.minecraft.util.math.Vec2f;
 
 /**
  * Represents a two-dimensional vector with `x` and `y` coordinates using float.
+ * <p>
+ * All operations are directly performed on the vector.
  *
  * @author Desoroxxx
  * @since 0.2
  */
-public class Vector2F {
+public final class Vector2F {
 
-    /** The x component of this vector. */
+    /**
+     * The x component of this vector.
+     */
     public float x;
-    /** The y component of this vector. */
+    /**
+     * The y component of this vector.
+     */
     public float y;
 
     /**
@@ -33,11 +40,30 @@ public class Vector2F {
     }
 
     /**
+     * Constructs a new vector with the same coordinates as the given `input` Vec2f.
+     *
+     * @param input The Vec2f to copy the coordinates from
+     */
+    public Vector2F(final Vec2f input) {
+        x = input.x;
+        y = input.y;
+    }
+
+    /**
+     * Sets all coordinates of this vector to zero.
+     */
+    public void zero() {
+        x = y = 0;
+    }
+
+    /*===================================== NETWORKING =====================================*/
+
+    /**
      * Writes the x and y coordinates of this vector to the given `byteBuf`.
      *
      * @param byteBuf The ByteBuf to which the coordinates are written
      */
-    public void write(ByteBuf byteBuf) {
+    public void write(final ByteBuf byteBuf) {
         byteBuf.writeFloat(x);
         byteBuf.writeFloat(y);
     }
@@ -47,7 +73,7 @@ public class Vector2F {
      *
      * @param byteBuf The ByteBuf from which the coordinates are read
      */
-    public void read(ByteBuf byteBuf) {
+    public void read(final ByteBuf byteBuf) {
         x = byteBuf.readFloat();
         y = byteBuf.readFloat();
     }

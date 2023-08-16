@@ -1,14 +1,17 @@
 package io.redstudioragnarok.redcore.vectors;
 
 import io.netty.buffer.ByteBuf;
+import net.minecraft.util.math.Vec2f;
 
 /**
  * Represents a two-dimensional vector with `x` and `y` coordinates using double.
+ * <p>
+ * All operations are directly performed on the vector.
  *
  * @author Desoroxxx
  * @since 0.2
  */
-public class Vector2D {
+public final class Vector2D {
 
     /** The x component of this vector. */
     public double x;
@@ -33,11 +36,28 @@ public class Vector2D {
     }
 
     /**
+     * Constructs a new vector with the same coordinates as the given `input` Vec2f.
+     *
+     * @param input The Vec2f to copy the coordinates from
+     */
+    public Vector2D(final Vec2f input) {
+        x = input.x;
+        y = input.y;
+    }
+
+    /**
+     * Sets all coordinates of this vector to zero.
+     */
+    public void zero() {
+        x = y = 0;
+    }
+
+    /**
      * Writes the x and y coordinates of this vector to the given `byteBuf`.
      *
      * @param byteBuf The ByteBuf to which the coordinates are written
      */
-    public void write(ByteBuf byteBuf) {
+    public void write(final ByteBuf byteBuf) {
         byteBuf.writeDouble(x);
         byteBuf.writeDouble(y);
     }
@@ -47,7 +67,7 @@ public class Vector2D {
      *
      * @param byteBuf The ByteBuf from which the coordinates are read
      */
-    public void read(ByteBuf byteBuf) {
+    public void read(final ByteBuf byteBuf) {
         x = byteBuf.readDouble();
         y = byteBuf.readDouble();
     }
