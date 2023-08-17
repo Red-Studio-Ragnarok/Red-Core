@@ -49,6 +49,7 @@ You now have `read` and `write` methods for all Vectors from Red Core, it simply
 - Improved error logging of the Stopwatch
 - Red Core jar name now has a `!` at the start so that it gets loaded earlier than mods using it
 - Cleaned up the vectors they might be slightly more performant as a result
+- Updated `mcmod.info`
 
 ### Fixed
 
