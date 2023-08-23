@@ -5,7 +5,9 @@ import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import javax.annotation.Nullable;
 import java.util.Map;
 
-@IFMLLoadingPlugin.Name("Red Core")
+import static io.redstudioragnarok.redcore.utils.ModReference.NAME;
+
+@IFMLLoadingPlugin.Name(NAME)
 @IFMLLoadingPlugin.MCVersion("1.12.2")
 @IFMLLoadingPlugin.SortingIndex(Integer.MIN_VALUE + 2)
 @IFMLLoadingPlugin.TransformerExclusions("io.redstudioragnarok.redcore.asm")
