@@ -36,7 +36,7 @@ You now have `read` and `write` methods for all Vectors from Red Core, it simply
 
 - **NetworkUtil:** Designed to streamline network coding practices, this utility makes writing cleaner, safer, and more efficient networking code effortless.
 - Added `read` and `write` methods to all vectors that allows for easy networking
-- Added `int` versions of `clampTest`, `clampMinFirst` and `clampMaxFirst` in `MathUtil`
+- Added `int`, `short` and `byte` versions of `clampTest`, `clampMinFirst` and `clampMaxFirst` in `MathUtil`
 - Added `int` versions of the vectors
 - Added a `Vec2f` constructor for the 2-dimensional vectors
 - Added a `zero` method for the 2-dimensional vector
