@@ -1,23 +1,16 @@
-# eclipse
-bin
-*.launch
-.settings
-.metadata
-.classpath
-.project
-
-# idea
+# IntelliJ Idea
 out
 *.ipr
 *.iws
 *.iml
 .idea
 
-# gradle
+# Gradle
 build
 .gradle
 
-# other
-eclipse
+# Minecraft
 run
-*.log
+
+# Misc
+.settings
