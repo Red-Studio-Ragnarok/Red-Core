@@ -54,6 +54,7 @@ You now have `read` and `write` methods for all Vectors from Red Core, it simply
 ### Fixed
 
 - Fixed Red Core using the wrong GitHub issue link when logging errors
+- Fixed Red Core using its id instead of its name for logging
 
 ---
 

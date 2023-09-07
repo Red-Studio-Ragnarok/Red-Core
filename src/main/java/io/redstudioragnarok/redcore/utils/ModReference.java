@@ -15,6 +15,6 @@ public class ModReference {
     public static final String ID = Tags.ID;
     public static final String NAME = "Red Core";
     public static final String VERSION = Tags.VERSION;
-    public static final Logger LOG = LogManager.getLogger(ID);
+    public static final Logger LOG = LogManager.getLogger(NAME);
     public static final RedLogger RED_LOG = new RedLogger(NAME, "https://linkify.cz/RedCoreBugReport", LOG);
 }
