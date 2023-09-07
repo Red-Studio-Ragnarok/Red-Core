@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Highlight
 
+Welcome to Red Core 0.4 a non-breaking release that includes a lot of Quality of Life enhancements and general polishing of certain parts of Red Core.
+
+Red Core 0.5 will be a breaking release since we will switch from `io.redstudioragnarok` to `dev.redstudio` stay tuned as dev builds will only be released for devs on GitHub as to not cause issue will mods prepare their updates.
+
 #### Networking with Vectors just got a lot easier and cleaner too!
 
 You now have `read` and `write` methods for all Vectors from Red Core, it simply take in `ByteBuf` and takes care of the rest.
