@@ -15,6 +15,10 @@ Welcome to Red Core 0.5 a breaking release.
 
 - Changed GroupId from `io.redstudioragnarok` to `dev.redstudio`
 
+### Removed
+
+- Removed `pack.mcmeta`
+
 ---
 
 ## Red Core Version 0.4 Changelog - 2023-09-07
