@@ -10,14 +10,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 Welcome to Red Core 0.5 a breaking release.
 
-
 ### Changed
 
 - Changed GroupId from `io.redstudioragnarok` to `dev.redstudio`
+- Moved `startClientTicker` from `RedCore` to `RedClientTicker
+- Moved `forceOptiFineFastRenderOff` from `RedCore` to `OptiNotFine`
 
 ### Removed
 
 - Removed `pack.mcmeta`
+
+## Internal
+
+- Switched from [RFG](https://github.com/GTNewHorizons/RetroFuturaGradle) to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin)
 
 ---
 
