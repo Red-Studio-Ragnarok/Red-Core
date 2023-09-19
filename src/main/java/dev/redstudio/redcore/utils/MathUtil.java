@@ -1,8 +1,8 @@
-package io.redstudioragnarok.redcore.utils;
+package dev.redstudio.redcore.utils;
 
 import net.jafama.FastMath;
 
-import static io.redstudioragnarok.redcore.utils.ModReference.LOG;
+import static dev.redstudio.redcore.utils.ModReference.LOG;
 
 /**
  * A utility class that offers efficient mathematical operations such as clamping, absolute value calculation, linear interpolation, and rounding operations.

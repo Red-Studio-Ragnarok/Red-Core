@@ -1,11 +1,11 @@
-package io.redstudioragnarok.redcore.asm;
+package dev.redstudio.redcore.asm;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 import javax.annotation.Nullable;
 import java.util.Map;
 
-import static io.redstudioragnarok.redcore.utils.ModReference.NAME;
+import static dev.redstudio.redcore.utils.ModReference.NAME;
 
 @IFMLLoadingPlugin.Name(NAME)
 @IFMLLoadingPlugin.MCVersion("1.12.2")

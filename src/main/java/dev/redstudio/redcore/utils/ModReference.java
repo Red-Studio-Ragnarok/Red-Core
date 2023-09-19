@@ -1,7 +1,7 @@
-package io.redstudioragnarok.redcore.utils;
+package dev.redstudio.redcore.utils;
 
-import io.redstudioragnarok.redcore.Tags;
-import io.redstudioragnarok.redcore.logging.RedLogger;
+import dev.redstudio.redcore.logging.RedLogger;
+import dev.redstudio.redcore.Tags;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

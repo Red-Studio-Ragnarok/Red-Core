@@ -1,4 +1,4 @@
-package io.redstudioragnarok.redcore.vectors;
+package dev.redstudio.redcore.vectors;
 
 import io.netty.buffer.ByteBuf;
 import net.jafama.FastMath;

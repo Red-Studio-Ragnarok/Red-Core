@@ -1,27 +1,27 @@
-package io.redstudioragnarok.redcore.vectors;
+package dev.redstudio.redcore.vectors;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.util.math.Vec2f;
 
 /**
- * Represents a two-dimensional vector with `x` and `y` coordinates using int.
+ * Represents a two-dimensional vector with `x` and `y` coordinates using double.
  * <p>
  * All operations are directly performed on the vector.
  *
- * @author Luna Lage (Desoroxxx)
- * @since 0.4
+ * @author Desoroxxx
+ * @since 0.2
  */
-public final class Vector2I {
+public final class Vector2D {
 
     /** The x component of this vector. */
-    public int x;
+    public double x;
     /** The y component of this vector. */
-    public int y;
+    public double y;
 
     /**
      * Constructs a new "empty" vector.
      */
-    public Vector2I() {
+    public Vector2D() {
     }
 
     /**
@@ -30,7 +30,7 @@ public final class Vector2I {
      * @param inputX The X coordinate
      * @param inputY The Y coordinate
      */
-    public Vector2I(final int inputX, final int inputY) {
+    public Vector2D(final double inputX, final double inputY) {
         x = inputX;
         y = inputY;
     }
@@ -40,9 +40,9 @@ public final class Vector2I {
      *
      * @param input The Vec2f to copy the coordinates from
      */
-    public Vector2I(final Vec2f input) {
-        x = (int) input.x;
-        y = (int) input.y;
+    public Vector2D(final Vec2f input) {
+        x = input.x;
+        y = input.y;
     }
 
     /**
@@ -58,8 +58,8 @@ public final class Vector2I {
      * @param byteBuf The ByteBuf to which the coordinates are written
      */
     public void write(final ByteBuf byteBuf) {
-        byteBuf.writeInt(x);
-        byteBuf.writeInt(y);
+        byteBuf.writeDouble(x);
+        byteBuf.writeDouble(y);
     }
 
     /**
@@ -68,7 +68,7 @@ public final class Vector2I {
      * @param byteBuf The ByteBuf from which the coordinates are read
      */
     public void read(final ByteBuf byteBuf) {
-        x = byteBuf.readInt();
-        y = byteBuf.readInt();
+        x = byteBuf.readDouble();
+        y = byteBuf.readDouble();
     }
 }

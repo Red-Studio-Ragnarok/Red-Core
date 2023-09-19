@@ -1,4 +1,4 @@
-package io.redstudioragnarok.redcore.logging;
+package dev.redstudio.redcore.logging;
 
 import org.apache.logging.log4j.Logger;
 

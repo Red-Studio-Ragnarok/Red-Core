@@ -1,4 +1,4 @@
-package io.redstudioragnarok.redcore.utils;
+package dev.redstudio.redcore.utils;
 
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -8,7 +8,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.lang.reflect.Field;
 
-import static io.redstudioragnarok.redcore.utils.ModReference.RED_LOG;
+import static dev.redstudio.redcore.utils.ModReference.RED_LOG;
 
 /**
  * This class provides methods to communicate with OptiNotFine (Can you see that I hate OptiFine?)

@@ -1,27 +1,31 @@
-package io.redstudioragnarok.redcore.vectors;
+package dev.redstudio.redcore.vectors;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.util.math.Vec2f;
 
 /**
- * Represents a two-dimensional vector with `x` and `y` coordinates using double.
+ * Represents a two-dimensional vector with `x` and `y` coordinates using float.
  * <p>
  * All operations are directly performed on the vector.
  *
  * @author Desoroxxx
  * @since 0.2
  */
-public final class Vector2D {
+public final class Vector2F {
 
-    /** The x component of this vector. */
-    public double x;
-    /** The y component of this vector. */
-    public double y;
+    /**
+     * The x component of this vector.
+     */
+    public float x;
+    /**
+     * The y component of this vector.
+     */
+    public float y;
 
     /**
      * Constructs a new "empty" vector.
      */
-    public Vector2D() {
+    public Vector2F() {
     }
 
     /**
@@ -30,7 +34,7 @@ public final class Vector2D {
      * @param inputX The X coordinate
      * @param inputY The Y coordinate
      */
-    public Vector2D(final double inputX, final double inputY) {
+    public Vector2F(final float inputX, final float inputY) {
         x = inputX;
         y = inputY;
     }
@@ -40,7 +44,7 @@ public final class Vector2D {
      *
      * @param input The Vec2f to copy the coordinates from
      */
-    public Vector2D(final Vec2f input) {
+    public Vector2F(final Vec2f input) {
         x = input.x;
         y = input.y;
     }
@@ -52,14 +56,16 @@ public final class Vector2D {
         x = y = 0;
     }
 
+    /*===================================== NETWORKING =====================================*/
+
     /**
      * Writes the x and y coordinates of this vector to the given `byteBuf`.
      *
      * @param byteBuf The ByteBuf to which the coordinates are written
      */
     public void write(final ByteBuf byteBuf) {
-        byteBuf.writeDouble(x);
-        byteBuf.writeDouble(y);
+        byteBuf.writeFloat(x);
+        byteBuf.writeFloat(y);
     }
 
     /**
@@ -68,7 +74,7 @@ public final class Vector2D {
      * @param byteBuf The ByteBuf from which the coordinates are read
      */
     public void read(final ByteBuf byteBuf) {
-        x = byteBuf.readDouble();
-        y = byteBuf.readDouble();
+        x = byteBuf.readFloat();
+        y = byteBuf.readFloat();
     }
 }

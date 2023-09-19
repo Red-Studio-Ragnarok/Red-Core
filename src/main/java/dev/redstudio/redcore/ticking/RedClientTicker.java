@@ -1,4 +1,4 @@
-package io.redstudioragnarok.redcore.ticking;
+package dev.redstudio.redcore.ticking;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;

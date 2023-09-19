@@ -1,4 +1,4 @@
-package io.redstudioragnarok.redcore.utils;
+package dev.redstudio.redcore.utils;
 
 import net.minecraft.util.IThreadListener;
 import net.minecraftforge.fml.common.FMLCommonHandler;

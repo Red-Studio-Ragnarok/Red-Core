@@ -1,10 +1,11 @@
-package io.redstudioragnarok.redcore.utils;
+package dev.redstudio.redcore.utils;
 
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import static io.redstudioragnarok.redcore.utils.ModReference.RED_LOG;
+import static dev.redstudio.redcore.utils.ModReference.LOG;
+import static dev.redstudio.redcore.utils.ModReference.RED_LOG;
 
 /**
  * A utility class for measuring elapsed time in milliseconds between two points in the code.
@@ -33,7 +34,7 @@ public class Stopwatch {
         int id = nextId++;
 
         startTimes.put(id, System.nanoTime());
-        ModReference.LOG.info("Started chronometer with " + id);
+        LOG.info("Started chronometer with " + id);
 
         return id;
     }
@@ -47,7 +48,7 @@ public class Stopwatch {
         double elapsed = (System.nanoTime() - startTimes.get(id)) / 1_000_000.0;
         String elapsedFormatted = String.format("%.2f", elapsed);
 
-        ModReference.LOG.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
+        LOG.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
         startTimes.remove(id);
     }
 
@@ -61,7 +62,7 @@ public class Stopwatch {
         double elapsed = (System.nanoTime() - startTimes.get(id)) / 1_000_000.0;
         String elapsedFormatted = String.format("%.2f", elapsed);
 
-        ModReference.LOG.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
+        LOG.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
         startTimes.remove(id);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
@@ -93,8 +94,8 @@ public class Stopwatch {
 
         if (count > 0) {
             String averageFormatted = String.format("%.2f", sum / count);
-            ModReference.LOG.info("Average elapsed time between " + count + " entries: " + averageFormatted + "ms");
+            LOG.info("Average elapsed time between " + count + " entries: " + averageFormatted + "ms");
         } else
-            ModReference.LOG.warn("No elapsed times found in file.");
+            LOG.warn("No elapsed times found in file.");
     }
 }

@@ -1,9 +1,9 @@
-package io.redstudioragnarok.redcore;
+package dev.redstudio.redcore;
 
-import io.redstudioragnarok.redcore.ticking.RedClientTickEvent;
-import io.redstudioragnarok.redcore.ticking.RedClientTicker;
-import io.redstudioragnarok.redcore.utils.ModReference;
-import io.redstudioragnarok.redcore.utils.OptiNotFine;
+import dev.redstudio.redcore.ticking.RedClientTickEvent;
+import dev.redstudio.redcore.ticking.RedClientTicker;
+import dev.redstudio.redcore.utils.ModReference;
+import dev.redstudio.redcore.utils.OptiNotFine;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.relauncher.Side;
