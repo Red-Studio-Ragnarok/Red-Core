@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import static dev.redstudio.redcore.utils.ModReference.LOG;
-import static dev.redstudio.redcore.utils.ModReference.RED_LOG;
+import static dev.redstudio.redcore.utils.ProjectConstants.LOGGER;
+import static dev.redstudio.redcore.utils.ProjectConstants.RED_LOGGER;
 
 /**
  * A utility class for measuring elapsed time in milliseconds between two points in the code.
@@ -34,7 +34,7 @@ public class Stopwatch {
         int id = nextId++;
 
         startTimes.put(id, System.nanoTime());
-        LOG.info("Started chronometer with " + id);
+        LOGGER.info("Started chronometer with " + id);
 
         return id;
     }
@@ -48,7 +48,7 @@ public class Stopwatch {
         double elapsed = (System.nanoTime() - startTimes.get(id)) / 1_000_000.0;
         String elapsedFormatted = String.format("%.2f", elapsed);
 
-        LOG.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
+        LOGGER.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
         startTimes.remove(id);
     }
 
@@ -62,14 +62,14 @@ public class Stopwatch {
         double elapsed = (System.nanoTime() - startTimes.get(id)) / 1_000_000.0;
         String elapsedFormatted = String.format("%.2f", elapsed);
 
-        LOG.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
+        LOGGER.info("Time elapsed for chronometer with id " + id + ": " + elapsedFormatted + "ms");
         startTimes.remove(id);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
             writer.write(elapsedFormatted);
             writer.newLine();
         } catch (IOException ioException) {
-            RED_LOG.printFramedError("Stopwatch", "Failed to write file", "", ioException.getMessage(), ioException.getStackTrace()[3].toString());
+            RED_LOGGER.printFramedError("Stopwatch", "Failed to write file", "", ioException.getMessage(), ioException.getStackTrace()[3].toString());
         }
     }
 
@@ -89,13 +89,13 @@ public class Stopwatch {
                 count++;
             }
         } catch (IOException ioException) {
-            RED_LOG.printFramedError("Stopwatch", "Failed to read file", "", ioException.getMessage(), ioException.getStackTrace()[3].toString());
+            RED_LOGGER.printFramedError("Stopwatch", "Failed to read file", "", ioException.getMessage(), ioException.getStackTrace()[3].toString());
         }
 
         if (count > 0) {
             String averageFormatted = String.format("%.2f", sum / count);
-            LOG.info("Average elapsed time between " + count + " entries: " + averageFormatted + "ms");
+            LOGGER.info("Average elapsed time between " + count + " entries: " + averageFormatted + "ms");
         } else
-            LOG.warn("No elapsed times found in file.");
+            LOGGER.warn("No elapsed times found in file.");
     }
 }

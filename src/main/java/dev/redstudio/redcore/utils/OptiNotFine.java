@@ -10,7 +10,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.lang.reflect.Field;
 
-import static dev.redstudio.redcore.utils.ModReference.RED_LOG;
+import static dev.redstudio.redcore.utils.ProjectConstants.RED_LOGGER;
 
 /**
  * This class provides methods to communicate with OptiNotFine (Can you see that I hate OptiFine?)
@@ -61,7 +61,7 @@ public class OptiNotFine {
 
             return (boolean) shaderPackLoadedField.get(null);
         } catch (IllegalAccessException | ClassNotFoundException | NoSuchFieldException exception) {
-            RED_LOG.printFramedError("OptiNotFine", "Could not get OptiFine shaders status.", "If shaders are enabled things might break", exception.getMessage());
+            RED_LOGGER.printFramedError("OptiNotFine", "Could not get OptiFine shaders status.", "If shaders are enabled things might break", exception.getMessage());
             return false;
         }
     }
@@ -92,7 +92,7 @@ public class OptiNotFine {
             if (fastRenderField.getBoolean(Minecraft.getMinecraft().gameSettings))
                 fastRenderField.set(Minecraft.getMinecraft().gameSettings, false);
         } catch (IllegalAccessException | ClassNotFoundException | NoSuchFieldException exception) {
-            RED_LOG.printFramedError("OptiNotFine", "Could not disable OptiFine fast renderer", "Things will break", exception.getMessage());
+            RED_LOGGER.printFramedError("OptiNotFine", "Could not disable OptiFine fast renderer", "Things will break", exception.getMessage());
         }
     }
 

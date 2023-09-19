@@ -2,7 +2,7 @@ package dev.redstudio.redcore.utils;
 
 import net.jafama.FastMath;
 
-import static dev.redstudio.redcore.utils.ModReference.LOG;
+import static dev.redstudio.redcore.utils.ProjectConstants.LOGGER;
 
 /**
  * A utility class that offers efficient mathematical operations such as clamping, absolute value calculation, linear interpolation, and rounding operations.
@@ -62,13 +62,13 @@ public class MathUtil {
 	 */
 	public static float clampTest(final float input, final float min, final float max) {
 		if (input < min) {
-			LOG.info("Clamped to minimum");
+			LOGGER.info("Clamped to minimum");
 			return min;
 		} else if (input > max) {
-			LOG.info("Clamped to maximum");
+			LOGGER.info("Clamped to maximum");
 			return max;
 		} else {
-			LOG.info("Did not clamp");
+			LOGGER.info("Did not clamp");
 			return input;
 		}
 	}
@@ -121,13 +121,13 @@ public class MathUtil {
 	 */
 	public static double clampTest(final double input, final double min, final double max) {
 		if (input < min) {
-			LOG.info("Clamped to minimum");
+			LOGGER.info("Clamped to minimum");
 			return min;
 		} else if (input > max) {
-			LOG.info("Clamped to maximum");
+			LOGGER.info("Clamped to maximum");
 			return max;
 		} else {
-			LOG.info("Did not clamp");
+			LOGGER.info("Did not clamp");
 			return input;
 		}
 	}
@@ -180,13 +180,13 @@ public class MathUtil {
 	 */
 	public static byte clampTest(final byte input, final byte min, final byte max) {
 		if (input < min) {
-			LOG.info("Clamped to minimum");
+			LOGGER.info("Clamped to minimum");
 			return min;
 		} else if (input > max) {
-			LOG.info("Clamped to maximum");
+			LOGGER.info("Clamped to maximum");
 			return max;
 		} else {
-			LOG.info("Did not clamp");
+			LOGGER.info("Did not clamp");
 			return input;
 		}
 	}
@@ -239,13 +239,13 @@ public class MathUtil {
 	 */
 	public static short clampTest(final short input, final short min, final short max) {
 		if (input < min) {
-			LOG.info("Clamped to minimum");
+			LOGGER.info("Clamped to minimum");
 			return min;
 		} else if (input > max) {
-			LOG.info("Clamped to maximum");
+			LOGGER.info("Clamped to maximum");
 			return max;
 		} else {
-			LOG.info("Did not clamp");
+			LOGGER.info("Did not clamp");
 			return input;
 		}
 	}
@@ -298,13 +298,13 @@ public class MathUtil {
 	 */
 	public static int clampTest(final int input, final int min, final int max) {
 		if (input < min) {
-			LOG.info("Clamped to minimum");
+			LOGGER.info("Clamped to minimum");
 			return min;
 		} else if (input > max) {
-			LOG.info("Clamped to maximum");
+			LOGGER.info("Clamped to maximum");
 			return max;
 		} else {
-			LOG.info("Did not clamp");
+			LOGGER.info("Did not clamp");
 			return input;
 		}
 	}

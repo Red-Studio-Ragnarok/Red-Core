@@ -10,6 +10,7 @@ plugins {
 }
 
 // Add version to the jar name
+group = "dev.redstudio"
 version = project.version
 
 // Set the toolchain version to decouple the Java we run Gradle with from the Java used to compile and run the mod
@@ -44,8 +45,15 @@ dependencies {
 }
 
 buildConfig {
+    className("ProjectConstants")
+    packageName("dev.redstudio.redcore.utils")
+
     buildConfigField("String", "ID", "\"${project.id}\"")
+    buildConfigField("String", "NAME", "\"Red Core\"")
     buildConfigField("String", "VERSION", "\"${project.version}\"")
+    buildConfigField("org.apache.logging.log4j.Logger", "LOGGER", "LogManager.getLogger(NAME)")
+    buildConfigField("dev.redstudio.redcore.logging.RedLogger", "RED_LOGGER", "new RedLogger(NAME, \"https://linkify.cz/RedCoreBugReport\", LOGGER)")
+    buildConfigField("org.apache.logging.log4j.LogManager", "DO_NOT_USE", "null")
 }
 
 jar {
