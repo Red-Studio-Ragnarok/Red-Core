@@ -12,7 +12,7 @@ import static dev.redstudio.redcore.utils.ProjectConstants.LOGGER;
  * @author Desoroxxx
  * @since 0.2
  */
-public class MathUtil {
+public final class MathUtil {
 
 	/**
 	 * Clamps a value within a specified range [min, max], checking for the minimum value first.

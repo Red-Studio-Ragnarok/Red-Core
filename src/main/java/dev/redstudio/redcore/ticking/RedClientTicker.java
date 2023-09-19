@@ -16,31 +16,29 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RedClientTicker {
 
-    private static boolean clientTickerStarted = false;
-
     private static int biTickCount, pentaTickCount, decaTickCount;
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void onClientTickEvent(TickEvent.ClientTickEvent clientTickEvent) {
-        if (clientTickEvent.phase == TickEvent.Phase.START) {
+    public static void onClientTickEvent(final TickEvent.ClientTickEvent clientTickEvent) {
+        if (clientTickEvent.phase != TickEvent.Phase.START)
+            return;
 
-            biTickCount++;
-            if (biTickCount == 2) {
-                MinecraftForge.EVENT_BUS.post(new RedClientTickEvent.BiTickEvent());
-                biTickCount = 0;
-            }
+        biTickCount++;
+        if (biTickCount == 2) {
+            MinecraftForge.EVENT_BUS.post(new RedClientTickEvent.BiTickEvent());
+            biTickCount = 0;
+        }
 
-            pentaTickCount++;
-            if (pentaTickCount == 5) {
-                MinecraftForge.EVENT_BUS.post(new RedClientTickEvent.PentaTickEvent());
-                pentaTickCount = 0;
-            }
+        pentaTickCount++;
+        if (pentaTickCount == 5) {
+            MinecraftForge.EVENT_BUS.post(new RedClientTickEvent.PentaTickEvent());
+            pentaTickCount = 0;
+        }
 
-            decaTickCount++;
-            if (decaTickCount == 10) {
-                MinecraftForge.EVENT_BUS.post(new RedClientTickEvent.DecaTickEvent());
-                decaTickCount = 0;
-            }
+        decaTickCount++;
+        if (decaTickCount == 10) {
+            MinecraftForge.EVENT_BUS.post(new RedClientTickEvent.DecaTickEvent());
+            decaTickCount = 0;
         }
     }
 

@@ -1,5 +1,6 @@
 package dev.redstudio.redcore.ticking;
 
+import lombok.NoArgsConstructor;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -18,9 +19,8 @@ public class RedClientTickEvent extends Event {
      * <p>
      * In a client that is not lagging, it would be fired 10 times a second.
      */
+    @NoArgsConstructor
     public static class BiTickEvent extends RedClientTickEvent {
-        public BiTickEvent() {
-        }
     }
 
     /**
@@ -28,9 +28,8 @@ public class RedClientTickEvent extends Event {
      * <p>
      * In a client that is not lagging, it would be fired 4 times a second.
      */
+    @NoArgsConstructor
     public static class PentaTickEvent extends RedClientTickEvent {
-        public PentaTickEvent() {
-        }
     }
 
     /**
@@ -38,8 +37,7 @@ public class RedClientTickEvent extends Event {
      * <p>
      * In a client that is not lagging, it would be fired 2 times a second.
      */
+    @NoArgsConstructor
     public static class DecaTickEvent extends RedClientTickEvent {
-        public DecaTickEvent() {
-        }
     }
 }
