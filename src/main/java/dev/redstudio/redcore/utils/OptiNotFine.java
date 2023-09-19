@@ -1,6 +1,8 @@
 package dev.redstudio.redcore.utils;
 
+import dev.redstudio.redcore.ticking.RedClientTicker;
 import net.minecraft.client.Minecraft;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -65,8 +67,20 @@ public class OptiNotFine {
     }
 
     /**
+     * Forces OptiFine fast render option to be disabled.
+     * <p>
+     * This method starts the client ticker and registers the OptiNotFine class as an event listener which will attempt to disable OptiFine's fast render each tick.
+     */
+    public static void forceOptiFineFastRenderOff() {
+        RedClientTicker.startClientTicker();
+
+        MinecraftForge.EVENT_BUS.register(OptiNotFine.class);
+    }
+
+    /**
      * Disable OptiFine fast renderer.
      */
+    @SuppressWarnings("JavaReflectionMemberAccess")
     private static void disableFastRender() {
         if (!isOptiFineInstalled())
             return;
