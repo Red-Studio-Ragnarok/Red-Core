@@ -20,9 +20,10 @@ Welcome to Red Core 0.5 a breaking release.
 
 - Removed `pack.mcmeta`
 
-## Internal
+### Internal
 
-- Switched from [RFG](https://github.com/GTNewHorizons/RetroFuturaGradle) to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin)
+- Switched to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) entirely for project constants
+- General cleanup
 
 ---
 
