@@ -39,8 +39,8 @@ configurations {
 }
 
 dependencies {
-    implementation 'net.jafama:jafama:2.3.2'
-    embed 'net.jafama:jafama:2.3.2'
+    implementation 'net.jafama:jafama:2.+'
+    embed 'net.jafama:jafama:2.+'
 }
 
 buildConfig {
