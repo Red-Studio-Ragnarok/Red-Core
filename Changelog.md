@@ -10,9 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 Welcome to Red Core 0.5 an originally breaking release, but now it has a compatibility layer, all mods using it should update before 0.8 when the compatibility layer will be removed.
 
+*Note: The compatibility layer is only for the MC (Minecraft) part of Red Core as normally it should only have been used there prior to 0.5*
+
+#### The separation
+
+Red Core and its Minecraft parts have been separated into two, this allows for greater freedom in how we develop Red Core, but also allows for Red Core to be used in any Java project.
+
 ### Changed
 
-- Red Core is now split into two, `Red Core` and `Red Core MC` the later being the MC specific part of Red Core, this finally allows it to be used everywhere
 - `MathUtil` is now under `utils.math`
 - Separated `MathUtil` clamping methods into their own class `ClampUtil`
 - Changed GroupId from `io.redstudioragnarok` to `dev.redstudio`
