@@ -9,7 +9,8 @@ import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import javax.annotation.Nullable;
 import java.util.Map;
 
-import static dev.redstudio.redcore.ProjectConstants.*;
+import static dev.redstudio.redcore.ProjectConstants.NAME;
+import static dev.redstudio.redcore.ProjectConstants.VERSION;
 
 //   /$$$$$$$                  /$$        /$$$$$$                                      /$$      /$$  /$$$$$$
 //  | $$__  $$                | $$       /$$__  $$                                    | $$$    /$$$ /$$__  $$

@@ -8,7 +8,7 @@ import net.jafama.FastMath;
  * @author Desoroxxx
  * @since 0.2
  */
-@SuppressWarnings({"unused"})
+@SuppressWarnings("unused")
 public final class MathUtil {
 
     /**
@@ -176,13 +176,13 @@ public final class MathUtil {
     /**
      * Performs a linear interpolation between two values.
      *
-     * @param input The starting value.
+     * @param startValue The starting value.
      * @param partialTicks The fraction of the tick that has passed.
-     * @param target The target value.
+     * @param targetValue The target value.
      * @return The interpolated value.
      */
-    public static double lerp(final double input,  final double partialTicks, final double target) {
-        return input + (target - input) * partialTicks;
+    public static double lerp(final double startValue,  final double partialTicks, final double targetValue) {
+        return startValue + (targetValue - startValue) * partialTicks;
     }
 
     /**

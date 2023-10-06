@@ -32,8 +32,13 @@ tasks.named<Jar>("jar") {
         )
     }
 
-    archiveBaseName = "!Red-Core-1.12"
+    archiveBaseName = "!Red-Core-1.12.2"
 }
+
+tasks.named<Jar>("sourcesJar") {
+    archiveBaseName.set("!Red-Core-1.12.2")
+}
+
 
 publishing.publications.register("redCoreMc", MavenPublication::class) {
     from(components["java"])

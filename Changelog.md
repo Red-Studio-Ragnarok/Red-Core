@@ -21,10 +21,15 @@ Red Core and its Minecraft parts have been separated into two, this allows for g
 - `MathUtil` is now under `utils.math`
 - Separated `MathUtil` clamping methods into their own class `ClampUtil`
 - Changed GroupId from `io.redstudioragnarok` to `dev.redstudio`
+- Made `RedLogger#RANDOM` private
 
 ### Removed
 
 - Removed `Stopwatch` :sob: it wasn't that good or useful but was fun to make
+
+### Fixed
+
+- Fixed inconsistent argument naming in `MathUtil#lerp`
 
 ### Internal
 

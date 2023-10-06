@@ -41,7 +41,8 @@ allprojects {
             // Azul covers the most platforms for Java 8 toolchains, crucially including macOS arm64
             vendor.set(JvmVendorSpec.AZUL)
         }
-        withJavadocJar()
+        // Generate sources jar when building
+        withSourcesJar()
     }
 
     tasks.withType<JavaCompile>().configureEach {

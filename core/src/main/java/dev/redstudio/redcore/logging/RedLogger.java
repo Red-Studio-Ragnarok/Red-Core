@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
  */
 public class RedLogger {
 
-    public static final Random RANDOM = new Random();
+    private static final Random RANDOM = new Random();
 
     /**
      * A list of recomfort messages to be displayed when an error occurs.
@@ -86,7 +86,7 @@ public class RedLogger {
      *
      * @deprecated Use a String instead of an URI for the newIssueLink parameter. To be removed in 0.4
      */
-    @Deprecated // Use a String instead of an URI for the newIssueLink parameter. To be removed in 0.4
+    @Deprecated // Use a String instead of an URI for the newIssueLink parameter. Todo: Removed in 0.4
     public RedLogger(final String modName, final URI newIssueLink, final Logger logger, final String... customRecomfortMessages) {
         this.modName = modName;
         this.newIssueLink = newIssueLink.toString();
