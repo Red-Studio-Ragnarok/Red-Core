@@ -32,11 +32,11 @@ tasks.named<Jar>("jar") {
         )
     }
 
-    archiveBaseName = "!Red-Core-1.12.2"
+    archiveBaseName = "!Red-Core-MC-1.12.2"
 }
 
 tasks.named<Jar>("sourcesJar") {
-    archiveBaseName.set("!Red-Core-1.12.2")
+    archiveBaseName = "!Red-Core-MC-1.12.2"
 }
 
 
