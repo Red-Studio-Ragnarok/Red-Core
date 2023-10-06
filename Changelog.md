@@ -8,22 +8,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Highlight
 
-Welcome to Red Core 0.5 a breaking release.
+Welcome to Red Core 0.5 an originally breaking release, but now it has a compatibility layer, all mods using it should update before 0.8 when the compatibility layer will be removed.
 
 ### Changed
 
+- Red Core is now split into two, `Red Core` and `Red Core MC` the later being the MC specific part of Red Core, this finally allows it to be used everywhere
+- `MathUtil` is now under `utils.math`
+- Separated `MathUtil` clamping methods into their own class `ClampUtil`
 - Changed GroupId from `io.redstudioragnarok` to `dev.redstudio`
-- Moved `startClientTicker` from `RedCore` to `RedClientTicker
-- Moved `forceOptiFineFastRenderOff` from `RedCore` to `OptiNotFine`
 
 ### Removed
 
-- Removed `pack.mcmeta`
+- Removed `Stopwatch` :sob: it wasn't that good or useful but was fun to make
 
 ### Internal
 
 - Switched to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) entirely for project constants
+- Switched to Gradle Kotlin DSL
 - General cleanup
+
+### Red Core MC
+
+#### Changed
+
+- Moved `startClientTicker` from `RedCore` to `RedClientTicker
+- Moved `forceOptiFineFastRenderOff` from `RedCore` to `OptiNotFine`
+
+#### Removed
+
+- Removed `pack.mcmeta`
 
 ---
 

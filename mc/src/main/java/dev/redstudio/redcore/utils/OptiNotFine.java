@@ -10,7 +10,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.lang.reflect.Field;
 
-import static dev.redstudio.redcore.utils.ProjectConstants.RED_LOGGER;
+import static dev.redstudio.redcore.ProjectConstants.RED_LOGGER;
 
 /**
  * This class provides methods to communicate with OptiNotFine (Can you see that I hate OptiFine?)

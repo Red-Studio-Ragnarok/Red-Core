@@ -37,6 +37,8 @@ Join us in enhancing Red-Core! We believe in constant evolution and the power of
 
 Integrating Red-Core into your project is a straightforward process that involves tweaking your Gradle build script. Follow the steps below:
 
+*Not up to date with 0.5 dev builds, README will be updated once 0.5 is released*
+
 1. **Add a New Configuration:** Start by adding a new configuration to your Gradle build script, which will be used to download and attach sources.
 
     ```groovy
