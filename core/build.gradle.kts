@@ -22,6 +22,14 @@ buildConfig {
     buildConfigField("dev.redstudio.redcore.logging.RedLogger", "RED_LOGGER", "new RedLogger(NAME, \"https://linkify.cz/RedCoreBugReport\", LOGGER)")
 }
 
+tasks.named<Jar>("jar") {
+    archiveBaseName = "Red-Core"
+}
+
+tasks.named<Jar>("sourcesJar") {
+    archiveBaseName = "Red-Core"
+}
+
 publishing.publications.register("redCore", MavenPublication::class) {
     from(components["java"])
 
