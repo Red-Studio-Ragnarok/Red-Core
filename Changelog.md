@@ -15,6 +15,7 @@ Welcome to Red Core 0.5 an originally breaking release, but now it has a compati
 #### The separation
 
 Red Core and its Minecraft parts have been separated into two, this allows for greater freedom in how we develop Red Core, but also allows for Red Core to be used in any Java project.
+Thanks to this separation, Red Core MC is now available for 1.7.10 through 1.12.2 meaning every version in between is compatible.
 
 ### Changed
 
@@ -41,10 +42,11 @@ Red Core and its Minecraft parts have been separated into two, this allows for g
 
 #### Added
 
-- Added support for mc versions 1.7.10 to 1.12.2
+- Added support for mc versions 1.7.10 through 1.12.2
 
 #### Changed
 
+- Switched to [CurseUpdate](https://forge.curseupdate.com/) for update checking
 - Moved `startClientTicker` from `RedCore` to `RedClientTicker
 - Moved `forceOptiFineFastRenderOff` from `RedCore` to `OptiNotFine`
 
