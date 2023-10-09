@@ -24,6 +24,14 @@ idea {
     }
 }
 
+tasks.processResources.configure {
+    inputs.property("version", project.version)
+
+    filesMatching("mcmod.info") {
+        expand(mapOf("version" to project.version))
+    }
+}
+
 tasks.named<Jar>("jar") {
     manifest {
         attributes(
@@ -34,13 +42,19 @@ tasks.named<Jar>("jar") {
         )
     }
 
+    for (projectName in arrayOf("dummy")) {
+        from(project(projectName).tasks.compileJava.get().outputs) {
+            include("**/*.class")
+        }
+        dependsOn(project(projectName).tasks.compileJava.get())
+    }
+
     archiveBaseName = jarBaseName
 }
 
 tasks.named<Jar>("sourcesJar") {
     archiveBaseName = jarBaseName
 }
-
 
 publishing.publications.register("redCoreMc", MavenPublication::class) {
     from(components["java"])
