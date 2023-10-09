@@ -23,4 +23,4 @@ plugins {
 }
 
 include(":core")
-include(":mc")
+include("mc:1-7---1-12")

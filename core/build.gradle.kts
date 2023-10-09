@@ -2,6 +2,8 @@ plugins {
     id("com.github.gmazzo.buildconfig") version "4.1.2"
 }
 
+val jarBaseName = "Red-Core"
+
 val log4jVersion = "2.17.1"
 
 dependencies {
@@ -23,11 +25,11 @@ buildConfig {
 }
 
 tasks.named<Jar>("jar") {
-    archiveBaseName = "Red-Core"
+    archiveBaseName = jarBaseName
 }
 
 tasks.named<Jar>("sourcesJar") {
-    archiveBaseName = "Red-Core"
+    archiveBaseName = jarBaseName
 }
 
 publishing.publications.register("redCore", MavenPublication::class) {

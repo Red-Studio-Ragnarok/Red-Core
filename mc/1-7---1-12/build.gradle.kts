@@ -2,6 +2,8 @@ plugins {
     id("com.gtnewhorizons.retrofuturagradle") version "1.3.24"
 }
 
+val jarBaseName = "!Red-Core-MC-1.7-1.12"
+
 minecraft {
     mcVersion = "1.12.2"
     username = "Desoroxxx"
@@ -32,11 +34,11 @@ tasks.named<Jar>("jar") {
         )
     }
 
-    archiveBaseName = "!Red-Core-MC-1.12.2"
+    archiveBaseName = jarBaseName
 }
 
 tasks.named<Jar>("sourcesJar") {
-    archiveBaseName = "!Red-Core-MC-1.12.2"
+    archiveBaseName = jarBaseName
 }
 
 
