@@ -39,6 +39,10 @@ Red Core and its Minecraft parts have been separated into two, this allows for g
 
 ### Red Core MC
 
+#### Added
+
+- Added support for mc versions 1.7.10 to 1.12.2
+
 #### Changed
 
 - Moved `startClientTicker` from `RedCore` to `RedClientTicker
