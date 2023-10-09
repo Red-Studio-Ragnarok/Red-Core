@@ -20,7 +20,7 @@ allprojects {
     apply(plugin = "maven-publish")
 
     group = "dev.redstudio"
-    version = "0.5-Dev-2" // Versioning must follow Ragnarök versioning convention: https://shor.cz/ragnarok_versioning_convention
+    version = "0.5-Dev-3" // Versioning must follow Ragnarök versioning convention: https://shor.cz/ragnarok_versioning_convention
 
     repositories {
         gradlePluginPortal()
@@ -58,22 +58,22 @@ idea {
             languageLevel = IdeaLanguageLevel("JDK_1_8")
 
             runConfigurations {
-                create("MC Client", Gradle::class.java) {
+                create("MC 1.7-1.12 Client", Gradle::class.java) {
                     taskNames = setOf("runClient")
                 }
-                create("MC Server", Gradle::class.java) {
+                create("MC 1.7-1.12 Server", Gradle::class.java) {
                     taskNames = setOf("runServer")
                 }
-                create("MC Obfuscated Client", Gradle::class.java) {
+                create("MC 1.7-1.12 Obfuscated Client", Gradle::class.java) {
                     taskNames = setOf("runObfClient")
                 }
-                create("MC Obfuscated Server", Gradle::class.java) {
+                create("MC 1.7-1.12 Obfuscated Server", Gradle::class.java) {
                     taskNames = setOf("runObfServer")
                 }
-                create("MC Vanilla Client", Gradle::class.java) {
+                create("MC 1.7-1.12 Vanilla Client", Gradle::class.java) {
                     taskNames = setOf("runVanillaClient")
                 }
-                create("MC Vanilla Server", Gradle::class.java) {
+                create("MC 1.7-1.12 Vanilla Server", Gradle::class.java) {
                     taskNames = setOf("runVanillaServer")
                 }
             }
