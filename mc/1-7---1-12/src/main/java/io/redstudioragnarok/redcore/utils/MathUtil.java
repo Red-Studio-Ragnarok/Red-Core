@@ -1,7 +1,6 @@
 package io.redstudioragnarok.redcore.utils;
 
 import dev.redstudio.redcore.math.ClampUtil;
-import net.minecraft.entity.player.EntityPlayer;
 
 /**
  * @author Luna Lage (Desoroxxx)
@@ -16,7 +15,6 @@ public final class MathUtil {
      */
     @Deprecated
     public static float clampMinFirst(final float input, final float min, final float max) {
-        new EntityPlayer().getEyeHeight()
         return ClampUtil.clampMinFirst(input, min, max);
     }
 
