@@ -1,4 +1,4 @@
-package dev.redstudio.redcore.utils.math;
+package dev.redstudio.redcore.math;
 
 import net.jafama.FastMath;
 

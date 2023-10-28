@@ -16,6 +16,7 @@ public final class RedCorePlugin implements IFMLLoadingPlugin, cpw.mods.fml.rela
     @Override
     public String[] getASMTransformerClass() {
         return new String[0];
+
     }
 
     @Override

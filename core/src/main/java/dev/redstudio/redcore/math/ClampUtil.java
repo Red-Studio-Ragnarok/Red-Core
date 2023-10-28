@@ -1,4 +1,4 @@
-package dev.redstudio.redcore.utils.math;
+package dev.redstudio.redcore.math;
 
 import static dev.redstudio.redcore.ProjectConstants.LOGGER;
 
