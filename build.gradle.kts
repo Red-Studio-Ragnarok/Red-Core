@@ -38,8 +38,7 @@ allprojects {
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(8))
-            // Azul covers the most platforms for Java 8 toolchains, crucially including macOS arm64
-            vendor.set(JvmVendorSpec.AZUL)
+            vendor.set(JvmVendorSpec.ADOPTIUM)
         }
         // Generate sources jar when building
         withSourcesJar()
@@ -48,6 +47,7 @@ allprojects {
     tasks.withType<JavaCompile>().configureEach {
         options.encoding = "UTF-8"
         options.isFork = true
+        options.forkOptions.jvmArgs = listOf("-Xmx4G")
     }
 }
 

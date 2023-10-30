@@ -8,6 +8,7 @@ minecraft {
     mcVersion = "1.12.2"
     username = "Desoroxxx"
     extraRunJvmArguments = listOf("-Dforge.logging.console.level=debug", "-Dfml.coreMods.load=${project.group}.redcore.RedCorePlugin")
+    javaToolchain.get().vendor.set(JvmVendorSpec.ADOPTIUM)
 }
 
 dependencies {
