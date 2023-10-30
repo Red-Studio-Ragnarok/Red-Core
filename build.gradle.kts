@@ -20,7 +20,7 @@ allprojects {
     apply(plugin = "maven-publish")
 
     group = "dev.redstudio"
-    version = "0.5-Dev-4" // Versioning must follow Ragnarök versioning convention: https://shor.cz/ragnarok_versioning_convention
+    version = "0.5-Dev-5" // Versioning must follow Ragnarök versioning convention: https://shor.cz/ragnarok_versioning_convention
 
     repositories {
         gradlePluginPortal()
