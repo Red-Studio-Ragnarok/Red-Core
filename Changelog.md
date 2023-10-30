@@ -36,6 +36,7 @@ Thanks to this separation, Red Core MC is now available for 1.7.10 through 1.12.
 
 - Switched to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) entirely for project constants
 - Switched to Gradle Kotlin DSL
+- Switched to Adoptium
 - General cleanup
 
 ### Red Core MC
