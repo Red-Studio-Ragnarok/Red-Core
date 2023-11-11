@@ -13,6 +13,7 @@ minecraft {
 
 dependencies {
     embed(project(":core"))
+    embed(project(":mc:common"))
 
     implementation("net.jafama", "jafama", "2.3.2")
 }

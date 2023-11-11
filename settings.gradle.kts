@@ -23,5 +23,6 @@ plugins {
 }
 
 include(":core")
-include("mc:1-7---1-12")
-include("mc:1-7---1-12:dummy")
+include(":mc:common")
+include(":mc:1-7---1-12")
+include(":mc:1-7---1-12:dummy")
