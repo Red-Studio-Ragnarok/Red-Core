@@ -8,7 +8,7 @@
 [![Gradle](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/built-with/gradle_vector.svg)](https://gradle.org/)
 [![Forge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/forge_vector.svg)](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.12.2.html)
 
-![Red Core Banner](https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/2cab5fb2-96dc-4738-83d2-907d5e835e2a)
+![Red Core Banner with Background Rounded](https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/6a52753f-a693-4d1b-9696-20619eb8d828)
 
 Red Core is the foundational library for Red Studio projects and associated projects.
 
