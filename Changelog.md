@@ -17,6 +17,10 @@ Welcome to Red Core 0.5 an originally breaking release, but now it has a compati
 Red Core and its Minecraft parts have been separated into two, this allows for greater freedom in how we develop Red Core, but also allows for Red Core to be used in any Java project.
 Thanks to this separation, Red Core MC is now available for 1.7.10 through 1.12.2 meaning every version in between is compatible.
 
+### Added
+
+- New `Experimental` annotation
+
 ### Changed
 
 - `MathUtil` is now under `utils.math`
