@@ -19,7 +19,7 @@ Thanks to this separation, Red Core MC is now available for 1.7.10 through 1.12.
 
 #### New GroupId
 
-The old groupId was bad, and I did not own it, now both of thoses things are fixed by the brand new `dev.redstudio` which is more readable and sounds better, also I actually own it.
+The old groupId was bad, and I did not own it, now both of these things are fixed by the brand new `dev.redstudio` which is more readable and sounds better, also I actually own it.
 
 #### Re-Branding!
 ![Red Core Banner](https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/2cab5fb2-96dc-4738-83d2-907d5e835e2a)
