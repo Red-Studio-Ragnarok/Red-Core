@@ -17,10 +17,19 @@ Welcome to Red Core 0.5 an originally breaking release, but now it has a compati
 Red Core and its Minecraft parts have been separated into two, this allows for greater freedom in how we develop Red Core, but also allows for Red Core to be used in any Java project.
 Thanks to this separation, Red Core MC is now available for 1.7.10 through 1.12.2 meaning every version in between is compatible.
 
+#### New GroupId
+
+The old groupId was bad, and I did not own it, now both of thoses things are fixed by the brand new `dev.redstudio` which is more readable and sounds better, also I actually own it.
+
+#### Re-Branding!
+
+Say welcome to the new Red Core logo! The Readme is also getting a makeover.
+
 ### Added
 
-- New `Experimental` annotation
-- New experimental vector suite, this is supposed to replace the existing vector suite in 0.6
+- Added an `Experimental` annotation
+- Added a new experimental vector suite, this is supposed to replace the existing vector suite in 0.6 the existing vector suite is marked for removal in 0.8
+- Added a compatibility layer for old groupId which is marked for removal in 0.8
 
 ### Changed
 
@@ -60,6 +69,10 @@ Thanks to this separation, Red Core MC is now available for 1.7.10 through 1.12.
 #### Removed
 
 - Removed `pack.mcmeta`
+
+#### Internal
+
+- General cleanup
 
 ---
 
