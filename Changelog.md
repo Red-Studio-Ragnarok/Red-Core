@@ -30,7 +30,7 @@ Thanks to this separation, Red Core MC is now available for 1.7.10 through 1.12.
 
 ### Removed
 
-- Removed `Stopwatch` :sob: it wasn't that good or useful but was fun to make
+- Removed `Stopwatch` it wasn't that good or useful but was fun to make
 
 ### Fixed
 
