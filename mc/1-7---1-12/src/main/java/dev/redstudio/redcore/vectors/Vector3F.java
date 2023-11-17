@@ -13,7 +13,7 @@ import net.minecraft.util.math.Vec3d;
  * @since 0.2
  * @deprecated Will be replaced in 0.6 by the new vector suite {@link dev.redstudio.redcore.math.vectors}.
  */
-@Deprecated
+@Deprecated // Todo: Remove in 0.8
 public final class Vector3F {
 
 	/** The X coordinate */

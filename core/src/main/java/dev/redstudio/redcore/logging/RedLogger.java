@@ -84,9 +84,9 @@ public class RedLogger {
      * @param logger The underlying logger to use.
      * @param customRecomfortMessages Optional custom comforting messages.
      *
-     * @deprecated Use a String instead of an URI for the newIssueLink parameter. To be removed in 0.4
+     * @deprecated Use a String instead of a URI for the newIssueLink parameter.
      */
-    @Deprecated // Use a String instead of an URI for the newIssueLink parameter. Todo: Removed in 0.4
+    @Deprecated // Todo: Remove in 0.8
     public RedLogger(final String modName, final URI newIssueLink, final Logger logger, final String... customRecomfortMessages) {
         this.modName = modName;
         this.newIssueLink = newIssueLink.toString();

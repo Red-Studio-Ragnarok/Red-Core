@@ -6,7 +6,7 @@ import dev.redstudio.redcore.math.ClampUtil;
  * @author Luna Lage (Desoroxxx)
  * @deprecated See methods for details.
  */
-@Deprecated
+@Deprecated // Todo: Remove in 0.8
 @SuppressWarnings("unused")
 public final class MathUtil {
 

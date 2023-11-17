@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.eventhandler.Event;
  * @author Luna Lage (Desoroxxx)
  * @deprecated See methods for details.
  */
-@Deprecated
+@Deprecated  // Todo: Remove in 0.8
 public class RedClientTickEvent extends Event {
 
     /**
