@@ -20,6 +20,7 @@ Thanks to this separation, Red Core MC is now available for 1.7.10 through 1.12.
 ### Added
 
 - New `Experimental` annotation
+- New experimental vector suite, this is supposed to replace the existing vector suite in 0.6
 
 ### Changed
 
