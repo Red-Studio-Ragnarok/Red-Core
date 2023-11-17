@@ -8,71 +8,37 @@
 [![Gradle](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/built-with/gradle_vector.svg)](https://gradle.org/)
 [![Forge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/forge_vector.svg)](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.12.2.html)
 
-# Red-Core
+![Red Core Banner](https://github.com/Red-Studio-Ragnarok/Red-Core/assets/82710983/2cab5fb2-96dc-4738-83d2-907d5e835e2a)
 
-Red-Core is the foundational framework for Red Studio projects and associated projects. It features robust development utilities, streamlined error logging, and a high-speed, clean vectors' suite.
+Red Core is the foundational library for Red Studio projects and associated projects.
 
 ## Features
 
-- **RedLogger:** This robust error logger elevates error tracking, offering a clean, user-friendly experience that demystifies complex error data.
-- **Vectors:** Introducing a comprehensive vector suite that is sleek and speedy, continuously evolving with new features as per necessity.
-- **MathUtil:** A purpose-built class providing an array of mathematical methods, engineered with a steadfast focus on rapid processing and calculations.
-- **Stopwatch:** Tailored for precise profiling, this stopwatch sets itself apart in the burgeoning roster of Java-based stopwatch solutions, by its simplicity and easy of use.
-- **RedClientTicker:** A useful ticker that allows you to have ticks every 2, 5 or 10 normal ticks, for things that shouldn't run 20 times a second.
-- **OptiNotFine:** A must-have when working with OptiFine compatibility, it allows you to know if OptiFine is installed, whether shaders are loaded, and to force fast render off.
-- **NetworkUtil:** Designed to streamline network coding practices, this utility makes writing cleaner, safer, and more efficient networking code effortless.
-- **[Jafama]:** Red Core embeds [Jafama] allowing you to use it in your mods
+- **RedLogger:** A user and dev-friendly logger, useful for errors and crash logging when lots of information is needed.
+- **Vectors:** A fast and simple vector suite, for every Java primitive.
+- **MathUtil:** A utility class which provides nice to have math related methods.
+- **ClampUtil:** A utility class which provides fast biased clamping for every primitive, and testers to know exactly which end to bias towards.
+- **[Jafama]:** Red Core embeds [Jafama] allowing you to use it in your mods.
 
 [Jafama]: https://github.com/jeffhain/jafama
 
-## Why Red-Core?
+### Minecraft Specific Features
 
-Red-Core sits at the heart of Red Studio's Minecraft 1.12 mods, aiming to make your mod development process more efficient. By providing a set of tailored tools and libraries, we allow you to focus more on designing exciting mods and less on the intricacies of development.
+- **RedClientTicker:** A client ticker which provides slower ticking methods for things that don't require updating 20 times per second.
+- **NetworkUtil:** A utility class which makes networking easier, safer and cleaner.
+- **OptiNotFine:** A utility class which allows you to easily know if OptiFine is installed, force off specific OptiFine features, and also allows you to know if shaders are enabled.
 
-What sets us apart is our comprehensive Javadoc documentation. We believe good documentation is the cornerstone of effective development. Every method in Red-Core comes with detailed Javadoc comments, making the technical information and guidance you need just a ctrl-click away.
+## Why Red Core?
 
-Join us in enhancing Red-Core! We believe in constant evolution and the power of community-driven development. Whether you're a contributor or a user in the Minecraft modding community, your experience matters. We're here to ensure it's the best it can be.
+Red Core is used in most projects Red Studio is involved in, it aims at reducing redundant code amongst projects and making it easier to do a plethora of things.
 
-## How to Integrate Red-Core into Your Project?
+Red Core aims to have great Javadoc's and comments, so you can know what something does without leaving your IDE.
 
-Integrating Red-Core into your project is a straightforward process that involves tweaking your Gradle build script. Follow the steps below:
+Red Core is always evolving, and you can help, pull requests and feature requests are very welcome.
 
-*Not up to date with 0.5 dev builds, README will be updated once 0.5 is released*
+## How to Integrate Red Core into Your Project?
 
-1. **Add a New Configuration:** Start by adding a new configuration to your Gradle build script, which will be used to download and attach sources.
-
-    ```groovy
-    configurations {
-        // Define a configuration to download and attach sources
-        sources
-    }
-    ```
-
-2. **Add the Ivy Repository:** Next, add the Ivy repository to your list of repositories.
-
-    ```groovy
-    repositories {
-        ivy {
-            name 'Red Studio GitHub Releases'
-            url 'https://github.com/'
-
-            patternLayout { artifact '[organisation]/[module]/releases/download/[revision]/[module]-[revision](-[classifier]).[ext]' }
-
-            metadataSources { artifact() }
-        }
-    }
-    ```
-
-3. **Add Dependencies:** Lastly, include Red-Core in your dependencies. Make sure to replace the version number (0.2 in this case) with the desired Red-Core version.
-
-    ```groovy
-    dependencies {
-        implementation 'Red-Studio-Ragnarok:Red-Core:0.2'
-        sources 'Red-Studio-Ragnarok:Red-Core:0.2:sources@jar'
-    }
-    ```
-
-And there you have it! Red-Core is now integrated into your project and ready to use.
+Section coming soon
 
 ---
 
