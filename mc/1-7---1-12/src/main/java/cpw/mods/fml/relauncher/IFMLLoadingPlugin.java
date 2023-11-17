@@ -4,28 +4,56 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.Map;
 
-/**
- * Dummy class to keep compat with old fml
- * <p>
- * If it's 1.7.10, forge's class will take precedence
- * If it's later, having this class will change nothing
- * <p>
- * Credits to cpw for the original class signature
- *
- * @author Glease <a href="https://github.com/Minecraft-Malware-Prevention-Alliance/PipeBlocker/commit/45244693452996c8248d9b8c7281e8f15134faae">PipeBlocker Commit</a>
- */
+@SuppressWarnings({"unused", "UnnecessaryModifier"})
 public interface IFMLLoadingPlugin {
 
+    String[] getASMTransformerClass();
+
+    String getModContainerClass();
+
+
+    String getSetupClass();
+
+    void injectData(Map<String, Object> data);
+
+    String getAccessTransformerClass();
+
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.TYPE)
-    @interface Name {
-        String value();
+    public @interface TransformerExclusions {
+
+        public String[] value() default "";
     }
 
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.TYPE)
-    @interface SortingIndex {
-        int value();
+    public @interface MCVersion {
+
+        public String value() default "";
     }
+
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.TYPE)
+    public @interface Name {
+
+        public String value() default "";
+    }
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.TYPE)
+    public @interface DependsOn {
+
+        public String[] value() default {};
+    }
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.TYPE)
+    public @interface SortingIndex {
+
+        public int value() default 0;
+    }
+
 }

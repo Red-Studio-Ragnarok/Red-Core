@@ -7,8 +7,10 @@ import javax.annotation.Nullable;
 import java.util.Map;
 
 import static dev.redstudio.redcore.ProjectConstants.NAME;
+import static dev.redstudio.redcore.ProjectConstants.VERSION;
 
-@Mod(modid = "redcore", useMetadata = true)
+@Mod(modid = "redcore", version = VERSION, updateJSON = "https://forge.curseupdate.com/873867/redcore", useMetadata = true)
+@cpw.mods.fml.common.Mod(modid = "redcore", version = VERSION, useMetadata = true)
 @IFMLLoadingPlugin.Name(NAME)
 @cpw.mods.fml.relauncher.IFMLLoadingPlugin.Name(NAME)
 @IFMLLoadingPlugin.SortingIndex(Integer.MIN_VALUE + 2)
