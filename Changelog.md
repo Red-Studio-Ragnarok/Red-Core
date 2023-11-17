@@ -55,6 +55,7 @@ Thanks to this separation, Red Core MC is now available for 1.7.10 through 1.12.
 - Switched to [CurseUpdate](https://forge.curseupdate.com/) for update checking
 - Moved `startClientTicker` from `RedCore` to `RedClientTicker
 - Moved `forceOptiFineFastRenderOff` from `RedCore` to `OptiNotFine`
+- Deprecated the vector suite as it is to be replaced by the new vector suite in 0.6
 
 #### Removed
 

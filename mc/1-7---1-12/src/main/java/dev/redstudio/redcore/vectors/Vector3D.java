@@ -11,7 +11,9 @@ import net.minecraft.util.math.Vec3d;
  *
  * @author Desoroxxx
  * @since 0.2
+ * @deprecated Will be replaced in 0.6 by the new vector suite {@link dev.redstudio.redcore.math.vectors}.
  */
+@Deprecated
 public final class Vector3D {
 
 	/** The X coordinate */

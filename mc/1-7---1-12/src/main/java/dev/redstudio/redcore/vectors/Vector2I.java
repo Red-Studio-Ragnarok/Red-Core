@@ -10,7 +10,9 @@ import net.minecraft.util.math.Vec2f;
  *
  * @author Luna Lage (Desoroxxx)
  * @since 0.4
+ * @deprecated Will be replaced in 0.6 by the new vector suite {@link dev.redstudio.redcore.math.vectors}.
  */
+@Deprecated
 public final class Vector2I {
 
     /** The x component of this vector. */
