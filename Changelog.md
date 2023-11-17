@@ -15,7 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Fixed version check
 - Fixed mod not showing up in the mod menu in older versions
 
-## Red Core Version 0.5 Changelog - 2023-11-17
+## [UNRELEASED] Red Core Version 0.5 Changelog
 
 ### Highlight
 
