@@ -21,6 +21,9 @@ import static dev.redstudio.redcore.ProjectConstants.RED_LOGGER;
 @SideOnly(Side.CLIENT)
 public final class OptiNotFine {
 
+    // Todo: Instead of periodically forcing fast render off, force it once and then disable the slider.
+    // Todo: Allow forcing any OptiFine option to be disabled.
+
     private static boolean checkedOptiFineInstalled = false;
     private static boolean isOptiFineInstalled = true;
 
