@@ -13,18 +13,18 @@ import net.minecraft.util.math.AxisAlignedBB;
 public final class AABBUtil {
 
     /**
-     * Rotates the given north aligned AxisAlignedBB to face the given facing.
+     * Orient the given north aligned AxisAlignedBB to face the given facing.
      * <p>
-     * This utility method allows you to only make your AABB once and rotate it to face the needed facing.
+     * This utility method allows you to only make your AABB once and orient it to face the needed facing.
      *
-     * @param facing The EnumFacing to which the AxisAlignedBB should be rotated.
-     * @param northAABB The AxisAlignedBB aligned to the north which will be rotated.
+     * @param facing The EnumFacing to which the AxisAlignedBB should be oriented.
+     * @param northAABB The AxisAlignedBB aligned to the north which will be oriented.
      *
-     * @return A new AxisAlignedBB object that represents the rotated bounding box.
+     * @return A new AxisAlignedBB object that represents the oriented bounding box.
      * <p>
      * If the facing is NORTH, it returns the original bounding box without changes.
      */
-    public static AxisAlignedBB rotateAABB(final EnumFacing facing, final AxisAlignedBB northAABB) {
+    public static AxisAlignedBB orientAABB(final EnumFacing facing, final AxisAlignedBB northAABB) {
         switch (facing) {
             case WEST:
                 return new AxisAlignedBB(northAABB.minZ, northAABB.minY, 1 - northAABB.maxX, northAABB.maxZ, northAABB.maxY, 1 - northAABB.minX);
