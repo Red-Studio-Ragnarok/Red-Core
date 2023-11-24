@@ -19,7 +19,7 @@ import static dev.redstudio.redcore.ProjectConstants.RED_LOGGER;
  * @since 0.3
  */
 @SideOnly(Side.CLIENT)
-public class OptiNotFine {
+public final class OptiNotFine {
 
     private static boolean checkedOptiFineInstalled = false;
     private static boolean isOptiFineInstalled = true;
