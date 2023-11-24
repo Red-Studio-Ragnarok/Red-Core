@@ -13,6 +13,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - `AABBUtil` a utility class for handling axis aligned bounding boxes
 - `AABBUtil#orientAABB` a utility method for orienting a north facing AABB towards any `EnumFacing` allowing you to make only one AABB that works for every direction
 
+#### Internal
+
+- Minor cleanup
+
 ## Red Core Version 0.5.1 Changelog - 2023-11-20
 
 ### Red Core MC
