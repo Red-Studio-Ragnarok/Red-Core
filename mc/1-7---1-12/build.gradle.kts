@@ -1,5 +1,5 @@
 plugins {
-    id("com.gtnewhorizons.retrofuturagradle") version "1.3.26"
+    id("com.gtnewhorizons.retrofuturagradle") version "1.3.33"
 }
 
 val jarBaseName = "!Red-Core-MC-1.7-1.12"
@@ -8,7 +8,6 @@ minecraft {
     mcVersion = "1.12.2"
     username = "Desoroxxx"
     extraRunJvmArguments = listOf("-Dforge.logging.console.level=debug", "-Dfml.coreMods.load=${project.group}.redcore.RedCorePlugin")
-    javaToolchain.get().vendor.set(JvmVendorSpec.ADOPTIUM)
 }
 
 dependencies {
