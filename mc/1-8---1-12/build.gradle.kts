@@ -2,7 +2,7 @@ plugins {
     id("com.gtnewhorizons.retrofuturagradle") version "1.3.33"
 }
 
-val jarBaseName = "!Red-Core-MC-1.7-1.12"
+val jarBaseName = "!Red-Core-MC-1.8-1.12"
 
 minecraft {
     mcVersion = "1.12.2"
@@ -21,7 +21,7 @@ idea {
     module {
         isDownloadJavadoc = true
         isDownloadSources = true
-        inheritOutputDirs = true // Fix resources in IJ-Native runs
+        inheritOutputDirs = true
     }
 }
 
@@ -41,13 +41,6 @@ tasks.named<Jar>("jar") {
             "FMLCorePluginContainsFMLMod" to "true",
             "ForceLoadAsMod" to "true"
         )
-    }
-
-    for (projectName in arrayOf("dummy")) {
-        from(project(projectName).tasks.compileJava.get().outputs) {
-            include("**/*.class")
-        }
-        dependsOn(project(projectName).tasks.compileJava.get())
     }
 
     archiveBaseName = jarBaseName
