@@ -5,7 +5,7 @@ import org.jetbrains.gradle.ext.runConfigurations
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version embeddedKotlinVersion
-    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.7"
+    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.8"
     id("dev.redstudio.gradleembeder") version "1.0"
     id("io.freefair.lombok") version "8.6"
     id("maven-publish")
