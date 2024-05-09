@@ -6,7 +6,6 @@ import org.jetbrains.gradle.ext.runConfigurations
 plugins {
     id("org.jetbrains.kotlin.jvm") version embeddedKotlinVersion
     id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.8"
-    id("dev.redstudio.gradleembeder") version "1.0"
     id("io.freefair.lombok") version "8.6"
     id("maven-publish")
     id("java-library")
@@ -16,7 +15,6 @@ allprojects {
     apply(plugin = "org.jetbrains.gradle.plugin.idea-ext")
     apply(plugin = "io.freefair.lombok")
     apply(plugin = "java-library")
-    apply(plugin = "dev.redstudio.gradleembeder")
     apply(plugin = "maven-publish")
 
     group = "dev.redstudio"
@@ -48,6 +46,23 @@ allprojects {
         options.encoding = "UTF-8"
         options.isFork = true
         options.forkOptions.jvmArgs = listOf("-Xmx4G")
+    }
+
+    // Define embedded dependencies configuration
+    val embed = configurations.create("embed") {
+        description = "Embedded dependencies"
+        isTransitive = true
+    }
+    configurations.named("implementation").configure {
+        extendsFrom(embed)
+    }
+
+    // Include embedded dependencies into the jar
+    tasks.named<Jar>("jar").configure {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        from({
+            configurations.getByName("embed").map { if (it.isDirectory) it else zipTree(it) }
+        })
     }
 }
 
