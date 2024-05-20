@@ -59,6 +59,7 @@ allprojects {
 
     // Include embedded dependencies into the jar
     tasks.named<Jar>("jar").configure {
+        dependsOn(configurations.getByName("embed"))
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
         from({
             configurations.getByName("embed").map { if (it.isDirectory) it else zipTree(it) }
