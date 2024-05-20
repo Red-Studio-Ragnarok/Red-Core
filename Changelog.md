@@ -34,7 +34,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 #### Internal
 
 - Minor cleanup
-- Updated [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) to version 5.3.5
+- Updated [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) to version 1.3.35
 
 ## Red Core Version 0.5.1 Changelog - 2023-11-20
 
