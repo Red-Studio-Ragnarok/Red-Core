@@ -1,5 +1,6 @@
 package dev.redstudio.redcore.logging;
 
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Logger;
 
 import java.net.URI;
@@ -95,16 +96,87 @@ public class RedLogger {
     }
 
     /**
-     * Prints a framed error message with a category, description of what happened, what's going to happen now, and optional additional information.
+     * Logs a framed message with a title, specified log level, and an array of messages.
+     * <p>
+     * This method formats the message in an easy-to-read manner, perfect for versioning information or other lists type of logging.
+     * <p>
+     * The frame is made of {@code =} and has top, bottom borders.
+     *
+     * @param title The title of the framed message.
+     * @param logLevel The log level at which to log the message.
+     * @param messages The array of messages to be included within the frame.
+     */
+    public void logFramed(final String title, final Level logLevel, final String... messages) {
+        // Create a StringBuilder and add a new line so everything can be aligned
+        final StringBuilder stringBuilder = new StringBuilder().append("\n");
+
+        // Determine the maximum length of the message lines and title
+        int maxLength = title.length();
+        for (final String message : messages)
+            maxLength = Math.max(maxLength, message.length());
+
+        // Calculate the total length of the frame's border and create it
+        final int borderLength = maxLength + 4;
+        final String fullBorder = repeatString("=", borderLength);
+
+        // Calculate the length of the half-border and create it
+        int halfBorderLength = (borderLength - title.length() - 2) / 2;
+        final String halfBorder = repeatString("=", halfBorderLength);
+
+        // Append the top border and the title
+        stringBuilder.append(halfBorder).append(" ").append(title).append(" ").append(halfBorder);
+
+        // Adjust the border in case the total length is odd
+        if ((borderLength - title.length() - 2 * halfBorderLength) == 1)
+            stringBuilder.append("=");
+
+        stringBuilder.append("\n");
+
+        // Append each message to the StringBuilder
+        for (final String message : messages)
+            stringBuilder.append(message).append("\n");
+
+        // Append the bottom border
+        stringBuilder.append(fullBorder);
+
+        // Log the framed message at the specified log level
+        logger.log(logLevel, stringBuilder.toString());
+    }
+
+    /**
+     * Logs a framed error message with a category, description of what happened, what's going to happen now, and an optional array of additional information.
      * <p>
      * This method formats the message in a user-friendly manner, including a "comforting" message and the link to report the error.
+     * <p>
+     * The frame is made of {@code +} {@code -} {@code |} and has top, bottom, left, and right borders.
+     * It also has separator lines between the title and the "comforting" message, the "comforting" message and the information, the information and the link.
+     *
+     * @param category The error category.
+     * @param whatHappened A description of what happened.
+     * @param whatNow A description of what's happening now.
+     * @param additionalInformation Optional additional information about the error.
+     *
+     * @deprecated Use {@link #logFramedError(String, String, String, String...)} instead.
+     */
+    @Deprecated // TODO: Remove in 0.8
+    public void printFramedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
+        logFramedError(category, whatHappened, whatNow, additionalInformation);
+    }
+
+    /**
+     * Logs a framed error message with a category, description of what happened, what's going to happen now, and an optional array of additional information.
+     * <p>
+     * This method formats the message in a user-friendly manner, including a "comforting" message and the link to report the error.
+     * <p>
+     * The frame is made of {@code +} {@code -} {@code |} and has top, bottom, left, and right borders.
+     * It also has separator lines between the title and the "comforting" message, the "comforting" message and the information, the information and the link.
      *
      * @param category The error category.
      * @param whatHappened A description of what happened.
      * @param whatNow A description of what's happening now.
      * @param additionalInformation Optional additional information about the error.
      */
-    public void printFramedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
+    public void logFramedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
         // Create a list of formatted text lines containing the descriptions of what happened and what's happening now, as well as optional additional information.
         final List<String> formattedTextLines = new ArrayList<>(Collections.singletonList(whatHappened));
 

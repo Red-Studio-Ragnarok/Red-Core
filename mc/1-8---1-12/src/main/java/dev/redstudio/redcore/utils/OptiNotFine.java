@@ -64,7 +64,7 @@ public final class OptiNotFine {
 
             return (boolean) shaderPackLoadedField.get(null);
         } catch (IllegalAccessException | ClassNotFoundException | NoSuchFieldException exception) {
-            RED_LOGGER.printFramedError("OptiNotFine", "Could not get OptiFine shaders status.", "If shaders are enabled things might break", exception.getMessage());
+            RED_LOGGER.logFramedError("OptiNotFine", "Could not get OptiFine shaders status.", "If shaders are enabled things might break", exception.getMessage());
             return false;
         }
     }
@@ -97,7 +97,7 @@ public final class OptiNotFine {
             if (fastRenderField.getBoolean(mc.gameSettings))
                 fastRenderField.set(mc.gameSettings, false);
         } catch (IllegalAccessException | ClassNotFoundException | NoSuchFieldException exception) {
-            RED_LOGGER.printFramedError("OptiNotFine", "Could not disable OptiFine fast renderer", "Things will break", exception.getMessage());
+            RED_LOGGER.logFramedError("OptiNotFine", "Could not disable OptiFine fast renderer", "Things will break", exception.getMessage());
         }
     }
 

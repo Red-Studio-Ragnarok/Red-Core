@@ -35,11 +35,11 @@ public final class RedLogger extends dev.redstudio.redcore.logging.RedLogger {
     }
 
     /**
-     * @deprecated Use {@link dev.redstudio.redcore.logging.RedLogger#printFramedError}
+     * @deprecated Use {@link dev.redstudio.redcore.logging.RedLogger#logFramedError}
      */
     @Override
     @Deprecated
     public void printFramedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
-        super.printFramedError(category, whatHappened, whatNow, additionalInformation);
+        super.logFramedError(category, whatHappened, whatNow, additionalInformation);
     }
 }

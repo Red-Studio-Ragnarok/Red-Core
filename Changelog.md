@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [UNRELEASED] Red Core Version 0.6 Changelog
 
+### Deprecation Warning
+
+The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramedError`, all usages should be updated before 0.8.
+
 ### Added
 
 - `Case` a utility enum for handling checking, applying and enforcing naming conventions, currently supported casing:
@@ -14,6 +18,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
   - `kebab-case`
   - `lower_snake_case`
   - `UPPER_SNAKE_CASE`
+- Added `RedLogger#logFramed` which allows logging lists in a readable manner (e.g., versioning information)
+- Improved documentation for `RedLogger#logFramedError`
+
+### Changed
+
+- Renamed `RedLogger#printFramedError` to `RedLogger#logFramedError`
 
 ### Internal
 
