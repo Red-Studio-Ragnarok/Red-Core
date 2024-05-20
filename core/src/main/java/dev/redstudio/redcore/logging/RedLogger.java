@@ -97,7 +97,7 @@ public class RedLogger {
     /**
      * Prints a framed error message with a category, description of what happened, what's going to happen now, and optional additional information.
      * <p>
-     * This method formats the message in a user-friendly manner, including a comforting message and the link to report the error.
+     * This method formats the message in a user-friendly manner, including a "comforting" message and the link to report the error.
      *
      * @param category The error category.
      * @param whatHappened A description of what happened.
