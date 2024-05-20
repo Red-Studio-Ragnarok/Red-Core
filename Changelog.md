@@ -17,8 +17,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ### Internal
 
-- Updated [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) to version 1.3.33
 - Updated [foojay-resolver](https://github.com/gradle/foojay-toolchains) to version 0.8.0
+- Updated [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) to version 5.3.5
 
 ### Red Core MC
 
