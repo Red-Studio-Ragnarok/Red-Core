@@ -19,10 +19,10 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
   - `lower_snake_case`
   - `UPPER_SNAKE_CASE`
 - Added `RedLogger#logFramed` which allows logging lists in a readable manner (e.g., versioning information)
-- Improved documentation for `RedLogger#logFramedError`
 
 ### Changed
 
+- Improved documentation for `RedLogger#logFramedError`
 - Renamed `RedLogger#printFramedError` to `RedLogger#logFramedError`
 
 ### Internal
