@@ -42,7 +42,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 
 - Removed support for 1.7.10 (Compatibility layer caused issue with the ownership system, wrongfully attributing issues to Red Core)
 
-### Optimization
+#### Optimization
 
 - `OptiNotFine` now uses `MethodHandle`
 
