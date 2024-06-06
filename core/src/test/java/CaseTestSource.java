@@ -40,6 +40,8 @@ final class CaseTestSource {
                 Arguments.of(Case.CAMEL_CASE, "h", true),
                 Arguments.of(Case.CAMEL_CASE, "hH", true),
                 Arguments.of(Case.CAMEL_CASE, "HH", false),
+                Arguments.of(Case.CAMEL_CASE, "officeChair2", true),
+                Arguments.of(Case.CAMEL_CASE, "officeChair11", true),
 
                 Arguments.of(Case.PASCAL_CASE, "HelloWorld", true),
                 Arguments.of(Case.PASCAL_CASE, "helloWorld", false),
@@ -52,6 +54,8 @@ final class CaseTestSource {
                 Arguments.of(Case.PASCAL_CASE, "H", true),
                 Arguments.of(Case.PASCAL_CASE, "Hh", true),
                 Arguments.of(Case.PASCAL_CASE, "HH", true),
+                Arguments.of(Case.PASCAL_CASE, "OfficeChair2", true),
+                Arguments.of(Case.PASCAL_CASE, "OfficeChair11", true),
 
                 Arguments.of(Case.KEBAB_CASE, "hello-world", true),
                 Arguments.of(Case.KEBAB_CASE, "Hello-World", false),
@@ -65,6 +69,8 @@ final class CaseTestSource {
                 Arguments.of(Case.KEBAB_CASE, "h", true),
                 Arguments.of(Case.KEBAB_CASE, "hh", true),
                 Arguments.of(Case.KEBAB_CASE, "HH", false),
+                Arguments.of(Case.KEBAB_CASE, "office-chair-2", true),
+                Arguments.of(Case.KEBAB_CASE, "office-chair-11", true),
 
                 Arguments.of(Case.LOWER_SNAKE_CASE, "hello_world", true),
                 Arguments.of(Case.LOWER_SNAKE_CASE, "Hello_World", false),
@@ -77,6 +83,8 @@ final class CaseTestSource {
                 Arguments.of(Case.LOWER_SNAKE_CASE, "h", true),
                 Arguments.of(Case.LOWER_SNAKE_CASE, "hh", true),
                 Arguments.of(Case.LOWER_SNAKE_CASE, "HH", false),
+                Arguments.of(Case.LOWER_SNAKE_CASE, "office_chair_2", true),
+                Arguments.of(Case.LOWER_SNAKE_CASE, "office_chair_11", true),
 
                 Arguments.of(Case.UPPER_SNAKE_CASE, "HELLO_WORLD", true),
                 Arguments.of(Case.UPPER_SNAKE_CASE, "hello_world", false),
@@ -89,7 +97,9 @@ final class CaseTestSource {
                 Arguments.of(Case.UPPER_SNAKE_CASE, "testing", false),
                 Arguments.of(Case.UPPER_SNAKE_CASE, "H", true),
                 Arguments.of(Case.UPPER_SNAKE_CASE, "HH", true),
-                Arguments.of(Case.UPPER_SNAKE_CASE, "hh", false)
+                Arguments.of(Case.UPPER_SNAKE_CASE, "hh", false),
+                Arguments.of(Case.UPPER_SNAKE_CASE, "OFFICE_CHAIR_2", true),
+                Arguments.of(Case.UPPER_SNAKE_CASE, "OFFICE_CHAIR_11", true)
         );
     }
 
@@ -112,6 +122,8 @@ final class CaseTestSource {
                 Arguments.of(Case.CAMEL_CASE, "H", "h"),
                 Arguments.of(Case.CAMEL_CASE, "HH", "hh"),
                 Arguments.of(Case.CAMEL_CASE, "Hh", "hh"),
+                Arguments.of(Case.CAMEL_CASE, "officeChair2", "officeChair2"),
+                Arguments.of(Case.CAMEL_CASE, "officeChair11", "officeChair11"),
 
                 Arguments.of(Case.PASCAL_CASE, "Testing", "Testing"),
                 Arguments.of(Case.PASCAL_CASE, "testing", "Testing"),
@@ -131,6 +143,8 @@ final class CaseTestSource {
                 Arguments.of(Case.PASCAL_CASE, "HH", "HH"),
                 Arguments.of(Case.PASCAL_CASE, "hH", "HH"),
                 Arguments.of(Case.PASCAL_CASE, "hHh", "HHh"),
+                Arguments.of(Case.PASCAL_CASE, "OfficeChair2", "OfficeChair2"),
+                Arguments.of(Case.PASCAL_CASE, "OfficeChair11", "OfficeChair11"),
 
                 Arguments.of(Case.KEBAB_CASE, "Testing", "testing"),
                 Arguments.of(Case.KEBAB_CASE, "testing", "testing"),
@@ -150,6 +164,8 @@ final class CaseTestSource {
                 Arguments.of(Case.KEBAB_CASE, "HH", "hh"),
                 Arguments.of(Case.KEBAB_CASE, "Hh", "hh"),
                 Arguments.of(Case.KEBAB_CASE, "HhH", "hh-h"),
+                Arguments.of(Case.KEBAB_CASE, "office-chair-2", "office-chair-2"),
+                Arguments.of(Case.KEBAB_CASE, "office-chair-11", "office-chair-11"),
 
                 Arguments.of(Case.LOWER_SNAKE_CASE, "Testing", "testing"),
                 Arguments.of(Case.LOWER_SNAKE_CASE, "testing", "testing"),
@@ -169,6 +185,8 @@ final class CaseTestSource {
                 Arguments.of(Case.LOWER_SNAKE_CASE, "HH", "hh"),
                 Arguments.of(Case.LOWER_SNAKE_CASE, "Hh", "hh"),
                 Arguments.of(Case.LOWER_SNAKE_CASE, "HhH", "hh_h"),
+                Arguments.of(Case.LOWER_SNAKE_CASE, "office_chair_2", "office_chair_2"),
+                Arguments.of(Case.LOWER_SNAKE_CASE, "office_chair_11", "office_chair_11"),
 
                 Arguments.of(Case.UPPER_SNAKE_CASE, "Testing", "TESTING"),
                 Arguments.of(Case.UPPER_SNAKE_CASE, "testing", "TESTING"),
@@ -187,7 +205,9 @@ final class CaseTestSource {
                 Arguments.of(Case.UPPER_SNAKE_CASE, "h", "H"),
                 Arguments.of(Case.UPPER_SNAKE_CASE, "hh", "HH"),
                 Arguments.of(Case.UPPER_SNAKE_CASE, "hH", "H_H"),
-                Arguments.of(Case.UPPER_SNAKE_CASE, "HhH", "HH_H")
+                Arguments.of(Case.UPPER_SNAKE_CASE, "HhH", "HH_H"),
+                Arguments.of(Case.UPPER_SNAKE_CASE, "OFFICE_CHAIR_2", "OFFICE_CHAIR_2"),
+                Arguments.of(Case.UPPER_SNAKE_CASE, "OFFICE_CHAIR_11", "OFFICE_CHAIR_11")
         );
     }
 }

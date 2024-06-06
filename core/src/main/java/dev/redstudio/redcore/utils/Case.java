@@ -21,7 +21,7 @@ public enum Case {
     /**
      * camelCase
      */
-    CAMEL_CASE("^[a-z]++(?:[A-Z]++[a-z]*+)*+$") {
+    CAMEL_CASE("^[a-z0-9]++(?:[A-Z]++[a-z0-9]*+)*+$") {
         @Override
         public String apply(String input) {
             final AtomicBoolean isFirstWord = new AtomicBoolean(true); // Must use AtomicBoolean since used in a lambda it must be effectively final
@@ -42,7 +42,7 @@ public enum Case {
      * <p>
      * <b>Warning: This will consider full uppercase strings as valid, it is included for completeness but use at your own risk.</b>
      */
-    PASCAL_CASE("^[A-Z]([a-z]*)([A-Z][a-z]*)*$") {
+    PASCAL_CASE("^[A-Z]([a-z0-9]*)([A-Z][a-z0-9]*)*$") {
         @Override
         public String apply(String input) {
             return prepare(input).map(part -> part.isEmpty() ? "" : part.substring(0, 1).toUpperCase() + part.substring(1).toLowerCase()).collect(Collectors.joining());
@@ -51,7 +51,7 @@ public enum Case {
     /**
      * kebab-case
      */
-    KEBAB_CASE("^[a-z]++(?:-[a-z]++)*+$") {
+    KEBAB_CASE("^[a-z0-9]++(?:-[a-z0-9]++)*+$") {
         @Override
         public String apply(String input) {
             return prepare(input).map(String::toLowerCase).collect(Collectors.joining("-"));
@@ -60,7 +60,7 @@ public enum Case {
     /**
      * lower_snake_case
      */
-    LOWER_SNAKE_CASE("^[a-z]++(?:_[a-z]++)*+$") {
+    LOWER_SNAKE_CASE("^[a-z0-9]++(?:_[a-z0-9]++)*+$") {
         @Override
         public String apply(String input) {
             return prepare(input).map(String::toLowerCase).collect(Collectors.joining("_"));
@@ -69,7 +69,7 @@ public enum Case {
     /**
      * UPPER_SNAKE_CASE
      */
-    UPPER_SNAKE_CASE("^[A-Z]++(?:_[A-Z]++)*+$") {
+    UPPER_SNAKE_CASE("^[A-Z0-9]++(?:_[A-Z0-9]++)*+$") {
         @Override
         public String apply(String input) {
             return prepare(input).map(String::toUpperCase).collect(Collectors.joining("_"));
@@ -77,7 +77,7 @@ public enum Case {
     };
 
     private static final Pattern PUNCTUATION_PATTERN = Pattern.compile("\\p{Punct}");
-    private static final Pattern SPLIT_PATTERN = Pattern.compile("\\s+|(?<=[a-z])(?=[A-Z])");
+    private static final Pattern SPLIT_PATTERN = Pattern.compile("\\s+|(?<=[a-z0-9])(?=[A-Z0-9])");
 
     private final Pattern pattern;
 
