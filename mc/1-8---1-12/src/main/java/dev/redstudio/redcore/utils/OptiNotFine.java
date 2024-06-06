@@ -8,6 +8,8 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodHandles;
 import java.lang.reflect.Field;
 
 import static dev.redstudio.redcore.ProjectConstants.RED_LOGGER;
@@ -24,11 +26,18 @@ public final class OptiNotFine {
     // Todo: Instead of periodically forcing fast render off, force it once and then disable the slider.
     // Todo: Allow forcing any OptiFine option to be disabled.
 
+    private static final String OPTIFINE_CLASS = "optifine.Installer";
+    private static final String SHADERS_CLASS = "net.optifine.shaders.Shaders";
+    private static final String SHADER_PACK_LOADED_FIELD = "shaderPackLoaded";
+    private static final String GAME_SETTINGS_CLASS = "net.minecraft.client.settings.GameSettings";
+    private static final String FAST_RENDER_FIELD = "ofFastRender";
+
     private static boolean checkedOptiFineInstalled = false;
     private static boolean isOptiFineInstalled = true;
 
-    private static Field shaderPackLoadedField = null;
-    private static Field fastRenderField = null;
+    private static MethodHandle shaderPackLoadedHandle = null;
+    private static MethodHandle fastRenderGetterHandle = null;
+    private static MethodHandle fastRenderSetterHandle = null;
 
     /**
      * Checks if OptiFine is installed.
@@ -38,7 +47,7 @@ public final class OptiNotFine {
     public static boolean isOptiFineInstalled() {
         if (!checkedOptiFineInstalled) {
             try {
-                Class.forName("optifine.Installer");
+                Class.forName(OPTIFINE_CLASS);
             } catch (ClassNotFoundException ignored) {
                 isOptiFineInstalled = false;
             }
@@ -59,11 +68,13 @@ public final class OptiNotFine {
             return false;
 
         try {
-            if (shaderPackLoadedField == null)
-                shaderPackLoadedField = Class.forName("net.optifine.shaders.Shaders").getDeclaredField("shaderPackLoaded");
+            if (shaderPackLoadedHandle == null) {
+                final Field shaderPackLoadedField = Class.forName(SHADERS_CLASS).getDeclaredField(SHADER_PACK_LOADED_FIELD);
+                shaderPackLoadedHandle = MethodHandles.lookup().unreflectGetter(shaderPackLoadedField);
+            }
 
-            return (boolean) shaderPackLoadedField.get(null);
-        } catch (IllegalAccessException | ClassNotFoundException | NoSuchFieldException exception) {
+            return (boolean) shaderPackLoadedHandle.invoke();
+        } catch (Throwable exception) {
             RED_LOGGER.logFramedError("OptiNotFine", "Could not get OptiFine shaders status.", "If shaders are enabled things might break", exception.getMessage());
             return false;
         }
@@ -89,14 +100,17 @@ public final class OptiNotFine {
             return;
 
         try {
-            if (fastRenderField == null)
-                fastRenderField = Class.forName("net.minecraft.client.settings.GameSettings").getDeclaredField("ofFastRender");
+            if (fastRenderGetterHandle == null || fastRenderSetterHandle == null) {
+                final Field fastRenderField = Class.forName(GAME_SETTINGS_CLASS).getDeclaredField(FAST_RENDER_FIELD);
+                fastRenderGetterHandle = MethodHandles.lookup().unreflectGetter(fastRenderField);
+                fastRenderSetterHandle = MethodHandles.lookup().unreflectSetter(fastRenderField);
+            }
 
             final Minecraft mc = Minecraft.getMinecraft();
 
-            if (fastRenderField.getBoolean(mc.gameSettings))
-                fastRenderField.set(mc.gameSettings, false);
-        } catch (IllegalAccessException | ClassNotFoundException | NoSuchFieldException exception) {
+            if ((boolean) fastRenderGetterHandle.invoke(mc.gameSettings))
+                fastRenderSetterHandle.invoke(mc.gameSettings, false);
+        } catch (Throwable exception) {
             RED_LOGGER.logFramedError("OptiNotFine", "Could not disable OptiFine fast renderer", "Things will break", exception.getMessage());
         }
     }
