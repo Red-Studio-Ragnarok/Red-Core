@@ -19,6 +19,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
   - `lower_snake_case`
   - `UPPER_SNAKE_CASE`
 - Added `RedLogger#logFramed` which allows logging lists in a readable manner (e.g., versioning information)
+- Added `DecimalUtils` a utility class which currently allows for truncating decimal numbers for human reading
 
 ### Changed
 
