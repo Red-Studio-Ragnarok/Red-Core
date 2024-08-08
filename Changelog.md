@@ -30,6 +30,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 - Updated [foojay-resolver](https://github.com/gradle/foojay-toolchains) to version 0.8.0
 - Updated [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) to version 5.3.5
 - Updated to [Gradle](https://gradle.org) 8.9
+- Updated to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) 5.4.0
 
 ### Red Core MC
 
