@@ -1,5 +1,5 @@
 plugins {
-    id("com.gtnewhorizons.retrofuturagradle") version "1.3.35"
+    id("com.gtnewhorizons.retrofuturagradle") version "1.4.1"
 }
 
 val jarBaseName = "!Red-Core-MC-1.8-1.12"

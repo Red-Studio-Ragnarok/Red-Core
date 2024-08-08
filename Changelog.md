@@ -52,7 +52,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 #### Internal
 
 - Minor cleanup
-- Updated [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) to version 1.3.35
+- Updated to [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 1.4.1
 
 ## Red Core Version 0.5.1 Changelog - 2023-11-20
 
