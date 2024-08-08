@@ -1,4 +1,4 @@
-rootProject.name = "Red-Core"
+rootProject.name = "Red Core"
 
 pluginManagement {
     repositories {
