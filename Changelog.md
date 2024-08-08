@@ -33,6 +33,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 - Updated to [Gradle](https://gradle.org) 8.9
 - Changed the root project name
 - Set a minimum Gradle Daemon JVM version requirement
+- Switched to the new standard `gradle.properties`
 
 ### Red Core MC
 
@@ -53,7 +54,6 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 
 - Minor cleanup
 - Updated to [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 1.4.1
-- Switched to the new standard `gradle.properties`
 
 ## Red Core Version 0.5.1 Changelog - 2023-11-20
 
