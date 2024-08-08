@@ -53,6 +53,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 
 - Minor cleanup
 - Updated to [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 1.4.1
+- Switched to the new standard `gradle.properties`
 
 ## Red Core Version 0.5.1 Changelog - 2023-11-20
 
