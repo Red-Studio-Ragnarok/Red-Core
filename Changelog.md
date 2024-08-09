@@ -34,6 +34,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 - Changed the root project name
 - Set a minimum Gradle Daemon JVM version requirement
 - Switched to the new standard `gradle.properties`
+- Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.7.1
 
 ### Red Core MC
 
