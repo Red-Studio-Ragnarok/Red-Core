@@ -1,11 +1,14 @@
 package dev.redstudio.redcore.ticking;
 
+import lombok.NoArgsConstructor;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import static lombok.AccessLevel.PRIVATE;
 
 /**
  * This class is responsible for ticking the different click tick events
@@ -14,6 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @since 0.3
  */
 @SideOnly(Side.CLIENT)
+@NoArgsConstructor(access = PRIVATE)
 public class RedClientTicker {
 
     private static int biTickCount, pentaTickCount, decaTickCount;

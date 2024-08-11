@@ -1,6 +1,9 @@
 package dev.redstudio.redcore.math;
 
+import lombok.NoArgsConstructor;
 import net.jafama.FastMath;
+
+import static lombok.AccessLevel.PRIVATE;
 
 /**
  * A utility class that offers efficient mathematical operations such as absolute value calculation, linear interpolation, and rounding operations.
@@ -9,6 +12,7 @@ import net.jafama.FastMath;
  * @since 0.2
  */
 @SuppressWarnings("unused")
+@NoArgsConstructor(access = PRIVATE)
 public final class MathUtil {
 
     /**

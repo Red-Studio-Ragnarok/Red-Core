@@ -5,6 +5,8 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import static lombok.AccessLevel.PRIVATE;
+
 /**
  * This class has different client tick events, that fire less often than the client ticks.
  *
@@ -12,6 +14,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @since 0.3
  */
 @SideOnly(Side.CLIENT)
+@NoArgsConstructor(access = PRIVATE)
 public class RedClientTickEvent extends Event {
 
     /**

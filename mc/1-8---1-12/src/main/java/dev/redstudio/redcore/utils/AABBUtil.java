@@ -1,7 +1,10 @@
 package dev.redstudio.redcore.utils;
 
+import lombok.NoArgsConstructor;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
+
+import static lombok.AccessLevel.PRIVATE;
 
 /**
  * A utility class for handling axis aligned bounding boxes.
@@ -10,6 +13,7 @@ import net.minecraft.util.math.AxisAlignedBB;
  * @since 0.6
  */
 @SuppressWarnings("unused")
+@NoArgsConstructor(access = PRIVATE)
 public final class AABBUtil {
 
     /**

@@ -1,6 +1,9 @@
 package dev.redstudio.redcore.math;
 
+import lombok.NoArgsConstructor;
+
 import static dev.redstudio.redcore.ProjectConstants.LOGGER;
+import static lombok.AccessLevel.PRIVATE;
 
 /**
  * A utility class that offers efficient clamping methods.
@@ -11,6 +14,7 @@ import static dev.redstudio.redcore.ProjectConstants.LOGGER;
  * @since 0.5
  */
 @SuppressWarnings({"unused", "ManualMinMaxCalculation", "DuplicatedCode"})
+@NoArgsConstructor(access = PRIVATE)
 public final class ClampUtil {
 
     /**

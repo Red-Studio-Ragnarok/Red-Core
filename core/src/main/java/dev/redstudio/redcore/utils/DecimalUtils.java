@@ -1,5 +1,9 @@
 package dev.redstudio.redcore.utils;
 
+import lombok.NoArgsConstructor;
+
+import static lombok.AccessLevel.PRIVATE;
+
 /**
  * Utility class for handling decimal numbers, notably for display purposes.
  * <p>
@@ -9,6 +13,7 @@ package dev.redstudio.redcore.utils;
  * @author Luna Lage (Desoroxxx)
  * @since 0.6
  */
+@NoArgsConstructor(access = PRIVATE)
 public class DecimalUtils {
 
     /**

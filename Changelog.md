@@ -20,6 +20,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
   - `UPPER_SNAKE_CASE`
 - Added `RedLogger#logFramed` which allows logging lists in a readable manner (e.g., versioning information)
 - Added `DecimalUtils` a utility class which currently allows for truncating decimal numbers for human reading
+- Added empty private constructors to hide implicit public ones
 
 ### Changed
 
@@ -43,6 +44,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 
 - `AABBUtil` a utility class for handling axis aligned bounding boxes
 - `AABBUtil#orientAABB` a utility method for orienting a north facing AABB towards any `EnumFacing` allowing you to make only one AABB that works for every direction
+- Added empty private constructors to hide implicit public ones
 
 #### Removed
 
