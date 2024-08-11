@@ -3,6 +3,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
@@ -22,7 +23,7 @@ final class CaseTest {
     @ParameterizedTest
     @MethodSource("CaseTestSource#caseEmptyInputProvider")
     void testEmpty(final Case toTest, final String input, final String expected) {
-        assertEquals(false, toTest.check(input));
+        assertFalse(toTest.check(input));
         assertEquals(expected, toTest.apply(input));
         assertEquals(expected, toTest.enforce(input));
     }
@@ -30,7 +31,7 @@ final class CaseTest {
     @ParameterizedTest
     @MethodSource("CaseTestSource#caseSpecialInputProvider")
     void testSpecial(final Case toTest, final String input, final String expected) {
-        assertEquals(false, toTest.check(input));
+        assertFalse(toTest.check(input));
         assertEquals(expected, toTest.apply(input));
         assertEquals(expected, toTest.enforce(input));
     }
