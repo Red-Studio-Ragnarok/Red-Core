@@ -1,5 +1,5 @@
 plugins {
-    id("com.github.gmazzo.buildconfig") version "5.4.0"
+    id("com.github.gmazzo.buildconfig") version "5.5.0"
 }
 
 val jarBaseName = "Red-Core"
