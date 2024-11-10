@@ -4,7 +4,7 @@ import dev.redstudio.redcore.annotations.Experimental;
 
 @Experimental
 @SuppressWarnings("unused")
-public class Vector2D {
+public class Vector2D implements VectorVector2Operations<Vector2D> {
 
     public double x;
     public double y;
@@ -18,8 +18,21 @@ public class Vector2D {
         this.y = y;
     }
 
+    @Override
+    public Vector2D copy(final Vector2D vector) {
+        x = vector.x;
+        y = vector.y;
+
+        return this;
+    }
+
+    // region Math
+    /*================================ Math ================================*/
+
+    // region Addition
     /*================================ Addition ================================*/
 
+    @Override
     public Vector2D add(final Vector2D vector) {
         x += vector.x;
         y += vector.y;
@@ -27,8 +40,12 @@ public class Vector2D {
         return this;
     }
 
+    // endregion
+
+    // region Subtraction
     /*================================ Subtraction ================================*/
 
+    @Override
     public Vector2D subtract(final Vector2D vector) {
         x -= vector.x;
         y -= vector.y;
@@ -36,8 +53,12 @@ public class Vector2D {
         return this;
     }
 
+    // endregion
+
+    // region Multiplication
     /*================================ Multiplication ================================*/
 
+    @Override
     public Vector2D multiply(final byte scalar) {
         x = (x * scalar);
         y = (y * scalar);
@@ -45,6 +66,7 @@ public class Vector2D {
         return this;
     }
 
+    @Override
     public Vector2D multiply(final short scalar) {
         x = (x * scalar);
         y = (y * scalar);
@@ -52,6 +74,7 @@ public class Vector2D {
         return this;
     }
 
+    @Override
     public Vector2D multiply(final int scalar) {
         x = (x * scalar);
         y = (y * scalar);
@@ -59,6 +82,7 @@ public class Vector2D {
         return this;
     }
 
+    @Override
     public Vector2D multiply(final long scalar) {
         x = (x * scalar);
         y = (y * scalar);
@@ -66,6 +90,7 @@ public class Vector2D {
         return this;
     }
 
+    @Override
     public Vector2D multiply(final float scalar) {
         x = (x * scalar);
         y = (y * scalar);
@@ -73,6 +98,7 @@ public class Vector2D {
         return this;
     }
 
+    @Override
     public Vector2D multiply(final double scalar) {
         x = (x * scalar);
         y = (y * scalar);
@@ -80,8 +106,12 @@ public class Vector2D {
         return this;
     }
 
+    // endregion
+
+    // region Division
     /*================================ Division ================================*/
 
+    @Override
     public Vector2D divide(final byte scalar) {
         x = (x / scalar);
         y = (y / scalar);
@@ -89,6 +119,7 @@ public class Vector2D {
         return this;
     }
 
+    @Override
     public Vector2D divide(final short scalar) {
         x = (x / scalar);
         y = (y / scalar);
@@ -96,6 +127,7 @@ public class Vector2D {
         return this;
     }
 
+    @Override
     public Vector2D divide(final int scalar) {
         x = (x / scalar);
         y = (y / scalar);
@@ -103,6 +135,7 @@ public class Vector2D {
         return this;
     }
 
+    @Override
     public Vector2D divide(final long scalar) {
         x = (x / scalar);
         y = (y / scalar);
@@ -110,6 +143,7 @@ public class Vector2D {
         return this;
     }
 
+    @Override
     public Vector2D divide(final float scalar) {
         x = (x / scalar);
         y = (y / scalar);
@@ -117,10 +151,15 @@ public class Vector2D {
         return this;
     }
 
+    @Override
     public Vector2D divide(final double scalar) {
         x = (x / scalar);
         y = (y / scalar);
 
         return this;
     }
+
+    // endregion
+
+    // endregion
 }

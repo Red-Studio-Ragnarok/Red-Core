@@ -40,6 +40,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 - Use Jabel
 - Cleanup buildscript
 - General cleanup
+- Vectors now uses interfaces for consistent implementations
 
 ### Red Core MC
 
