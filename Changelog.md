@@ -38,6 +38,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 - Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.7.1
 - Updated Qodana
 - Use Jabel
+- Cleanup buildscript
 
 ### Red Core MC
 

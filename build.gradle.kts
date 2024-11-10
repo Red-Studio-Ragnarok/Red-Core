@@ -1,7 +1,7 @@
-import org.jetbrains.gradle.ext.settings
 import org.gradle.plugins.ide.idea.model.IdeaLanguageLevel
-import org.jetbrains.gradle.ext.Gradle
 import org.jetbrains.gradle.ext.runConfigurations
+import org.jetbrains.gradle.ext.settings
+import org.jetbrains.gradle.ext.Gradle
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version embeddedKotlinVersion
