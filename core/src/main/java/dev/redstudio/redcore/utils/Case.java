@@ -112,7 +112,7 @@ public enum Case {
         if (check(input))
             return input;
 
-        String result = apply(input);
+        final String result = apply(input);
 
         LOGGER.warn("{} is not in the correct format, converted to {}", input, result);
 

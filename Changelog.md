@@ -39,6 +39,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 - Updated Qodana
 - Use Jabel
 - Cleanup buildscript
+- General cleanup
 
 ### Red Core MC
 
