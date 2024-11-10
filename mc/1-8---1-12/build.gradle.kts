@@ -11,6 +11,8 @@ minecraft {
 }
 
 dependencies {
+    patchedMinecraft("me.eigenraven.java8unsupported:java-8-unsupported-shim:1.0.0")
+
     embed(project(":core"))
     embed(project(":mc:common"))
 

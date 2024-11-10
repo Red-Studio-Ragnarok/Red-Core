@@ -22,6 +22,15 @@ allprojects {
 
     repositories {
         gradlePluginPortal()
+        mavenCentral()
+    }
+
+    dependencies {
+        annotationProcessor("com.pkware.jabel:jabel-javac-plugin:1.0.1-1")
+        annotationProcessor("net.java.dev.jna:jna-platform:5.13.0")
+        compileOnly("com.pkware.jabel:jabel-javac-plugin:1.0.1-1") { isTransitive = false }
+        testAnnotationProcessor("com.pkware.jabel:jabel-javac-plugin:1.0.1-1")
+        testCompileOnly("com.pkware.jabel:jabel-javac-plugin:1.0.1-1") { isTransitive = false }
     }
 
     idea {
@@ -35,7 +44,7 @@ allprojects {
     // Set the toolchain version to decouple the Java we run Gradle with from the Java used to compile and run the mod
     java {
         toolchain {
-            languageVersion.set(JavaLanguageVersion.of(8))
+            languageVersion.set(JavaLanguageVersion.of(21))
             vendor.set(JvmVendorSpec.ADOPTIUM)
         }
         // Generate sources jar when building
@@ -46,6 +55,15 @@ allprojects {
         options.encoding = "UTF-8"
         options.isFork = true
         options.forkOptions.jvmArgs = listOf("-Xmx4G")
+        options.compilerArgs.add("-Xlint:-options")
+
+        if (name != "compileMcLauncherJava" && name != "compilePatchedMcJava" && name != "generateEffectiveLombokConfig") {
+            sourceCompatibility = "21"
+            options.release = 8
+            javaCompiler.set(javaToolchains.compilerFor {
+                languageVersion.set(JavaLanguageVersion.of(21))
+            })
+        }
     }
 
     // Define embedded dependencies configuration
@@ -70,8 +88,8 @@ allprojects {
 idea {
     project {
         settings {
-            jdkName = "1.8"
-            languageLevel = IdeaLanguageLevel("JDK_1_8")
+            jdkName = "21"
+            languageLevel = IdeaLanguageLevel("JDK_21")
 
             runConfigurations {
                 create("MC 1.8-1.12 Client", Gradle::class.java) {

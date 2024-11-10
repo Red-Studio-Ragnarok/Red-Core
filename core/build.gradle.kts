@@ -31,6 +31,9 @@ buildConfig {
 
 tasks.test {
     useJUnitPlatform()
+    javaLauncher.set(javaToolchains.launcherFor{
+        languageVersion = JavaLanguageVersion.of(8)
+    })
 }
 
 tasks.named<Jar>("jar") {
