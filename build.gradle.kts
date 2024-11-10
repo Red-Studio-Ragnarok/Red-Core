@@ -5,8 +5,8 @@ import org.jetbrains.gradle.ext.Gradle
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version embeddedKotlinVersion
-    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.8"
-    id("io.freefair.lombok") version "8.7.1"
+    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.9"
+    id("io.freefair.lombok") version "8.10"
     id("maven-publish")
     id("java-library")
 }
