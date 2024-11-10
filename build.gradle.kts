@@ -60,6 +60,7 @@ allprojects {
         if (name != "compileMcLauncherJava" && name != "compilePatchedMcJava" && name != "generateEffectiveLombokConfig") {
             sourceCompatibility = "21"
             options.release = 8
+            options.compilerArgs.add("--release=8")
             javaCompiler.set(javaToolchains.compilerFor {
                 languageVersion.set(JavaLanguageVersion.of(21))
             })
