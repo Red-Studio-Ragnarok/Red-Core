@@ -6,8 +6,6 @@ import dev.redstudio.redcore.annotations.Experimental;
 @SuppressWarnings("unused")
 interface VectorPrimitiveOperations<T> {
 
-    T copy(final T vector);
-
     // region Math
     /*================================ Math ================================*/
 

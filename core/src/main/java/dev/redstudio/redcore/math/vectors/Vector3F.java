@@ -4,17 +4,17 @@ import dev.redstudio.redcore.annotations.Experimental;
 
 @Experimental
 @SuppressWarnings("unused")
-public class Vector3D implements VectorVector3Operations<Vector3D> {
+public class Vector3F implements VectorVector3Operations<Vector3F> {
 
-    public double x;
-    public double y;
-    public double z;
+    public float x;
+    public float y;
+    public float z;
 
-    public Vector3D() {
+    public Vector3F() {
         // No need to do anything
     }
 
-    public Vector3D(final double x, final double y, final double z) {
+    public Vector3F(final float x, final float y, final float z) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -24,7 +24,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     /*================================ Assignment ================================*/
 
     @Override
-    public Vector3D copy(final Vector3F vector) {
+    public Vector3F copy(final Vector3F vector) {
         x = vector.x;
         y = vector.y;
         z = vector.z;
@@ -33,10 +33,10 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D copy(final Vector3D vector) {
-        x = vector.x;
-        y = vector.y;
-        z = vector.z;
+    public Vector3F copy(final Vector3D vector) {
+        x = (float) vector.x;
+        y = (float) vector.y;
+        z = (float) vector.z;
 
         return this;
     }
@@ -50,7 +50,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     /*================================ Addition ================================*/
 
     @Override
-    public Vector3D add(final Vector3F vector) {
+    public Vector3F add(final Vector3F vector) {
         x += vector.x;
         y += vector.y;
         z += vector.z;
@@ -59,10 +59,10 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D add(final Vector3D vector) {
-        x += vector.x;
-        y += vector.y;
-        z += vector.z;
+    public Vector3F add(final Vector3D vector) {
+        x += (float) vector.x;
+        y += (float) vector.y;
+        z += (float) vector.z;
 
         return this;
     }
@@ -73,7 +73,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     /*================================ Subtraction ================================*/
 
     @Override
-    public Vector3D subtract(final Vector3F vector) {
+    public Vector3F subtract(final Vector3F vector) {
         x -= vector.x;
         y -= vector.y;
         z -= vector.z;
@@ -82,10 +82,10 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D subtract(final Vector3D vector) {
-        x -= vector.x;
-        y -= vector.y;
-        z -= vector.z;
+    public Vector3F subtract(final Vector3D vector) {
+        x -= (float) vector.x;
+        y -= (float) vector.y;
+        z -= (float) vector.z;
 
         return this;
     }
@@ -96,7 +96,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     /*================================ Multiplication ================================*/
 
     @Override
-    public Vector3D multiply(final byte scalar) {
+    public Vector3F multiply(final byte scalar) {
         x = (x * scalar);
         y = (y * scalar);
         z = (z * scalar);
@@ -105,7 +105,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D multiply(final short scalar) {
+    public Vector3F multiply(final short scalar) {
         x = (x * scalar);
         y = (y * scalar);
         z = (z * scalar);
@@ -114,7 +114,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D multiply(final int scalar) {
+    public Vector3F multiply(final int scalar) {
         x = (x * scalar);
         y = (y * scalar);
         z = (z * scalar);
@@ -123,7 +123,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D multiply(final long scalar) {
+    public Vector3F multiply(final long scalar) {
         x = (x * scalar);
         y = (y * scalar);
         z = (z * scalar);
@@ -132,7 +132,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D multiply(final float scalar) {
+    public Vector3F multiply(final float scalar) {
         x = (x * scalar);
         y = (y * scalar);
         z = (z * scalar);
@@ -141,10 +141,10 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D multiply(final double scalar) {
-        x = (x * scalar);
-        y = (y * scalar);
-        z = (z * scalar);
+    public Vector3F multiply(final double scalar) {
+        x = (x * (float) scalar);
+        y = (y * (float) scalar);
+        z = (z * (float) scalar);
 
         return this;
     }
@@ -155,7 +155,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     /*================================ Division ================================*/
 
     @Override
-    public Vector3D divide(final byte scalar) {
+    public Vector3F divide(final byte scalar) {
         x = (x / scalar);
         y = (y / scalar);
         z = (z / scalar);
@@ -164,7 +164,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D divide(final short scalar) {
+    public Vector3F divide(final short scalar) {
         x = (x / scalar);
         y = (y / scalar);
         z = (z / scalar);
@@ -173,7 +173,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D divide(final int scalar) {
+    public Vector3F divide(final int scalar) {
         x = (x / scalar);
         y = (y / scalar);
         z = (z / scalar);
@@ -182,7 +182,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D divide(final long scalar) {
+    public Vector3F divide(final long scalar) {
         x = (x / scalar);
         y = (y / scalar);
         z = (z / scalar);
@@ -191,7 +191,7 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D divide(final float scalar) {
+    public Vector3F divide(final float scalar) {
         x = (x / scalar);
         y = (y / scalar);
         z = (z / scalar);
@@ -200,10 +200,10 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     }
 
     @Override
-    public Vector3D divide(final double scalar) {
-        x = (x / scalar);
-        y = (y / scalar);
-        z = (z / scalar);
+    public Vector3F divide(final double scalar) {
+        x = (x / (float) scalar);
+        y = (y / (float) scalar);
+        z = (z / (float) scalar);
 
         return this;
     }

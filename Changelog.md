@@ -21,6 +21,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 - Added `RedLogger#logFramed` which allows logging lists in a readable manner (e.g., versioning information)
 - Added `DecimalUtils` a utility class which currently allows for truncating decimal numbers for human reading
 - Added empty private constructors to hide implicit public ones
+- Added `Vector3F` & `Vector2F` to the new experimental vector suite
 
 ### Changed
 

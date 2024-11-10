@@ -18,6 +18,17 @@ public class Vector2D implements VectorVector2Operations<Vector2D> {
         this.y = y;
     }
 
+    // region Assignment
+    /*================================ Assignment ================================*/
+
+    @Override
+    public Vector2D copy(final Vector2F vector) {
+        x = vector.x;
+        y = vector.y;
+
+        return this;
+    }
+
     @Override
     public Vector2D copy(final Vector2D vector) {
         x = vector.x;
@@ -26,11 +37,21 @@ public class Vector2D implements VectorVector2Operations<Vector2D> {
         return this;
     }
 
+    // endregion
+
     // region Math
     /*================================ Math ================================*/
 
     // region Addition
     /*================================ Addition ================================*/
+
+    @Override
+    public Vector2D add(final Vector2F vector) {
+        x += vector.x;
+        y += vector.y;
+
+        return this;
+    }
 
     @Override
     public Vector2D add(final Vector2D vector) {
@@ -44,6 +65,14 @@ public class Vector2D implements VectorVector2Operations<Vector2D> {
 
     // region Subtraction
     /*================================ Subtraction ================================*/
+
+    @Override
+    public Vector2D subtract(final Vector2F vector) {
+        x -= vector.x;
+        y -= vector.y;
+
+        return this;
+    }
 
     @Override
     public Vector2D subtract(final Vector2D vector) {
