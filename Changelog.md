@@ -38,6 +38,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 - Switched to the new standard `gradle.properties`
 - Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.7.1
 - Updated Qodana
+- Cleaned up tests
 - Updated to [org.jetbrains.gradle.plugin.idea-ext](https://github.com/JetBrains/gradle-idea-ext-plugin) 1.1.9
 - Use Jabel
 - Cleanup buildscript
