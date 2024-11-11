@@ -106,7 +106,7 @@ public class RedLogger {
      * @param logLevel The log level at which to log the message.
      * @param messages The array of messages to be included within the frame.
      */
-    public void logFramed(final String title, final Level logLevel, final String... messages) {
+    public void framed(final String title, final Level logLevel, final String... messages) {
         // Create a StringBuilder and add a new line so everything can be aligned
         final StringBuilder stringBuilder = new StringBuilder().append("\n");
 
@@ -156,11 +156,11 @@ public class RedLogger {
      * @param whatNow A description of what's happening now.
      * @param additionalInformation Optional additional information about the error.
      *
-     * @deprecated Use {@link #logFramedError(String, String, String, String...)} instead.
+     * @deprecated Use {@link #framedError(String, String, String, String...)} instead.
      */
     @Deprecated // TODO: Remove in 0.8
     public void printFramedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
-        logFramedError(category, whatHappened, whatNow, additionalInformation);
+        framedError(category, whatHappened, whatNow, additionalInformation);
     }
 
     /**
@@ -176,7 +176,7 @@ public class RedLogger {
      * @param whatNow A description of what's happening now.
      * @param additionalInformation Optional additional information about the error.
      */
-    public void logFramedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
+    public void framedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
         // Create a list of formatted text lines containing the descriptions of what happened and what's happening now, as well as optional additional information.
         final List<String> formattedTextLines = new ArrayList<>(Collections.singletonList(whatHappened));
 
