@@ -27,7 +27,7 @@ allprojects {
 
     dependencies {
         annotationProcessor("com.pkware.jabel:jabel-javac-plugin:1.0.1-1")
-        annotationProcessor("net.java.dev.jna:jna-platform:5.13.0")
+        annotationProcessor("net.java.dev.jna:jna-platform:5.16.0")
         compileOnly("com.pkware.jabel:jabel-javac-plugin:1.0.1-1") { isTransitive = false }
         testAnnotationProcessor("com.pkware.jabel:jabel-javac-plugin:1.0.1-1")
         testCompileOnly("com.pkware.jabel:jabel-javac-plugin:1.0.1-1") { isTransitive = false }
