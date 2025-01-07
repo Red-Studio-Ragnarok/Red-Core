@@ -30,13 +30,13 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 
 ### Internal
 
-- Updated to [foojay-resolver](https://github.com/gradle/foojay-toolchains) 0.8.0
-- Updated to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) 5.5.0
+- Updated to [foojay-resolver](https://github.com/gradle/foojay-toolchains) 0.9.0
+- Updated to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) 5.5.1
 - Updated to [Gradle](https://gradle.org) 8.8
 - Changed the root project name
 - Set a minimum Gradle Daemon JVM version requirement
 - Switched to the new standard `gradle.properties`
-- Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.7.1
+- Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.11
 - Updated Qodana
 - Cleaned up tests
 - Updated to [org.jetbrains.gradle.plugin.idea-ext](https://github.com/JetBrains/gradle-idea-ext-plugin) 1.1.9
