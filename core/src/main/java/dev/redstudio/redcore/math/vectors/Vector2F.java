@@ -6,14 +6,14 @@ import dev.redstudio.redcore.annotations.Experimental;
 @SuppressWarnings("unused")
 public class Vector2F implements VectorVector2Operations<Vector2F> {
 
-    public double x;
-    public double y;
+    public float x;
+    public float y;
 
     public Vector2F() {
         // No need to do anything
     }
 
-    public Vector2F(final double x, final double y) {
+    public Vector2F(final float x, final float y) {
         this.x = x;
         this.y = y;
     }
@@ -31,8 +31,8 @@ public class Vector2F implements VectorVector2Operations<Vector2F> {
 
     @Override
     public Vector2F copy(final Vector2D vector) {
-        x = vector.x;
-        y = vector.y;
+        x = (float) vector.x;
+        y = (float) vector.y;
 
         return this;
     }
@@ -55,8 +55,8 @@ public class Vector2F implements VectorVector2Operations<Vector2F> {
 
     @Override
     public Vector2F add(final Vector2D vector) {
-        x += vector.x;
-        y += vector.y;
+        x += (float) vector.x;
+        y += (float) vector.y;
 
         return this;
     }
@@ -76,8 +76,8 @@ public class Vector2F implements VectorVector2Operations<Vector2F> {
 
     @Override
     public Vector2F subtract(final Vector2D vector) {
-        x -= vector.x;
-        y -= vector.y;
+        x -= (float) vector.x;
+        y -= (float) vector.y;
 
         return this;
     }
@@ -129,8 +129,8 @@ public class Vector2F implements VectorVector2Operations<Vector2F> {
 
     @Override
     public Vector2F multiply(final double scalar) {
-        x = (x * scalar);
-        y = (y * scalar);
+        x = (float) (x * scalar);
+        y = (float) (y * scalar);
 
         return this;
     }
@@ -182,8 +182,8 @@ public class Vector2F implements VectorVector2Operations<Vector2F> {
 
     @Override
     public Vector2F divide(final double scalar) {
-        x = (x / scalar);
-        y = (y / scalar);
+        x = (float) (x / scalar);
+        y = (float) (y / scalar);
 
         return this;
     }
