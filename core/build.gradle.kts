@@ -4,7 +4,7 @@ plugins {
 
 val jarBaseName = "Red-Core"
 
-val log4jVersion = "2.17.1"
+val log4jVersion = "2.24.3"
 val jUnitVersion = "5.10.1"
 
 dependencies {
