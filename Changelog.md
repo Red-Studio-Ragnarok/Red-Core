@@ -32,11 +32,11 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 
 - Updated to [foojay-resolver](https://github.com/gradle/foojay-toolchains) 0.9.0
 - Updated to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) 5.5.1
-- Updated to [Gradle](https://gradle.org) 8.8
+- Updated to [Gradle](https://gradle.org) 8.12
 - Changed the root project name
 - Set a minimum Gradle Daemon JVM version requirement
 - Switched to the new standard `gradle.properties`
-- Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.11
+- Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.12
 - Updated Qodana
 - Cleaned up tests
 - Updated to [org.jetbrains.gradle.plugin.idea-ext](https://github.com/JetBrains/gradle-idea-ext-plugin) 1.1.9
@@ -44,6 +44,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 - Cleanup buildscript
 - General cleanup
 - Vectors now uses interfaces for consistent implementations
+- Updated to [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 1.4.2
 
 ### Red Core MC
 
