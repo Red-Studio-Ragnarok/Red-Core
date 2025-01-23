@@ -5,7 +5,7 @@ plugins {
 val jarBaseName = "Red-Core"
 
 val log4jVersion = "2.17.1"
-val jUnitVersion = "5.10.1"
+val jUnitVersion = "5.11.4"
 
 dependencies {
     embed("net.jafama", "jafama", "2.3.2")
