@@ -2,52 +2,51 @@ plugins {
     id("com.github.gmazzo.buildconfig") version "5.5.1"
 }
 
+val id = "redcore"
 val jarBaseName = "Red-Core"
 
-val log4jVersion = "2.17.1"
+val jafamaVersion = "2.3.2"
+
+val log4jVersion = "2.17.1" // Forged
+
 val jUnitVersion = "5.10.1"
 
 dependencies {
-    embed("net.jafama", "jafama", "2.3.2")
+    embed("net.jafama", "jafama", jafamaVersion)
 
     compileOnly("org.apache.logging.log4j", "log4j-api", log4jVersion)
-    compileOnly("org.apache.logging.log4j", "log4j-core", log4jVersion)
 
-    testImplementation("org.junit.jupiter", "junit-jupiter",jUnitVersion)
+    testImplementation("org.junit.jupiter", "junit-jupiter", jUnitVersion)
     testImplementation("org.apache.logging.log4j", "log4j-api", log4jVersion)
     testImplementation("org.apache.logging.log4j", "log4j-core", log4jVersion)
 }
 
 buildConfig {
-    packageName(project.group.toString() + ".redcore")
+    packageName("${project.group}.${id}")
     className("ProjectConstants")
+    documentation.set("This class defines constants for ${project.name}.\n<p>\nThey are automatically updated by Gradle.")
 
     useJavaOutput()
-    buildConfigField("String", "NAME", provider { "\"Red Core\"" })
-    buildConfigField("String", "VERSION", provider { "\"${project.version}\"" })
+
+    // Details
+    buildConfigField("ID", id)
+    buildConfigField("NAME", project.name)
+    buildConfigField("VERSION", project.version.toString())
+
+    // Loggers
     buildConfigField("org.apache.logging.log4j.Logger", "LOGGER", "org.apache.logging.log4j.LogManager.getLogger(NAME)")
     buildConfigField("dev.redstudio.redcore.logging.RedLogger", "RED_LOGGER", "new RedLogger(NAME, \"https://linkify.cz/RedCoreBugReport\", LOGGER)")
 }
 
-tasks.test {
-    useJUnitPlatform()
-    javaLauncher.set(javaToolchains.launcherFor{
-        languageVersion = JavaLanguageVersion.of(8)
-    })
+tasks {
+    test {
+        useJUnitPlatform()
+        javaLauncher.set(project.javaToolchains.launcherFor {
+            languageVersion = JavaLanguageVersion.of(8)
+        })
+    }
 }
 
-tasks.named<Jar>("jar") {
-    archiveBaseName = jarBaseName
-}
-
-tasks.named<Jar>("sourcesJar") {
-    archiveBaseName = jarBaseName
-}
-
-publishing.publications.register("redCore", MavenPublication::class) {
-    from(components["java"])
-
-    groupId = project.group.toString()
-    artifactId = "red-core"
-    version = project.version.toString()
+base {
+    archivesName.set(jarBaseName)
 }

@@ -41,10 +41,11 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 - Cleaned up tests
 - Updated to [org.jetbrains.gradle.plugin.idea-ext](https://github.com/JetBrains/gradle-idea-ext-plugin) 1.1.9
 - Use Jabel
-- Cleanup buildscript
 - General cleanup
 - Vectors now uses interfaces for consistent implementations
 - Updated to [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 1.4.2
+- Switched to the new standard `gradle.properties`
+- Reworked buildscript
 
 ### Red Core MC
 

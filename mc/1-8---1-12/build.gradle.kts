@@ -4,6 +4,8 @@ plugins {
 
 val jarBaseName = "!Red-Core-MC-1.8-1.12"
 
+val jafamaVersion = "2.3.2"
+
 minecraft {
     mcVersion = "1.12.2"
     username = "Desoroxxx"
@@ -16,7 +18,7 @@ dependencies {
     embed(project(":core"))
     embed(project(":mc:common"))
 
-    implementation("net.jafama", "jafama", "2.3.2")
+    implementation("net.jafama", "jafama", jafamaVersion)
 }
 
 idea {
@@ -27,35 +29,25 @@ idea {
     }
 }
 
-tasks.processResources.configure {
-    inputs.property("version", project.version)
+tasks {
+    processResources.configure {
+        inputs.property("version", project.version)
 
-    filesMatching("mcmod.info") {
-        expand(mapOf("version" to project.version))
+        filesMatching("mcmod.info") {
+            expand(mapOf("version" to project.version))
+        }
     }
-}
 
-tasks.named<Jar>("jar") {
-    manifest {
-        attributes(
+    named<Jar>("jar") {
+        manifest.attributes(
             "ModSide" to "BOTH",
             "FMLCorePlugin" to "${project.group}.redcore.RedCorePlugin",
             "FMLCorePluginContainsFMLMod" to "true",
-            "ForceLoadAsMod" to "true"
+            "ForceLoadAsMod" to "true",
         )
     }
-
-    archiveBaseName = jarBaseName
 }
 
-tasks.named<Jar>("sourcesJar") {
-    archiveBaseName = jarBaseName
-}
-
-publishing.publications.register("redCoreMc", MavenPublication::class) {
-    from(components["java"])
-
-    groupId = project.group.toString()
-    artifactId = "red-core-mc"
-    version = project.version.toString()
+base {
+    archivesName.set(jarBaseName)
 }
