@@ -4,7 +4,7 @@ import org.jetbrains.gradle.ext.runConfigurations
 import org.jetbrains.gradle.ext.settings
 
 plugins {
-    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.9"
+    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.10"
     id("io.freefair.lombok") version "8.12" apply false
     `java-library`
 }
