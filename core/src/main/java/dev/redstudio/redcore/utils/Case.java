@@ -13,6 +13,7 @@ import static dev.redstudio.redcore.ProjectConstants.LOGGER;
 /// *Warning: This cannot account for the entire complexity and nuances of naming things, it is a tool and as with any tools should be used with caution.*
 ///
 /// @author Luna Mira Lage (Desoroxxx)
+/// @version 2025-02-01
 /// @since 0.6
 public enum Case {
 
