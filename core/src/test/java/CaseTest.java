@@ -6,10 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-/**
- * @author Luna Mira Lage (Desoroxxx)
- * @since 0.6
- */
+/// @author Luna Mira Lage (Desoroxxx)
+/// @version 2025-02-01
+/// @since 0.6
 final class CaseTest {
 
     @ParameterizedTest

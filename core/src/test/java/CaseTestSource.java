@@ -5,10 +5,9 @@ import java.util.Collections;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-/**
- * @author Luna Mira Lage (Desoroxxx)
- * @since 0.6
- */
+/// @author Luna Mira Lage (Desoroxxx)
+/// @version 2025-02-01
+/// @since 0.6
 final class CaseTestSource {
 
     private static Stream<Case> caseNullInputProvider() {
