@@ -1,27 +1,61 @@
 package dev.redstudio.redcore.math.vectors;
 
-import dev.redstudio.redcore.annotations.Experimental;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
-@Experimental
-@SuppressWarnings("unused")
-public class Vector3D implements VectorVector3Operations<Vector3D> {
+/// Represents a two-dimensional vector with `x`,`y`, and `z` coordinates using `double`.
+///
+/// All operations are directly performed on the vector.
+///
+/// @author Luna Mira Lage (Desoroxxx)
+/// @version 2025-02-01
+/// @since 0.6
+@NoArgsConstructor
+@AllArgsConstructor
+public class Vector3D implements Vector3<Vector3D> {
 
     public double x;
     public double y;
     public double z;
 
-    public Vector3D() {
-        // No need to do anything
-    }
-
-    public Vector3D(final double x, final double y, final double z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-    }
-
     // region Assignment
     /*================================ Assignment ================================*/
+
+    @Override
+    public Vector3D copy(final Vector3B vector) {
+        x = vector.x;
+        y = vector.y;
+        z = vector.z;
+
+        return this;
+    }
+
+    @Override
+    public Vector3D copy(final Vector3S vector) {
+        x = vector.x;
+        y = vector.y;
+        z = vector.z;
+
+        return this;
+    }
+
+    @Override
+    public Vector3D copy(final Vector3I vector) {
+        x = vector.x;
+        y = vector.y;
+        z = vector.z;
+
+        return this;
+    }
+
+    @Override
+    public Vector3D copy(final Vector3L vector) {
+        x = vector.x;
+        y = vector.y;
+        z = vector.z;
+
+        return this;
+    }
 
     @Override
     public Vector3D copy(final Vector3F vector) {
@@ -49,6 +83,43 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
     // region Addition
     /*================================ Addition ================================*/
 
+
+    @Override
+    public Vector3D add(final Vector3B vector) {
+        x += vector.x;
+        y += vector.y;
+        z += vector.z;
+
+        return this;
+    }
+
+    @Override
+    public Vector3D add(final Vector3S vector) {
+        x += vector.x;
+        y += vector.y;
+        z += vector.z;
+
+        return this;
+    }
+
+    @Override
+    public Vector3D add(final Vector3I vector) {
+        x += vector.x;
+        y += vector.y;
+        z += vector.z;
+
+        return this;
+    }
+
+    @Override
+    public Vector3D add(final Vector3L vector) {
+        x += vector.x;
+        y += vector.y;
+        z += vector.z;
+
+        return this;
+    }
+
     @Override
     public Vector3D add(final Vector3F vector) {
         x += vector.x;
@@ -71,6 +142,42 @@ public class Vector3D implements VectorVector3Operations<Vector3D> {
 
     // region Subtraction
     /*================================ Subtraction ================================*/
+
+    @Override
+    public Vector3D subtract(final Vector3B vector) {
+        x -= vector.x;
+        y -= vector.y;
+        z -= vector.z;
+
+        return this;
+    }
+
+    @Override
+    public Vector3D subtract(final Vector3S vector) {
+        x -= vector.x;
+        y -= vector.y;
+        z -= vector.z;
+
+        return this;
+    }
+
+    @Override
+    public Vector3D subtract(final Vector3I vector) {
+        x -= vector.x;
+        y -= vector.y;
+        z -= vector.z;
+
+        return this;
+    }
+
+    @Override
+    public Vector3D subtract(final Vector3L vector) {
+        x -= vector.x;
+        y -= vector.y;
+        z -= vector.z;
+
+        return this;
+    }
 
     @Override
     public Vector3D subtract(final Vector3F vector) {

@@ -3,7 +3,7 @@ package dev.redstudio.redcore.math.vectors;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-/// Represents a two-dimensional vector with `x` and `y` coordinates using `float`.
+/// Represents a two-dimensional vector with `x` and `y` coordinates using `int`.
 ///
 /// All operations are directly performed on the vector.
 ///
@@ -12,16 +12,16 @@ import lombok.NoArgsConstructor;
 /// @since 0.6
 @NoArgsConstructor
 @AllArgsConstructor
-public class Vector2F implements Vector2<Vector2F> {
+public class Vector2I implements Vector2<Vector2I> {
 
-    public float x;
-    public float y;
+    public int x;
+    public int y;
 
     // region Assignment
     /*================================ Assignment ================================*/
 
     @Override
-    public Vector2F copy(final Vector2B vector) {
+    public Vector2I copy(final Vector2B vector) {
         x = vector.x;
         y = vector.y;
 
@@ -29,7 +29,7 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F copy(final Vector2S vector) {
+    public Vector2I copy(final Vector2S vector) {
         x = vector.x;
         y = vector.y;
 
@@ -37,7 +37,7 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F copy(final Vector2I vector) {
+    public Vector2I copy(final Vector2I vector) {
         x = vector.x;
         y = vector.y;
 
@@ -45,25 +45,25 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F copy(final Vector2L vector) {
-        x = vector.x;
-        y = vector.y;
+    public Vector2I copy(final Vector2L vector) {
+        x = (int) vector.x;
+        y = (int) vector.y;
 
         return this;
     }
 
     @Override
-    public Vector2F copy(final Vector2F vector) {
-        x = vector.x;
-        y = vector.y;
+    public Vector2I copy(final Vector2F vector) {
+        x = (int) vector.x;
+        y = (int) vector.y;
 
         return this;
     }
 
     @Override
-    public Vector2F copy(final Vector2D vector) {
-        x = (float) vector.x;
-        y = (float) vector.y;
+    public Vector2I copy(final Vector2D vector) {
+        x = (int) vector.x;
+        y = (int) vector.y;
 
         return this;
     }
@@ -77,7 +77,7 @@ public class Vector2F implements Vector2<Vector2F> {
     /*================================ Addition ================================*/
 
     @Override
-    public Vector2F add(final Vector2B vector) {
+    public Vector2I add(final Vector2B vector) {
         x += vector.x;
         y += vector.y;
 
@@ -85,7 +85,7 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F add(final Vector2S vector) {
+    public Vector2I add(final Vector2S vector) {
         x += vector.x;
         y += vector.y;
 
@@ -93,7 +93,7 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F add(final Vector2I vector) {
+    public Vector2I add(final Vector2I vector) {
         x += vector.x;
         y += vector.y;
 
@@ -101,25 +101,25 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F add(final Vector2L vector) {
-        x += vector.x;
-        y += vector.y;
+    public Vector2I add(final Vector2L vector) {
+        x += (int) vector.x;
+        y += (int) vector.y;
 
         return this;
     }
 
     @Override
-    public Vector2F add(final Vector2F vector) {
-        x += vector.x;
-        y += vector.y;
+    public Vector2I add(final Vector2F vector) {
+        x += (int) vector.x;
+        y += (int) vector.y;
 
         return this;
     }
 
     @Override
-    public Vector2F add(final Vector2D vector) {
-        x += (float) vector.x;
-        y += (float) vector.y;
+    public Vector2I add(final Vector2D vector) {
+        x += (int) vector.x;
+        y += (int) vector.y;
 
         return this;
     }
@@ -130,7 +130,7 @@ public class Vector2F implements Vector2<Vector2F> {
     /*================================ Subtraction ================================*/
 
     @Override
-    public Vector2F subtract(final Vector2B vector) {
+    public Vector2I subtract(final Vector2B vector) {
         x -= vector.x;
         y -= vector.y;
 
@@ -138,7 +138,7 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F subtract(final Vector2S vector) {
+    public Vector2I subtract(final Vector2S vector) {
         x -= vector.x;
         y -= vector.y;
 
@@ -146,7 +146,7 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F subtract(final Vector2I vector) {
+    public Vector2I subtract(final Vector2I vector) {
         x -= vector.x;
         y -= vector.y;
 
@@ -154,25 +154,25 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F subtract(final Vector2L vector) {
-        x -= vector.x;
-        y -= vector.y;
+    public Vector2I subtract(final Vector2L vector) {
+        x -= (int) vector.x;
+        y -= (int) vector.y;
 
         return this;
     }
 
     @Override
-    public Vector2F subtract(final Vector2F vector) {
-        x -= vector.x;
-        y -= vector.y;
+    public Vector2I subtract(final Vector2F vector) {
+        x -= (int) vector.x;
+        y -= (int) vector.y;
 
         return this;
     }
 
     @Override
-    public Vector2F subtract(final Vector2D vector) {
-        x -= (float) vector.x;
-        y -= (float) vector.y;
+    public Vector2I subtract(final Vector2D vector) {
+        x -= (int) vector.x;
+        y -= (int) vector.y;
 
         return this;
     }
@@ -183,7 +183,7 @@ public class Vector2F implements Vector2<Vector2F> {
     /*================================ Multiplication ================================*/
 
     @Override
-    public Vector2F multiply(final byte scalar) {
+    public Vector2I multiply(final byte scalar) {
         x = (x * scalar);
         y = (y * scalar);
 
@@ -191,7 +191,7 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F multiply(final short scalar) {
+    public Vector2I multiply(final short scalar) {
         x = (x * scalar);
         y = (y * scalar);
 
@@ -199,7 +199,7 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F multiply(final int scalar) {
+    public Vector2I multiply(final int scalar) {
         x = (x * scalar);
         y = (y * scalar);
 
@@ -207,25 +207,25 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F multiply(final long scalar) {
-        x = (x * scalar);
-        y = (y * scalar);
+    public Vector2I multiply(final long scalar) {
+        x = (int) (x * scalar);
+        y = (int) (y * scalar);
 
         return this;
     }
 
     @Override
-    public Vector2F multiply(final float scalar) {
-        x = (x * scalar);
-        y = (y * scalar);
+    public Vector2I multiply(final float scalar) {
+        x = (int) (x * scalar);
+        y = (int) (y * scalar);
 
         return this;
     }
 
     @Override
-    public Vector2F multiply(final double scalar) {
-        x = (float) (x * scalar);
-        y = (float) (y * scalar);
+    public Vector2I multiply(final double scalar) {
+        x = (int) (x * scalar);
+        y = (int) (y * scalar);
 
         return this;
     }
@@ -236,7 +236,7 @@ public class Vector2F implements Vector2<Vector2F> {
     /*================================ Division ================================*/
 
     @Override
-    public Vector2F divide(final byte scalar) {
+    public Vector2I divide(final byte scalar) {
         x = (x / scalar);
         y = (y / scalar);
 
@@ -244,7 +244,7 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F divide(final short scalar) {
+    public Vector2I divide(final short scalar) {
         x = (x / scalar);
         y = (y / scalar);
 
@@ -252,7 +252,7 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F divide(final int scalar) {
+    public Vector2I divide(final int scalar) {
         x = (x / scalar);
         y = (y / scalar);
 
@@ -260,25 +260,25 @@ public class Vector2F implements Vector2<Vector2F> {
     }
 
     @Override
-    public Vector2F divide(final long scalar) {
-        x = (x / scalar);
-        y = (y / scalar);
+    public Vector2I divide(final long scalar) {
+        x = (int) (x / scalar);
+        y = (int) (y / scalar);
 
         return this;
     }
 
     @Override
-    public Vector2F divide(final float scalar) {
-        x = (x / scalar);
-        y = (y / scalar);
+    public Vector2I divide(final float scalar) {
+        x = (int) (x / scalar);
+        y = (int) (y / scalar);
 
         return this;
     }
 
     @Override
-    public Vector2F divide(final double scalar) {
-        x = (float) (x / scalar);
-        y = (float) (y / scalar);
+    public Vector2I divide(final double scalar) {
+        x = (int) (x / scalar);
+        y = (int) (y / scalar);
 
         return this;
     }

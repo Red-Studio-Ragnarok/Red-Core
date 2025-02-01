@@ -1,25 +1,56 @@
 package dev.redstudio.redcore.math.vectors;
 
-import dev.redstudio.redcore.annotations.Experimental;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
-@Experimental
-@SuppressWarnings("unused")
-public class Vector2D implements VectorVector2Operations<Vector2D> {
+/// Represents a two-dimensional vector with `x` and `y` coordinates using `double`.
+///
+/// All operations are directly performed on the vector.
+///
+/// @author Luna Mira Lage (Desoroxxx)
+/// @version 2025-02-01
+/// @since 0.6
+@NoArgsConstructor
+@AllArgsConstructor
+public class Vector2D implements Vector2<Vector2D> {
 
     public double x;
     public double y;
 
-    public Vector2D() {
-        // No need to do anything
-    }
-
-    public Vector2D(final double x, final double y) {
-        this.x = x;
-        this.y = y;
-    }
-
     // region Assignment
     /*================================ Assignment ================================*/
+
+    @Override
+    public Vector2D copy(final Vector2B vector) {
+        x = vector.x;
+        y = vector.y;
+
+        return this;
+    }
+
+    @Override
+    public Vector2D copy(final Vector2S vector) {
+        x = vector.x;
+        y = vector.y;
+
+        return this;
+    }
+
+    @Override
+    public Vector2D copy(final Vector2I vector) {
+        x = vector.x;
+        y = vector.y;
+
+        return this;
+    }
+
+    @Override
+    public Vector2D copy(final Vector2L vector) {
+        x = vector.x;
+        y = vector.y;
+
+        return this;
+    }
 
     @Override
     public Vector2D copy(final Vector2F vector) {
@@ -46,6 +77,38 @@ public class Vector2D implements VectorVector2Operations<Vector2D> {
     /*================================ Addition ================================*/
 
     @Override
+    public Vector2D add(final Vector2B vector) {
+        x += vector.x;
+        y += vector.y;
+
+        return this;
+    }
+
+    @Override
+    public Vector2D add(final Vector2S vector) {
+        x += vector.x;
+        y += vector.y;
+
+        return this;
+    }
+
+    @Override
+    public Vector2D add(final Vector2I vector) {
+        x += vector.x;
+        y += vector.y;
+
+        return this;
+    }
+
+    @Override
+    public Vector2D add(final Vector2L vector) {
+        x += vector.x;
+        y += vector.y;
+
+        return this;
+    }
+
+    @Override
     public Vector2D add(final Vector2F vector) {
         x += vector.x;
         y += vector.y;
@@ -65,6 +128,38 @@ public class Vector2D implements VectorVector2Operations<Vector2D> {
 
     // region Subtraction
     /*================================ Subtraction ================================*/
+
+    @Override
+    public Vector2D subtract(final Vector2B vector) {
+        x -= vector.x;
+        y -= vector.y;
+
+        return this;
+    }
+
+    @Override
+    public Vector2D subtract(final Vector2S vector) {
+        x -= vector.x;
+        y -= vector.y;
+
+        return this;
+    }
+
+    @Override
+    public Vector2D subtract(final Vector2I vector) {
+        x -= vector.x;
+        y -= vector.y;
+
+        return this;
+    }
+
+    @Override
+    public Vector2D subtract(final Vector2L vector) {
+        x -= vector.x;
+        y -= vector.y;
+
+        return this;
+    }
 
     @Override
     public Vector2D subtract(final Vector2F vector) {

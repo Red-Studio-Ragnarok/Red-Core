@@ -3,7 +3,7 @@ package dev.redstudio.redcore.math.vectors;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-/// Represents a two-dimensional vector with `x`,`y`, and `z` coordinates using `float`.
+/// Represents a two-dimensional vector with `x` and `y` coordinates using `long`.
 ///
 /// All operations are directly performed on the vector.
 ///
@@ -12,65 +12,58 @@ import lombok.NoArgsConstructor;
 /// @since 0.6
 @NoArgsConstructor
 @AllArgsConstructor
-public class Vector3F implements Vector3<Vector3F> {
+public class Vector2L implements Vector2<Vector2L> {
 
-    public float x;
-    public float y;
-    public float z;
+    public long x;
+    public long y;
 
     // region Assignment
     /*================================ Assignment ================================*/
 
     @Override
-    public Vector3F copy(final Vector3B vector) {
+    public Vector2L copy(final Vector2B vector) {
         x = vector.x;
         y = vector.y;
-        z = vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F copy(final Vector3S vector) {
+    public Vector2L copy(final Vector2S vector) {
         x = vector.x;
         y = vector.y;
-        z = vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F copy(final Vector3I vector) {
+    public Vector2L copy(final Vector2I vector) {
         x = vector.x;
         y = vector.y;
-        z = vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F copy(final Vector3L vector) {
+    public Vector2L copy(final Vector2L vector) {
         x = vector.x;
         y = vector.y;
-        z = vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F copy(final Vector3F vector) {
-        x = vector.x;
-        y = vector.y;
-        z = vector.z;
+    public Vector2L copy(final Vector2F vector) {
+        x = (long) vector.x;
+        y = (long) vector.y;
 
         return this;
     }
 
     @Override
-    public Vector3F copy(final Vector3D vector) {
-        x = (float) vector.x;
-        y = (float) vector.y;
-        z = (float) vector.z;
+    public Vector2L copy(final Vector2D vector) {
+        x = (long) vector.x;
+        y = (long) vector.y;
 
         return this;
     }
@@ -83,116 +76,103 @@ public class Vector3F implements Vector3<Vector3F> {
     // region Addition
     /*================================ Addition ================================*/
 
-
     @Override
-    public Vector3F add(final Vector3B vector) {
+    public Vector2L add(final Vector2B vector) {
         x += vector.x;
         y += vector.y;
-        z += vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F add(final Vector3S vector) {
+    public Vector2L add(final Vector2S vector) {
         x += vector.x;
         y += vector.y;
-        z += vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F add(final Vector3I vector) {
+    public Vector2L add(final Vector2I vector) {
         x += vector.x;
         y += vector.y;
-        z += vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F add(final Vector3L vector) {
+    public Vector2L add(final Vector2L vector) {
         x += vector.x;
         y += vector.y;
-        z += vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F add(final Vector3F vector) {
-        x += vector.x;
-        y += vector.y;
-        z += vector.z;
+    public Vector2L add(final Vector2F vector) {
+        x += (long) vector.x;
+        y += (long) vector.y;
 
         return this;
     }
 
     @Override
-    public Vector3F add(final Vector3D vector) {
-        x += (float) vector.x;
-        y += (float) vector.y;
-        z += (float) vector.z;
+    public Vector2L add(final Vector2D vector) {
+        x += (long) vector.x;
+        y += (long) vector.y;
 
         return this;
     }
 
-    //endregion
+    // endregion
 
     // region Subtraction
     /*================================ Subtraction ================================*/
 
     @Override
-    public Vector3F subtract(final Vector3B vector) {
+    public Vector2L subtract(final Vector2B vector) {
         x -= vector.x;
         y -= vector.y;
-        z -= vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F subtract(final Vector3S vector) {
+    public Vector2L subtract(final Vector2S vector) {
         x -= vector.x;
         y -= vector.y;
-        z -= vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F subtract(final Vector3I vector) {
+    public Vector2L subtract(final Vector2I vector) {
         x -= vector.x;
         y -= vector.y;
-        z -= vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F subtract(final Vector3L vector) {
+    public Vector2L subtract(final Vector2L vector) {
         x -= vector.x;
         y -= vector.y;
-        z -= vector.z;
 
         return this;
     }
 
     @Override
-    public Vector3F subtract(final Vector3F vector) {
-        x -= vector.x;
-        y -= vector.y;
-        z -= vector.z;
+    public Vector2L subtract(final Vector2F vector) {
+        x -= (long) vector.x;
+        y -= (long) vector.y;
 
         return this;
     }
 
     @Override
-    public Vector3F subtract(final Vector3D vector) {
-        x -= (float) vector.x;
-        y -= (float) vector.y;
-        z -= (float) vector.z;
+    public Vector2L subtract(final Vector2D vector) {
+        x -= (long) vector.x;
+        y -= (long) vector.y;
 
         return this;
     }
@@ -203,55 +183,49 @@ public class Vector3F implements Vector3<Vector3F> {
     /*================================ Multiplication ================================*/
 
     @Override
-    public Vector3F multiply(final byte scalar) {
+    public Vector2L multiply(final byte scalar) {
         x = (x * scalar);
         y = (y * scalar);
-        z = (z * scalar);
 
         return this;
     }
 
     @Override
-    public Vector3F multiply(final short scalar) {
+    public Vector2L multiply(final short scalar) {
         x = (x * scalar);
         y = (y * scalar);
-        z = (z * scalar);
 
         return this;
     }
 
     @Override
-    public Vector3F multiply(final int scalar) {
+    public Vector2L multiply(final int scalar) {
         x = (x * scalar);
         y = (y * scalar);
-        z = (z * scalar);
 
         return this;
     }
 
     @Override
-    public Vector3F multiply(final long scalar) {
+    public Vector2L multiply(final long scalar) {
         x = (x * scalar);
         y = (y * scalar);
-        z = (z * scalar);
 
         return this;
     }
 
     @Override
-    public Vector3F multiply(final float scalar) {
-        x = (x * scalar);
-        y = (y * scalar);
-        z = (z * scalar);
+    public Vector2L multiply(final float scalar) {
+        x = (long) (x * scalar);
+        y = (long) (y * scalar);
 
         return this;
     }
 
     @Override
-    public Vector3F multiply(final double scalar) {
-        x = (float) (x * scalar);
-        y = (float) (y * scalar);
-        z = (float) (z * scalar);
+    public Vector2L multiply(final double scalar) {
+        x = (long) (x * scalar);
+        y = (long) (y * scalar);
 
         return this;
     }
@@ -262,55 +236,49 @@ public class Vector3F implements Vector3<Vector3F> {
     /*================================ Division ================================*/
 
     @Override
-    public Vector3F divide(final byte scalar) {
+    public Vector2L divide(final byte scalar) {
         x = (x / scalar);
         y = (y / scalar);
-        z = (z / scalar);
 
         return this;
     }
 
     @Override
-    public Vector3F divide(final short scalar) {
+    public Vector2L divide(final short scalar) {
         x = (x / scalar);
         y = (y / scalar);
-        z = (z / scalar);
 
         return this;
     }
 
     @Override
-    public Vector3F divide(final int scalar) {
+    public Vector2L divide(final int scalar) {
         x = (x / scalar);
         y = (y / scalar);
-        z = (z / scalar);
 
         return this;
     }
 
     @Override
-    public Vector3F divide(final long scalar) {
+    public Vector2L divide(final long scalar) {
         x = (x / scalar);
         y = (y / scalar);
-        z = (z / scalar);
 
         return this;
     }
 
     @Override
-    public Vector3F divide(final float scalar) {
-        x = (x / scalar);
-        y = (y / scalar);
-        z = (z / scalar);
+    public Vector2L divide(final float scalar) {
+        x = (long) (x / scalar);
+        y = (long) (y / scalar);
 
         return this;
     }
 
     @Override
-    public Vector3F divide(final double scalar) {
-        x = (float) (x / scalar);
-        y = (float) (y / scalar);
-        z = (float) (z / scalar);
+    public Vector2L divide(final double scalar) {
+        x = (long) (x / scalar);
+        y = (long) (y / scalar);
 
         return this;
     }
