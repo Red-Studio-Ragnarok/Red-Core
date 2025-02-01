@@ -1,17 +1,14 @@
 package dev.redstudio.redcore.math;
 
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 import net.jafama.FastMath;
-
-import static lombok.AccessLevel.PRIVATE;
 
 /// A utility class that offers efficient mathematical operations such as absolute value calculation, linear interpolation, and rounding operations.
 ///
 /// @author Luna Mira Lage (Desoroxxx)
 /// @version 2025-02-01
 /// @since 0.2
-@SuppressWarnings("unused")
-@NoArgsConstructor(access = PRIVATE)
+@UtilityClass
 public final class MathUtil {
 
     /// Returns the absolute value of a number.

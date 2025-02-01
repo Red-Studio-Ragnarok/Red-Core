@@ -1,11 +1,9 @@
 package dev.redstudio.redcore.utils;
 
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 import net.minecraft.util.IThreadListener;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-
-import static lombok.AccessLevel.PRIVATE;
 
 /// A utility class for handling network related tasks.
 ///
@@ -18,7 +16,7 @@ import static lombok.AccessLevel.PRIVATE;
 /// @author Luna Mira Lage (Desoroxxx)
 /// @version 2025-02-01
 /// @since 0.4
-@NoArgsConstructor(access = PRIVATE)
+@UtilityClass
 public final class NetworkUtil {
 
     /// Processes a message from a given context using a provided runnable.

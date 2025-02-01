@@ -1,10 +1,8 @@
 package dev.redstudio.redcore.utils;
 
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
-
-import static lombok.AccessLevel.PRIVATE;
 
 /// A utility class for handling axis aligned bounding boxes.
 ///
@@ -12,7 +10,7 @@ import static lombok.AccessLevel.PRIVATE;
 /// @version 2025-02-01
 /// @since 0.6
 @SuppressWarnings("unused")
-@NoArgsConstructor(access = PRIVATE)
+@UtilityClass
 public final class AABBUtil {
 
     /// Orient the given north aligned AxisAlignedBB to face the given facing.

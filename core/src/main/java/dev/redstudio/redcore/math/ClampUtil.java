@@ -1,9 +1,8 @@
 package dev.redstudio.redcore.math;
 
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 
 import static dev.redstudio.redcore.ProjectConstants.LOGGER;
-import static lombok.AccessLevel.PRIVATE;
 
 /// A utility class that offers efficient clamping methods.
 ///
@@ -13,7 +12,7 @@ import static lombok.AccessLevel.PRIVATE;
 /// @version 2025-02-01
 /// @since 0.5
 @SuppressWarnings({"unused", "ManualMinMaxCalculation", "DuplicatedCode"})
-@NoArgsConstructor(access = PRIVATE)
+@UtilityClass
 public final class ClampUtil {
 
     /// Clamps a value within a specified range `min, max`, checking for the maximum value first.

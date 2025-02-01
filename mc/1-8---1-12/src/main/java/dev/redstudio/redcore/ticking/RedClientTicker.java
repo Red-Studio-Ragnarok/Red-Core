@@ -1,6 +1,7 @@
 package dev.redstudio.redcore.ticking;
 
 import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -15,8 +16,8 @@ import static lombok.AccessLevel.PRIVATE;
 /// @author Luna Mira Lage (Desoroxxx)
 /// @version 2025-02-01
 /// @since 0.3
+@UtilityClass
 @SideOnly(Side.CLIENT)
-@NoArgsConstructor(access = PRIVATE)
 public class RedClientTicker {
 
     private static int biTickCount, pentaTickCount, decaTickCount;

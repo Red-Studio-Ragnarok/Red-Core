@@ -1,8 +1,6 @@
 package dev.redstudio.redcore.utils;
 
-import lombok.NoArgsConstructor;
-
-import static lombok.AccessLevel.PRIVATE;
+import lombok.experimental.UtilityClass;
 
 /// Utility class for handling decimal numbers, notably for display purposes.
 ///
@@ -12,8 +10,9 @@ import static lombok.AccessLevel.PRIVATE;
 /// @author Luna Mira Lage (Desoroxxx)
 /// @version 2025-02-01
 /// @since 0.6
-@NoArgsConstructor(access = PRIVATE)
-public class DecimalUtils {
+@UtilityClass
+@SuppressWarnings("unused")
+public final class DecimalUtils {
 
     /// Truncates the decimal places of a decimal number.
     ///

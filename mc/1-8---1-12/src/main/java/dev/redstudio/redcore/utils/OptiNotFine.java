@@ -1,7 +1,7 @@
 package dev.redstudio.redcore.utils;
 
 import dev.redstudio.redcore.ticking.RedClientTicker;
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -14,15 +14,14 @@ import java.lang.invoke.MethodHandles;
 import java.lang.reflect.Field;
 
 import static dev.redstudio.redcore.ProjectConstants.RED_LOGGER;
-import static lombok.AccessLevel.PRIVATE;
 
 /// This class provides methods to communicate with OptiNotFine (Can you see that I hate OptiFine?)
 ///
 /// @author Luna Mira Lage (Desoroxxx)
 /// @version 2025-02-01
 /// @since 0.3
+@UtilityClass
 @SideOnly(Side.CLIENT)
-@NoArgsConstructor(access = PRIVATE)
 public final class OptiNotFine {
 
     // Todo: Instead of periodically forcing fast render off, force it once and then disable the slider.
