@@ -4,7 +4,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * @author Luna Lage (Desoroxxx)
+ * @author Luna Mira Lage (Desoroxxx)
  * @deprecated See methods for details.
  */
 @Deprecated // Todo: Remove in 0.8

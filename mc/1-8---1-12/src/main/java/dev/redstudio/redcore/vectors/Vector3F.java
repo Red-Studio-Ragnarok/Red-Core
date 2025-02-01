@@ -9,7 +9,7 @@ import net.minecraft.util.math.Vec3d;
  * <p>
  * All operations are directly performed on the vector.
  *
- * @author Desoroxxx
+ * @author Luna Mira Lage (Desoroxxx)
  * @since 0.2
  * @deprecated Use {@link dev.redstudio.redcore.math.vectors.Vector3F} instead.
  */

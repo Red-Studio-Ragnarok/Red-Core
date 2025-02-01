@@ -3,7 +3,7 @@ package io.redstudioragnarok.redcore.utils;
 import dev.redstudio.redcore.math.ClampUtil;
 
 /**
- * @author Luna Lage (Desoroxxx)
+ * @author Luna Mira Lage (Desoroxxx)
  * @deprecated See methods for details.
  */
 @Deprecated // Todo: Remove in 0.8

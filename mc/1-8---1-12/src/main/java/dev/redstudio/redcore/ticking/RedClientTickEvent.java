@@ -10,7 +10,7 @@ import static lombok.AccessLevel.PRIVATE;
 /**
  * This class has different client tick events, that fire less often than the client ticks.
  *
- * @author Desoroxxx
+ * @author Luna Mira Lage (Desoroxxx)
  * @since 0.3
  */
 @SideOnly(Side.CLIENT)

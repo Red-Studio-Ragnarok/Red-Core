@@ -10,12 +10,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import static lombok.AccessLevel.PRIVATE;
 
-/**
- * This class is responsible for ticking the different click tick events
- *
- * @author Desoroxxx
- * @since 0.3
- */
+/// This class is responsible for ticking the different click tick events
+///
+/// @author Luna Mira Lage (Desoroxxx)
+/// @version 2025-02-01
+/// @since 0.3
 @SideOnly(Side.CLIENT)
 @NoArgsConstructor(access = PRIVATE)
 public class RedClientTicker {
@@ -46,18 +45,16 @@ public class RedClientTicker {
         }
     }
 
-    /**
-     * Starts the client ticker.
-     * <p>
-     * This method registers {@link RedClientTicker} in the {@link MinecraftForge} event bus if the client ticker has not already been started.
-     * <p>
-     * The client ticker is responsible for ticking and thus sending the {@link RedClientTickEvent}.
-     * <p>
-     * For performance reasons, this should be called on any of the init methods in your mod.
-     *
-     * @author Desoroxxx
-     * @since 0.3
-     */
+    /// Starts the client ticker.
+    /// 
+    /// This method registers [RedClientTicker] in the [MinecraftForge] event bus if the client ticker has not already been started.
+    /// 
+    /// The client ticker is responsible for ticking and thus sending the [RedClientTickEvent].
+    /// 
+    /// For performance reasons, this should be called on any of the init methods in your mod.
+    ///
+    /// @author Luna Mira Lage (Desoroxxx)
+    /// @since 0.3
     @SideOnly(Side.CLIENT)
     public static void startClientTicker() {
         MinecraftForge.EVENT_BUS.register(RedClientTicker.class);

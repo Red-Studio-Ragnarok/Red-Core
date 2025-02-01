@@ -8,7 +8,7 @@ import net.minecraft.util.math.Vec2f;
  * <p>
  * All operations are directly performed on the vector.
  *
- * @author Luna Lage (Desoroxxx)
+ * @author Luna Mira Lage (Desoroxxx)
  * @since 0.4
  * @deprecated Use {@link dev.redstudio.redcore.math.vectors.Vector2I} instead.
  */

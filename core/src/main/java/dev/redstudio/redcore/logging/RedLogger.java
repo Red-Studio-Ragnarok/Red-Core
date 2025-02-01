@@ -7,21 +7,18 @@ import java.net.URI;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * This class provides a logging utility, with an emphasis on ease of use and user-friendliness.
- * <p>
- * The logger is equipped with custom messages and error frames that make error reporting more user-friendly.
- *
- * @author Desoroxxx
- * @since 0.2
- */
+/// This class provides a logging utility, with an emphasis on ease of use and user-friendliness.
+///
+/// The logger is equipped with custom messages and error frames that make error reporting more user-friendly.
+///
+/// @author Luna Mira Lage (Desoroxxx)
+/// @version 2025-02-01
+/// @since 0.2
 public class RedLogger {
 
     private static final Random RANDOM = new Random();
 
-    /**
-     * A list of recomfort messages to be displayed when an error occurs.
-     */
+    /// A list of recomfort messages to be displayed when an error occurs.
     private static final List<String> RECOMFORT_MESSAGES = new ArrayList<>(Arrays.asList(
             "Hey there, don't worry!",
             "Oh no! Even Minecraft mods need a hug sometimes.",
@@ -31,43 +28,31 @@ public class RedLogger {
             "Rome wasn't built in a day"
     ));
 
-    /**
-     * The maximum length of a line used in the formatted error output.
-     * <p>
-     * It is updated dynamically based on the size of the error details.
-     */
+    /// The maximum length of a line used in the formatted error output.
+    ///
+    /// It is updated dynamically based on the size of the error details.
     private static int maxLineLength;
 
-    /**
-     * The maximum length of a line used in the formatted error output.
-     * It is updated dynamically based on the size of the error details.
-     */
+    /// The maximum length of a line used in the formatted error output.
+    /// It is updated dynamically based on the size of the error details.
     private final String modName;
-    /**
-     * The link where new issues related to the mod can be reported.
-     * <p>
-     * Typically, a link to a GitHub issue creation page.
-     */
+    /// The link where new issues related to the mod can be reported.
+    ///
+    /// Typically, a link to a GitHub issue creation page.
     private final String newIssueLink;
-    /**
-     * The underlying logger which will output the error messages.
-     */
+    /// The underlying logger which will output the error messages.
     private final Logger logger;
-    /**
-     * A list of custom comforting messages specified during the creation of this logger.
-     */
+    /// A list of custom comforting messages specified during the creation of this logger.
     private final List<String> customRecomfortMessages = new ArrayList<>();
 
-    /**
-     * Constructor for the RedLogger class.
-     * <p>
-     * Allows for the specification of custom comforting messages in addition to the default ones.
-     *
-     * @param modName The name to be used for the logger.
-     * @param newIssueLink The link to report new issues.
-     * @param logger The underlying logger to use.
-     * @param customRecomfortMessages Optional custom comforting messages.
-     */
+    /// Constructor for the RedLogger class.
+    ///
+    /// Allows for the specification of custom comforting messages in addition to the default ones.
+    ///
+    /// @param modName The name to be used for the logger.
+    /// @param newIssueLink The link to report new issues.
+    /// @param logger The underlying logger to use.
+    /// @param customRecomfortMessages Optional custom comforting messages.
     public RedLogger(final String modName, final String newIssueLink, final Logger logger, final String... customRecomfortMessages) {
         this.modName = modName;
         this.newIssueLink = newIssueLink;
@@ -75,18 +60,16 @@ public class RedLogger {
         this.customRecomfortMessages.addAll(Arrays.asList(customRecomfortMessages));
     }
 
-    /**
-     * Constructor for the RedLogger class.
-     * <p>
-     * Allows for the specification of custom comforting messages in addition to the default ones.
-     *
-     * @param modName The name to be used for the logger.
-     * @param newIssueLink The URI link to report new issues.
-     * @param logger The underlying logger to use.
-     * @param customRecomfortMessages Optional custom comforting messages.
-     *
-     * @deprecated Use a String instead of a URI for the newIssueLink parameter.
-     */
+    /// Constructor for the RedLogger class.
+    ///
+    /// Allows for the specification of custom comforting messages in addition to the default ones.
+    ///
+    /// @param modName The name to be used for the logger.
+    /// @param newIssueLink The URI link to report new issues.
+    /// @param logger The underlying logger to use.
+    /// @param customRecomfortMessages Optional custom comforting messages.
+    ///
+    /// @deprecated Use a String instead of a URI for the newIssueLink parameter.
     @Deprecated // Todo: Remove in 0.8
     public RedLogger(final String modName, final URI newIssueLink, final Logger logger, final String... customRecomfortMessages) {
         this.modName = modName;
@@ -95,17 +78,15 @@ public class RedLogger {
         this.customRecomfortMessages.addAll(Arrays.asList(customRecomfortMessages));
     }
 
-    /**
-     * Logs a framed message with a title, specified log level, and an array of messages.
-     * <p>
-     * This method formats the message in an easy-to-read manner, perfect for versioning information or other lists type of logging.
-     * <p>
-     * The frame is made of {@code =} and has top, bottom borders.
-     *
-     * @param title The title of the framed message.
-     * @param logLevel The log level at which to log the message.
-     * @param messages The array of messages to be included within the frame.
-     */
+    /// Logs a framed message with a title, specified log level, and an array of messages.
+    ///
+    /// This method formats the message in an easy-to-read manner, perfect for versioning information or other lists type of logging.
+    ///
+    /// The frame is made of {@code =} and has top, bottom borders.
+    ///
+    /// @param title The title of the framed message.
+    /// @param logLevel The log level at which to log the message.
+    /// @param messages The array of messages to be included within the frame.
     public void framed(final String title, final Level logLevel, final String... messages) {
         // Create a StringBuilder and add a new line so everything can be aligned
         final StringBuilder stringBuilder = new StringBuilder().append("\n");
@@ -143,39 +124,35 @@ public class RedLogger {
         logger.log(logLevel, stringBuilder.toString());
     }
 
-    /**
-     * Logs a framed error message with a category, description of what happened, what's going to happen now, and an optional array of additional information.
-     * <p>
-     * This method formats the message in a user-friendly manner, including a "comforting" message and the link to report the error.
-     * <p>
-     * The frame is made of {@code +} {@code -} {@code |} and has top, bottom, left, and right borders.
-     * It also has separator lines between the title and the "comforting" message, the "comforting" message and the information, the information and the link.
-     *
-     * @param category The error category.
-     * @param whatHappened A description of what happened.
-     * @param whatNow A description of what's happening now.
-     * @param additionalInformation Optional additional information about the error.
-     *
-     * @deprecated Use {@link #framedError(String, String, String, String...)} instead.
-     */
+    /// Logs a framed error message with a category, description of what happened, what's going to happen now, and an optional array of additional information.
+    ///
+    /// This method formats the message in a user-friendly manner, including a "comforting" message and the link to report the error.
+    ///
+    /// The frame is made of {@code +} {@code -} {@code |} and has top, bottom, left, and right borders.
+    /// It also has separator lines between the title and the "comforting" message, the "comforting" message and the information, the information and the link.
+    ///
+    /// @param category The error category.
+    /// @param whatHappened A description of what happened.
+    /// @param whatNow A description of what's happening now.
+    /// @param additionalInformation Optional additional information about the error.
+    ///
+    /// @deprecated Use {@link #framedError(String, String, String, String...)} instead.
     @Deprecated // TODO: Remove in 0.8
     public void printFramedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
         framedError(category, whatHappened, whatNow, additionalInformation);
     }
 
-    /**
-     * Logs a framed error message with a category, description of what happened, what's going to happen now, and an optional array of additional information.
-     * <p>
-     * This method formats the message in a user-friendly manner, including a "comforting" message and the link to report the error.
-     * <p>
-     * The frame is made of {@code +} {@code -} {@code |} and has top, bottom, left, and right borders.
-     * It also has separator lines between the title and the "comforting" message, the "comforting" message and the information, the information and the link.
-     *
-     * @param category The error category.
-     * @param whatHappened A description of what happened.
-     * @param whatNow A description of what's happening now.
-     * @param additionalInformation Optional additional information about the error.
-     */
+    /// Logs a framed error message with a category, description of what happened, what's going to happen now, and an optional array of additional information.
+    ///
+    /// This method formats the message in a user-friendly manner, including a "comforting" message and the link to report the error.
+    ///
+    /// The frame is made of {@code +} {@code -} {@code |} and has top, bottom, left, and right borders.
+    /// It also has separator lines between the title and the "comforting" message, the "comforting" message and the information, the information and the link.
+    ///
+    /// @param category The error category.
+    /// @param whatHappened A description of what happened.
+    /// @param whatNow A description of what's happening now.
+    /// @param additionalInformation Optional additional information about the error.
     public void framedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
         // Create a list of formatted text lines containing the descriptions of what happened and what's happening now, as well as optional additional information.
         final List<String> formattedTextLines = new ArrayList<>(Collections.singletonList(whatHappened));
@@ -233,40 +210,36 @@ public class RedLogger {
         logger.error(framedText);
     }
 
-    /**
-     * Determines the maximum line length for the framed error message, based on the provided content.
-     * <p>
-     * The result is stored in the maxLineLength static variable.
-     *
-     * @param header The header message.
-     * @param category The error category.
-     * @param lines The lines of text to be displayed.
-     * @param recomfort The comforting message.
-     */
+    /// Determines the maximum line length for the framed error message, based on the provided content.
+    ///
+    /// The result is stored in the maxLineLength static variable.
+    ///
+    /// @param header The header message.
+    /// @param category The error category.
+    /// @param lines The lines of text to be displayed.
+    /// @param recomfort The comforting message.
     private static void getMaxLineLength(final String header, final String category, final List<String> lines, final String recomfort) {
         maxLineLength = Math.max(Math.max(Math.max(Math.max(lines.stream().mapToInt(String::length).max().orElse(0), category.length()), lines.get(lines.size() - 1).length()), recomfort.length()), header.length());
     }
 
-    /**
-     * Formats the given text to be centered within the framed error message.
-     *
-     * @param text The text to be centered.
-     * @return The centered text as a string.
-     */
+    /// Formats the given text to be centered within the framed error message.
+    ///
+    /// @param text The text to be centered.
+    ///
+    /// @return The centered text as a string.
     private static String centeredText(final String text) {
         int padding = (maxLineLength - text.length()) / 2;
         return "| " + repeatString(" ", padding) + text + repeatString(" ", maxLineLength - text.length() - padding) + " |";
     }
 
-    /**
-     * Repeats the given string for the specified number of times.
-     * <p>
-     * This method is used to create padding spaces for the error message formatting.
-     *
-     * @param string The string to be repeated.
-     * @param count The number of times to repeat the string.
-     * @return The repeated string.
-     */
+    /// Repeats the given string for the specified number of times.
+    ///
+    /// This method is used to create padding spaces for the error message formatting.
+    ///
+    /// @param string The string to be repeated.
+    /// @param count The number of times to repeat the string.
+    ///
+    /// @return The repeated string.
     private static String repeatString(final String string, final int count) {
         StringBuilder stringBuilder = new StringBuilder();
 

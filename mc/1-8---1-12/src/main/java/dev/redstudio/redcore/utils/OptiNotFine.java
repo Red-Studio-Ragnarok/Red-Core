@@ -16,12 +16,11 @@ import java.lang.reflect.Field;
 import static dev.redstudio.redcore.ProjectConstants.RED_LOGGER;
 import static lombok.AccessLevel.PRIVATE;
 
-/**
- * This class provides methods to communicate with OptiNotFine (Can you see that I hate OptiFine?)
- *
- * @author Desoroxxx
- * @since 0.3
- */
+/// This class provides methods to communicate with OptiNotFine (Can you see that I hate OptiFine?)
+///
+/// @author Luna Mira Lage (Desoroxxx)
+/// @version 2025-02-01
+/// @since 0.3
 @SideOnly(Side.CLIENT)
 @NoArgsConstructor(access = PRIVATE)
 public final class OptiNotFine {
@@ -42,11 +41,9 @@ public final class OptiNotFine {
     private static MethodHandle fastRenderGetterHandle = null;
     private static MethodHandle fastRenderSetterHandle = null;
 
-    /**
-     * Checks if OptiFine is installed.
-     *
-     * @return True if OptiFine is installed, false otherwise.
-     */
+    /// Checks if OptiFine is installed.
+    ///
+    /// @return True if OptiFine is installed, false otherwise.
     public static boolean isOptiFineInstalled() {
         if (!checkedOptiFineInstalled) {
             try {
@@ -61,11 +58,9 @@ public final class OptiNotFine {
         return isOptiFineInstalled;
     }
 
-    /**
-     * Checks if OptiFine shaders are enabled.
-     *
-     * @return True if shaders are enabled, false otherwise.
-     */
+    /// Checks if OptiFine shaders are enabled.
+    ///
+    /// @return True if shaders are enabled, false otherwise.
     public static boolean shadersEnabled() {
         if (!isOptiFineInstalled())
             return false;
@@ -83,20 +78,16 @@ public final class OptiNotFine {
         }
     }
 
-    /**
-     * Forces OptiFine fast render option to be disabled.
-     * <p>
-     * This method starts the client ticker and registers the OptiNotFine class as an event listener which will attempt to disable OptiFine's fast render each tick.
-     */
+    /// Forces OptiFine fast render option to be disabled.
+    ///
+    /// This method starts the client ticker and registers the OptiNotFine class as an event listener which will attempt to disable OptiFine's fast render each tick.
     public static void forceOptiFineFastRenderOff() {
         RedClientTicker.startClientTicker();
 
         MinecraftForge.EVENT_BUS.register(OptiNotFine.class);
     }
 
-    /**
-     * Disable OptiFine fast renderer.
-     */
+    /// Disable OptiFine fast renderer.
     @SuppressWarnings("JavaReflectionMemberAccess")
     private static void disableFastRender() {
         if (!isOptiFineInstalled())

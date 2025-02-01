@@ -27,6 +27,7 @@ The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramed
 
 - Improved documentation for `RedLogger#logFramedError`
 - Renamed `RedLogger#printFramedError` to `RedLogger#framedError`
+- Switched from Javadoc to Markdowndoc
 
 ### Internal
 
