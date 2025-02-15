@@ -44,7 +44,7 @@ Section coming soon
 
 [![BisectHostingPromoBanner](https://www.bisecthosting.com/partners/custom-banners/d410513a-9aee-467a-96eb-88eb0976af9d.webp)](https://bisecthosting.com/Desoroxxx?r=Red+Core+GitHub)
 
-## Want to have your own mod or support me?
+# Want to have your own mod or support me?
 
 If you're looking for a mod but don't have the development skills or time, consider commissioning me!
 My commissions are currently open and I would be happy to create a custom mod to fit your needs as long as you provide assets.
@@ -52,7 +52,7 @@ My commissions are currently open and I would be happy to create a custom mod to
 [Commissions]
 
 You can also support me on a monthly basis by becoming a member.
-To thank you will have the possibility to access exlcusive post and messages, Discord channel for WIP content, and even access to unreleased Prototypes or WIP Projects.
+To thank you will have the possibility to access exclusive post and messages, Discord channel for WIP content, and even access to unreleased Prototypes or WIP Projects.
 
 [Membership]
 
