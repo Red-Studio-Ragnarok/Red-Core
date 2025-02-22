@@ -9,7 +9,7 @@ val jafamaVersion = "2.3.2"
 
 val log4jVersion = "2.17.1" // Forged
 
-val jUnitVersion = "5.10.1"
+val jUnitVersion = "5.12.0"
 
 dependencies {
     embed("net.jafama", "jafama", jafamaVersion)
