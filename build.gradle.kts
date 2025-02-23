@@ -1,11 +1,11 @@
 import org.gradle.plugins.ide.idea.model.IdeaLanguageLevel
-import org.jetbrains.gradle.ext.Gradle
 import org.jetbrains.gradle.ext.runConfigurations
 import org.jetbrains.gradle.ext.settings
+import org.jetbrains.gradle.ext.Gradle
 
 plugins {
-    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.9"
-    id("io.freefair.lombok") version "8.12" apply false
+    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.10"
+    id("io.freefair.lombok") version "8.12.1" apply false
     `java-library`
 }
 
@@ -53,9 +53,10 @@ subprojects {
     tasks {
         withType<JavaCompile> {
             options.encoding = "UTF-8"
-            options.isFork = true
-            options.forkOptions.jvmArgs = listOf("-Xmx4G")
             options.compilerArgs.add("-Xlint:-options")
+
+            options.isFork = true
+            options.forkOptions.jvmArgs = listOf("-XX:+UseStringDeduplication")
 
             if (name != "compileMcLauncherJava" && name != "compilePatchedMcJava" && name != "generateEffectiveLombokConfig") {
                 sourceCompatibility = "21"
@@ -101,6 +102,8 @@ idea {
                         val prefix = name.substringBefore(" ").let { if (it == "Obfuscated") "Obf" else it }
                         val suffix = name.substringAfter(" ").takeIf { it != prefix } ?: ""
                         taskNames = setOf("run$prefix$suffix")
+
+                        jvmArgs = "-XX:+UseStringDeduplication"
                     }
                 }
             }

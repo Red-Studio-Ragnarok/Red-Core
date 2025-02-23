@@ -7,6 +7,14 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 
 ## [UNRELEASED] Red Core Version 0.7 Changelog
 
+### Internal
+
+- Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.12.1
+- Updated to [org.jetbrains.gradle.plugin.idea-ext](https://github.com/JetBrains/gradle-idea-ext-plugin) 1.1.10
+- Updated to [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 1.4.3
+- Updated to [Gradle](https://gradle.org) 8.13-rc-2
+- Improved the build script
+
 ### Red Core MC
 
 ### Fixed
