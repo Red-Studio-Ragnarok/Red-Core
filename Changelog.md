@@ -7,9 +7,14 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 
 ## [UNRELEASED] Red Core Version 0.7 Changelog
 
+### Deprecated
+
+- Deprecated `ClampUtil#clampTest`, `ClampUtil#clampMinFirst`, `ClampUtil#clampMaxFirst` in favor of `ClampUtil#clamp`
+
 ### Added
 
 - Added `RedDeprecated` annotation
+- Added `ClampUtil#clamp` methods for all primitives
 
 ### Changed
 
