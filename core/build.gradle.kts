@@ -30,7 +30,7 @@ buildConfig {
 
     // Details
     buildConfigField("ID", id)
-    buildConfigField("NAME", project.name)
+    buildConfigField("NAME", project.parent?.name)
     buildConfigField("VERSION", project.version.toString())
 
     // Loggers
