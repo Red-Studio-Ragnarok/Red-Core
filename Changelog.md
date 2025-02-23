@@ -2,11 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com), and this project follows to [Ragnarök Versioning Convention](https://github.com/Red-Studio-Ragnarok/Commons/blob/main/Ragnar%C3%B6k%20Versioning%20Convention.md).
+The format is based on [Keep a Changelog](https://keepachangelog.com),
+and this project follows the [Ragnarök Versioning Convention](https://github.com/Red-Studio-Ragnarok/Commons/blob/main/Ragnar%C3%B6k%20Versioning%20Convention.md).
+
+
 
 ## Red Core Version 0.6 Changelog - 2025-02-01
 
-### Deprecation Warning
+### Deprecated
 
 The method `RedLogger#printFramedError` has been renamed to `RedLogger#logFramedError`, all usages should be updated before 0.8.
 
