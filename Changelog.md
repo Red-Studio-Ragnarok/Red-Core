@@ -7,6 +7,14 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 
 ## [UNRELEASED] Red Core Version 0.7 Changelog
 
+### Added
+
+- Added `RedDeprecated` annotation
+
+### Changed
+
+- Switched from normal `Deprecated` annotation to `RedDeprecated` annotation
+
 ### Internal
 
 - Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.12.1

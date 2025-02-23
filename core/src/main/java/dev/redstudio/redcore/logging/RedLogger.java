@@ -1,5 +1,6 @@
 package dev.redstudio.redcore.logging;
 
+import dev.redstudio.redcore.annotations.RedDeprecated;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Logger;
 
@@ -70,7 +71,7 @@ public class RedLogger {
     /// @param customRecomfortMessages Optional custom comforting messages.
     ///
     /// @deprecated Use a String instead of a URI for the newIssueLink parameter.
-    @Deprecated // Todo: Remove in 0.8
+    @RedDeprecated(since = "0.3", forRemovalIn = "0.8")
     public RedLogger(final String modName, final URI newIssueLink, final Logger logger, final String... customRecomfortMessages) {
         this.modName = modName;
         this.newIssueLink = newIssueLink.toString();
@@ -137,7 +138,7 @@ public class RedLogger {
     /// @param additionalInformation Optional additional information about the error.
     ///
     /// @deprecated Use {@link #framedError(String, String, String, String...)} instead.
-    @Deprecated // TODO: Remove in 0.8
+    @RedDeprecated(since = "0.7", forRemovalIn = "0.8")
     public void printFramedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
         framedError(category, whatHappened, whatNow, additionalInformation);
     }

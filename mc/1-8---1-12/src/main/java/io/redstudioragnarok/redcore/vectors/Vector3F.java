@@ -1,5 +1,6 @@
 package io.redstudioragnarok.redcore.vectors;
 
+import dev.redstudio.redcore.annotations.RedDeprecated;
 import io.netty.buffer.ByteBuf;
 import net.jafama.FastMath;
 import net.minecraft.util.math.Vec3d;
@@ -8,7 +9,7 @@ import net.minecraft.util.math.Vec3d;
  * @author Luna Mira Lage (Desoroxxx)
  * @deprecated See methods for details.
  */
-@Deprecated // Todo: Remove in 0.8
+@RedDeprecated(since = "0.5", forRemovalIn = "0.8")
 @SuppressWarnings("unused")
 public final class Vector3F {
 
