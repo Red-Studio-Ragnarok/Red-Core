@@ -9,6 +9,7 @@ import net.minecraft.util.math.Vec3d;
  * @author Luna Mira Lage (Desoroxxx)
  * @deprecated See methods for details.
  */
+@Deprecated
 @RedDeprecated(since = "0.5", forRemovalIn = "0.8")
 @SuppressWarnings("unused")
 public final class Vector3D {

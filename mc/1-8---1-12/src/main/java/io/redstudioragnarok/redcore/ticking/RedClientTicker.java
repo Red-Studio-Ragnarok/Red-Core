@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
  * @author Luna Mira Lage (Desoroxxx)
  * @deprecated See methods for details.
  */
+@Deprecated
 @RedDeprecated(since = "0.5", forRemovalIn = "0.8")
 public class RedClientTicker {
 
@@ -18,7 +19,8 @@ public class RedClientTicker {
     /**
      * @deprecated Use {@link dev.redstudio.redcore.ticking.RedClientTicker#onClientTickEvent}
      */
-    @RedDeprecated(since = "0.5", forRemovalIn = "0.8")
+    @Deprecated
+@RedDeprecated(since = "0.5", forRemovalIn = "0.8")
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onClientTickEvent(TickEvent.ClientTickEvent clientTickEvent) {
         if (clientTickEvent.phase == TickEvent.Phase.START) {

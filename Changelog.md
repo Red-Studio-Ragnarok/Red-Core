@@ -16,10 +16,6 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 - Added `RedDeprecated` annotation
 - Added `ClampUtil#clamp` methods for all primitives
 
-### Changed
-
-- Switched from normal `Deprecated` annotation to `RedDeprecated` annotation
-
 ### Internal
 
 - Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.12.1

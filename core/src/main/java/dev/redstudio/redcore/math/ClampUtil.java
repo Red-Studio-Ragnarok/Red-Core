@@ -120,7 +120,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(byte, byte, byte)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static byte clampTest(final byte input, final byte min, final byte max) {
         if (input < min) {
             LOGGER.info("Clamped to minimum");
@@ -148,7 +149,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(short, short, short)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static short clampTest(final short input, final short min, final short max) {
         if (input < min) {
             LOGGER.info("Clamped to minimum");
@@ -176,7 +178,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(int, int, int)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static int clampTest(final int input, final int min, final int max) {
         if (input < min) {
             LOGGER.info("Clamped to minimum");
@@ -204,7 +207,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(long, long, long)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static long clampTest(final long input, final long min, final long max) {
         if (input < min) {
             LOGGER.info("Clamped to minimum");
@@ -232,7 +236,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(float, float, float)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static float clampTest(final float input, final float min, final float max) {
         if (input < min) {
             LOGGER.info("Clamped to minimum");
@@ -260,7 +265,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(double, double, double)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static double clampTest(final double input, final double min, final double max) {
         if (input < min) {
             LOGGER.info("Clamped to minimum");
@@ -286,7 +292,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(byte, byte, byte)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static byte clampMinFirst(final byte input, final byte min, final byte max) {
         return input < min ? min : input > max ? max : input;
     }
@@ -303,7 +310,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(short, short, short)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static short clampMinFirst(final short input, final short min, final short max) {
         return input < min ? min : input > max ? max : input;
     }
@@ -320,7 +328,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(int, int, int)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static int clampMinFirst(final int input, final int min, final int max) {
         return input < min ? min : input > max ? max : input;
     }
@@ -337,7 +346,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(long, long, long)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static long clampMinFirst(final long input, final long min, final long max) {
         return input < min ? min : input > max ? max : input;
     }
@@ -354,7 +364,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(float, float, float)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static float clampMinFirst(final float input, final float min, final float max) {
         return input < min ? min : input > max ? max : input;
     }
@@ -371,7 +382,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(double, double, double)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static double clampMinFirst(final double input, final double min, final double max) {
         return input < min ? min : input > max ? max : input;
     }
@@ -388,7 +400,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(byte, byte, byte)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static byte clampMaxFirst(final byte input, final byte min, final byte max) {
         return input > max ? max : input < min ? min : input;
     }
@@ -405,7 +418,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(short, short, short)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static short clampMaxFirst(final short input, final short min, final short max) {
         return input > max ? max : input < min ? min : input;
     }
@@ -422,7 +436,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(int, int, int)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static int clampMaxFirst(final int input, final int min, final int max) {
         return input > max ? max : input < min ? min : input;
     }
@@ -439,7 +454,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(long, long, long)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static long clampMaxFirst(final long input, final long min, final long max) {
         return input > max ? max : input < min ? min : input;
     }
@@ -456,7 +472,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(float, float, float)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static float clampMaxFirst(final float input, final float min, final float max) {
         return input > max ? max : input < min ? min : input;
     }
@@ -473,7 +490,8 @@ public final class ClampUtil {
     /// @return The clamped value
     ///
     /// @deprecated Use [ClampUtil#clamp(double, double, double)]
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.9")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.9")
     public static double clampMaxFirst(final double input, final double min, final double max) {
         return input > max ? max : input < min ? min : input;
     }

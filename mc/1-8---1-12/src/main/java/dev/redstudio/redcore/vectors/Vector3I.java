@@ -1,5 +1,6 @@
 package dev.redstudio.redcore.vectors;
 
+import dev.redstudio.redcore.annotations.RedDeprecated;
 import io.netty.buffer.ByteBuf;
 import net.jafama.FastMath;
 import net.minecraft.util.math.Vec3d;
@@ -14,7 +15,8 @@ import net.minecraft.util.math.Vec3i;
  * @since 0.4
  * @deprecated Use {@link dev.redstudio.redcore.math.vectors.Vector3I} instead.
  */
-@Deprecated // Todo: Remove in 0.8
+@Deprecated
+@RedDeprecated(since = "0.5", forRemovalIn = "0.8")
 public final class Vector3I {
 
     /** The X coordinate */

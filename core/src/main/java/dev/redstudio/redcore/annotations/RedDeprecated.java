@@ -1,6 +1,5 @@
 package dev.redstudio.redcore.annotations;
 
-import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
@@ -9,7 +8,6 @@ import java.lang.annotation.RetentionPolicy;
 /// @author Luna Mira Lage (Desoroxxx)
 /// @version 2025-02-23
 /// @since 0.7
-@Documented
 @Retention(RetentionPolicy.SOURCE)
 public @interface RedDeprecated {
 

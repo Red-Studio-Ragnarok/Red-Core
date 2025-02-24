@@ -71,7 +71,8 @@ public class RedLogger {
     /// @param customRecomfortMessages Optional custom comforting messages.
     ///
     /// @deprecated Use a String instead of a URI for the newIssueLink parameter.
-    @RedDeprecated(since = "0.3", forRemovalIn = "0.8")
+    @Deprecated
+@RedDeprecated(since = "0.3", forRemovalIn = "0.8")
     public RedLogger(final String modName, final URI newIssueLink, final Logger logger, final String... customRecomfortMessages) {
         this.modName = modName;
         this.newIssueLink = newIssueLink.toString();
@@ -138,7 +139,8 @@ public class RedLogger {
     /// @param additionalInformation Optional additional information about the error.
     ///
     /// @deprecated Use {@link #framedError(String, String, String, String...)} instead.
-    @RedDeprecated(since = "0.7", forRemovalIn = "0.8")
+    @Deprecated
+@RedDeprecated(since = "0.7", forRemovalIn = "0.8")
     public void printFramedError(final String category, final String whatHappened, final String whatNow, final String... additionalInformation) {
         framedError(category, whatHappened, whatNow, additionalInformation);
     }

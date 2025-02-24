@@ -1,5 +1,6 @@
 package dev.redstudio.redcore.vectors;
 
+import dev.redstudio.redcore.annotations.RedDeprecated;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.util.math.Vec2f;
 
@@ -12,7 +13,8 @@ import net.minecraft.util.math.Vec2f;
  * @since 0.2
  * @deprecated Use {@link dev.redstudio.redcore.math.vectors.Vector2D} instead.
  */
-@Deprecated // Todo: Remove in 0.8
+@Deprecated
+@RedDeprecated(since = "0.5", forRemovalIn = "0.8")
 public final class Vector2D {
 
     /** The x component of this vector. */

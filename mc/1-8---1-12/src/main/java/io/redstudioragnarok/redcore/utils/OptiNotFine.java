@@ -8,6 +8,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @author Luna Mira Lage (Desoroxxx)
  * @deprecated See methods for details.
  */
+@Deprecated
 @RedDeprecated(since = "0.5", forRemovalIn = "0.8")
 @SideOnly(Side.CLIENT)
 @SuppressWarnings("unused")
@@ -16,7 +17,8 @@ public final class OptiNotFine {
     /**
      * @deprecated Use {@link dev.redstudio.redcore.utils.OptiNotFine#isOptiFineInstalled()}
      */
-    @RedDeprecated(since = "0.5", forRemovalIn = "0.8")
+    @Deprecated
+@RedDeprecated(since = "0.5", forRemovalIn = "0.8")
     public static boolean isOptiFineInstalled() {
         return dev.redstudio.redcore.utils.OptiNotFine.isOptiFineInstalled();
     }
@@ -24,7 +26,8 @@ public final class OptiNotFine {
     /**
      * @deprecated Use {@link dev.redstudio.redcore.utils.OptiNotFine#shadersEnabled}
      */
-    @RedDeprecated(since = "0.5", forRemovalIn = "0.8")
+    @Deprecated
+@RedDeprecated(since = "0.5", forRemovalIn = "0.8")
     public static boolean shadersEnabled() {
         return dev.redstudio.redcore.utils.OptiNotFine.shadersEnabled();
     }
