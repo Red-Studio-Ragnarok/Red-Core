@@ -5,7 +5,7 @@ import org.jetbrains.gradle.ext.Gradle
 
 plugins {
     id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.10"
-    id("io.freefair.lombok") version "8.12.1" apply false
+    id("io.freefair.lombok") version "8.13" apply false
     `java-library`
 }
 
