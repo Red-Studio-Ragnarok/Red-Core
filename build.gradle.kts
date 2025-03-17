@@ -33,7 +33,7 @@ subprojects {
     }
 
     dependencies {
-        annotationProcessor("net.java.dev.jna:jna-platform:5.13.0")
+        annotationProcessor("net.java.dev.jna:jna-platform:5.17.0")
 
         compileOnly("com.pkware.jabel:jabel-javac-plugin:1.0.1-1") { isTransitive = false }
 
