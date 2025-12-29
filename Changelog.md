@@ -26,7 +26,7 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
   - Updated to [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 2.0.2
   - Updated to [foojay-resolver](https://github.com/gradle/foojay-toolchains) 1.0.0
   - Updated to [Gradle](https://gradle.org) 9.2.1
-  - Updated to [JUnit](https://junit.org/) 6.0.1
+  - Updated to [JUnit](https://junit.org/) 5.14.1
 
 ### Red Core MC
 
