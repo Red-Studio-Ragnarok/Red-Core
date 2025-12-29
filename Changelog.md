@@ -23,7 +23,6 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
   - Updated to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) 6.0.7
   - Updated to [gradle-idea-ext-plugin](https://github.com/JetBrains/gradle-idea-ext-plugin) 1.3
   - Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 9.1.0
-  - Updated to [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 2.0.2
   - Updated to [foojay-resolver](https://github.com/gradle/foojay-toolchains) 1.0.0
   - Updated to [Gradle](https://gradle.org) 9.2.1
   - Updated to [JUnit](https://junit.org/) 5.14.1
@@ -42,6 +41,11 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 ### Fixed
 
 - Fixed `name` being `core` instead of `Red Core`
+
+### Internal
+
+- Updated dependencies:
+  - Updated to [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 2.0.2
 
 ## Red Core Version 0.6 Changelog - 2025-02-01
 
