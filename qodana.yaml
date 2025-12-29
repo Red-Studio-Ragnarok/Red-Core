@@ -1,13 +1,13 @@
 version: "1.0"
-linter: jetbrains/qodana-jvm:2024.3
+linter: jetbrains/qodana-jvm-community:2025.3
 profile:
   name: qodana.recommended
-exclude:
-  - name: DuplicatedCode
-  - name: JavadocReference
-  - name: ManualMinMaxCalculation
-  - name: QodanaSanity
+fixesStrategy: none
 bootstrap: |+
-  set -eu
   bash gradlew setupDecompWorkspace
   bash gradlew generateBuildConfig
+exclude:
+  - name: QodanaSanity
+  - name: CheckDependencyLicenses
+  - name: DuplicatedCode
+  - name: ManualMinMaxCalculation

@@ -18,13 +18,26 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 
 ### Internal
 
-- Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 8.12.1
-- Updated to [org.jetbrains.gradle.plugin.idea-ext](https://github.com/JetBrains/gradle-idea-ext-plugin) 1.1.10
-- Updated to [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 1.4.3
-- Updated to [Gradle](https://gradle.org) 8.13-rc-2
 - Improved the build script
+- Updated dependencies:
+  - Updated to [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) 6.0.7
+  - Updated to [gradle-idea-ext-plugin](https://github.com/JetBrains/gradle-idea-ext-plugin) 1.3
+  - Updated to [io.freefair.lombok](https://plugins.gradle.org/plugin/io.freefair.lombok) 9.1.0
+  - Updated to [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 2.0.2
+  - Updated to [foojay-resolver](https://github.com/gradle/foojay-toolchains) 1.0.0
+  - Updated to [Gradle](https://gradle.org) 9.2.1
+  - Updated to [JUnit](https://junit.org/) 6.0.1
 
 ### Red Core MC
+
+### Added
+
+- Added `RedLoadingPlugin` an abstract class which you can extend instead of implementing `IFMLLoadingPlugin`, it implements the standard stub methods for you
+
+### Changed
+
+- Updated `mcmod.info`
+- Moved `RedCorePlugin` to `asm` package
 
 ### Fixed
 

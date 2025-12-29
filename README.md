@@ -16,7 +16,7 @@ Red Core is the foundational library for Red Studio projects and associated proj
 
 - **RedLogger:** A user and dev-friendly logger, useful for errors and crash logging when lots of information is needed.
 - **Vectors:** A fast and simple vector suite, for every Java primitive.
-- **MathUtil:** A utility class which provides nice to have math related methods.
+- **MathUtil:** A utility class which provides nice to have math-related methods.
 - **ClampUtil:** A utility class which provides fast biased clamping for every primitive, and testers to know exactly which end to bias towards.
 - **[Jafama]:** Red Core embeds [Jafama] allowing you to use it in your mods.
 
@@ -25,39 +25,67 @@ Red Core is the foundational library for Red Studio projects and associated proj
 ### Minecraft Specific Features
 
 - **RedClientTicker:** A client ticker which provides slower ticking methods for things that don't require updating 20 times per second.
-- **NetworkUtil:** A utility class which makes networking easier, safer and cleaner.
-- **OptiNotFine:** A utility class which allows you to easily know if OptiFine is installed, force off specific OptiFine features, and also allows you to know if shaders are enabled.
+- **NetworkUtil:** A utility class which makes networking easier, safer, and cleaner.
+- **OptiNotFine:** A utility class which allows you to easily know if OptiFine is installed, forces off specific OptiFine features, and also allows you to know if shaders are enabled.
+- **RedLoadingPlugin:** An abstract class which you can extend instead of implementing `IFMLLoadingPlugin`, it implements the standard stub methods for you.
 
 ## Why Red Core?
 
 Red Core is used in most projects Red Studio is involved in, it aims at reducing redundant code amongst projects and making it easier to do a plethora of things.
 
-Red Core aims to have great Javadoc's and comments, so you can know what something does without leaving your IDE.
+Red Core aims to have great Markdown Javadoc's and comments, so you can know what something does without leaving your IDE.
 
-Red Core is always evolving, and you can help, pull requests and feature requests are very welcome.
+Red Core is always evolving, and you can help; pull requests and feature requests are very welcome.
 
 ## How to Integrate Red Core into Your Project?
 
-Section coming soon
+First, add the Red Studio repository to your build.gradle.kts file:
 
+```kotlin
+repositories {
+	arrayOf("Release", "Beta", "Dev").forEach { repoType ->
+		maven {
+			name = "Red Studio - $repoType"
+			url = uri("https://repo.redstudio.dev/${repoType.lowercase()}")
+			content {
+				includeGroup("dev.redstudio")
+			}
+		}
+	}
+}
+```
+
+### Red Core
+
+Then for Red Core itself, add the dependency (this example is for 0.7):
+```kotlin
+dependencies {
+    implementation("dev.redstudio:Red-Core:0.7")
+}
+```
+
+### Red Core MC
+
+If you want to use Red Core's Minecraft-specific features, add the dependency (this example is for 0.7):
+```kotlin
+dependencies {
+    implementation("dev.redstudio:Red-Core-MC:1.8-1.12-0.7")
+}
+```
 ---
 
-[![BisectHostingPromoBanner](https://www.bisecthosting.com/partners/custom-banners/d410513a-9aee-467a-96eb-88eb0976af9d.webp)](https://bisecthosting.com/Desoroxxx?r=Red+Core+GitHub)
+[![BisectHostingPromoBanner](https://github.com/user-attachments/assets/8e66200c-1a7c-4f0a-a12a-387bf7d7f0f6)](https://bisecthosting.com/Desoroxxx?r=Red+Core+GitHub)
 
 # Want to have your own mod or support me?
 
 If you're looking for a mod but don't have the development skills or time, consider commissioning me!
-My commissions are currently open and I would be happy to create a custom mod to fit your needs as long as you provide assets.
+My commissions are currently open, and I’d be happy to create a custom mod to fit your needs as long as you provide assets.
 
-[Commissions]
+[Commissions](https://www.buymeacoffee.com/desoroxxx/commissions)
 
 You can also support me on a monthly basis by becoming a member.
-To thank you will have the possibility to access exclusive post and messages, Discord channel for WIP content, and even access to unreleased Prototypes or WIP Projects.
+To thank you, you’ll have the possibility to access exclusive post and messages, Discord channel for WIP content, and even access to unreleased Prototypes or WIP Projects.
 
-[Membership]
+[Membership](https://www.buymeacoffee.com/desoroxxx/membership)
 
-You can also [buy me a hot chocolate].
-
-[Commissions]: https://www.buymeacoffee.com/desoroxxx/commissions
-[Membership]: https://www.buymeacoffee.com/desoroxxx/membership
-[buy me a hot chocolate]: https://www.buymeacoffee.com/desoroxxx
+You can also [buy me a hot chocolate](https://www.buymeacoffee.com/desoroxxx).

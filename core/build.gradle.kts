@@ -1,5 +1,5 @@
 plugins {
-    id("com.github.gmazzo.buildconfig") version "5.5.1"
+    id("com.github.gmazzo.buildconfig") version "6.0.7"
 }
 
 val id = "redcore"
@@ -9,7 +9,7 @@ val jafamaVersion = "2.3.2"
 
 val log4jVersion = "2.17.1" // Forged
 
-val jUnitVersion = "5.10.1"
+val jUnitVersion = "6.0.1"
 
 dependencies {
     embed("net.jafama", "jafama", jafamaVersion)

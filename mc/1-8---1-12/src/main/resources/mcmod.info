@@ -1,13 +1,16 @@
 [
   {
-    "modid": "redcore",
-    "name": "Red Core",
-    "description": "§lRed-Core§r\\n\\nRed-Core is the foundational framework for Red Studio projects and associated projects. It features robust development utilities, streamlined error logging, and a high-speed, clean vectors' suite.\\n\\n§lWhy Red-Core?§r\\n\\nRed-Core sits at the heart of Red Studio's Minecraft 1.12 mods, aiming to make your mod development process more efficient. By providing a set of tailored tools and libraries, we allow you to focus more on designing exciting mods and less on the intricacies of development.\\n\\nWhat sets us apart is our comprehensive Javadoc documentation. We believe good documentation is the cornerstone of effective development. Every method in Red-Core comes with detailed Javadoc comments, making the technical information and guidance you need just a ctrl-click away.\\n\\nJoin us in enhancing Red-Core! We believe in constant evolution and the power of community-driven development. Whether you're a contributor or a user in the Minecraft modding community, your experience matters. We're here to ensure it's the best it can be.",
+    "name": "${name}",
+    "modid": "${id}",
     "version": "${version}",
+    "mcversion": "1.12.2",
+    "description": "§lRed-Core§r\\n\\nRed-Core is the foundational framework for Red Studio projects and associated projects.",
+    "authorList": [
+      "Red Studio"
+    ],
+    "credits": "Luna Mira Lage (Desoroxxx)",
     "url": "https://www.curseforge.com/minecraft/mc-mods/red-core",
-    "updateJSON": "https://forge.curseupdate.com/873867/redcore",
-    "authorList": ["Red Studio"],
-    "credits": "Desoroxxx",
+    "updateJSON": "https://forge.curseupdate.com/873867/${id}",
     "logoFile": "logo.png"
   }
 ]

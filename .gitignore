@@ -1,16 +1,18 @@
-# IntelliJ Idea
-out
-*.ipr
-*.iws
-*.iml
-.idea
+### Windows ###
+desktop.ini
 
-# Gradle
-build
+### macOS ###
+.DS_Store
+
+### Gradle ###
 .gradle
+build
 
-# Minecraft
+### IntelliJ IDEA ###
+.idea/*
+!.idea/fileColors.xml
+!.idea/scopes
+!.idea/scopes/*
+
+### Project ###
 run
-
-# Misc
-.settings

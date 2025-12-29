@@ -1,12 +1,11 @@
 import org.gradle.plugins.ide.idea.model.IdeaLanguageLevel
 import org.jetbrains.gradle.ext.runConfigurations
 import org.jetbrains.gradle.ext.settings
-import org.jetbrains.gradle.ext.Gradle
 
 plugins {
-    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.10"
-    id("io.freefair.lombok") version "8.12.1" apply false
-    `java-library`
+    id("org.jetbrains.gradle.plugin.idea-ext") version "1.3"
+    id("io.freefair.lombok") version "9.1.0" apply false
+    id("java-library")
 }
 
 allprojects {
@@ -14,22 +13,23 @@ allprojects {
 
     idea {
         module {
-            excludeDirs = setOf(
-                file(".github"), file(".gradle"), file(".idea"), file("build"), file("gradle"), file("run")
-            )
+            excludeDirs.addAll(setOf(".gradle", ".idea", "build", "gradle", "run", "gradlew", "gradlew.bat", "desktop.ini").map(::file))
         }
     }
 }
+
+val jvmCommonArgs = "-Dfile.encoding=UTF-8 -XX:+UseStringDeduplication"
 
 subprojects {
     apply(plugin = "io.freefair.lombok")
     apply(plugin = "java-library")
 
     group = "dev.redstudio"
-    version = "0.7-Dev-1" // Versioning must follow Ragnarök versioning convention: https://github.com/Red-Studio-Ragnarok/Commons/blob/main/Ragnar%C3%B6k%20Versioning%20Convention.md
+    version = "0.7" // Versioning must follow Ragnarök versioning convention: https://github.com/Red-Studio-Ragnarok/Commons/blob/main/Ragnar%C3%B6k%20Versioning%20Convention.md
 
     repositories {
         mavenCentral()
+        mavenLocal()
     }
 
     dependencies {
@@ -56,7 +56,7 @@ subprojects {
             options.compilerArgs.add("-Xlint:-options")
 
             options.isFork = true
-            options.forkOptions.jvmArgs = listOf("-XX:+UseStringDeduplication")
+            options.forkOptions.jvmArgs = jvmCommonArgs.split(" ")
 
             if (name != "compileMcLauncherJava" && name != "compilePatchedMcJava" && name != "generateEffectiveLombokConfig") {
                 sourceCompatibility = "21"
@@ -97,16 +97,16 @@ idea {
             languageLevel = IdeaLanguageLevel("JDK_21")
 
             runConfigurations {
-                listOf("Client", "Server", "Obfuscated Client", "Obfuscated Server", "Vanilla Client", "Vanilla Server").forEach { name ->
-                    register(name, Gradle::class.java) {
-                        val prefix = name.substringBefore(" ").let { if (it == "Obfuscated") "Obf" else it }
-                        val suffix = name.substringAfter(" ").takeIf { it != prefix } ?: ""
-                        taskNames = setOf("run$prefix$suffix")
+				listOf("Client", "Server", "Obfuscated Client", "Obfuscated Server", "Vanilla Client", "Vanilla Server").forEach { name ->
+					create(name, org.jetbrains.gradle.ext.Gradle::class.java) {
+						val prefix = name.substringBefore(" ").let { if (it == "Obfuscated") "Obf" else it }
+						val suffix = name.substringAfter(" ").takeIf { it != prefix } ?: ""
+						taskNames = setOf("run$prefix$suffix")
 
-                        jvmArgs = "-XX:+UseStringDeduplication"
-                    }
-                }
-            }
+						jvmArgs = jvmCommonArgs
+					}
+				}
+			}
         }
     }
 }

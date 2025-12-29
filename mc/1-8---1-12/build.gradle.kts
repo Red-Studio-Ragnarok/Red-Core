@@ -1,6 +1,11 @@
 plugins {
-    id("com.gtnewhorizons.retrofuturagradle") version "1.4.3"
+    id("com.gtnewhorizons.retrofuturagradle") version "2.0.2"
 }
+
+val id = "redcore"
+val plugin = "${project.group}.${id}.asm.RedCorePlugin"
+
+val jvmCommonArgs = "-Dfile.encoding=UTF-8 -XX:+UseStringDeduplication"
 
 val jarBaseName = "!Red-Core-MC-1.8-1.12"
 
@@ -9,7 +14,7 @@ val jafamaVersion = "2.3.2"
 minecraft {
     mcVersion = "1.12.2"
     username = "Desoroxxx"
-    extraRunJvmArguments = listOf("-Dforge.logging.console.level=debug", "-Dfml.coreMods.load=${project.group}.redcore.RedCorePlugin")
+    extraRunJvmArguments = listOf("-Dforge.logging.console.level=debug", "-Dfml.coreMods.load=${plugin}") + jvmCommonArgs.split(" ")
 }
 
 dependencies {
@@ -30,11 +35,19 @@ idea {
 }
 
 tasks {
-    processResources.configure {
-        inputs.property("version", project.version)
+    processResources {
+        val expandProperties = mapOf(
+            "version" to project.version,
+            "name" to rootProject.name,
+            "id" to id
+        )
 
-        filesMatching("mcmod.info") {
-            expand(mapOf("version" to project.version))
+        inputs.properties(expandProperties)
+
+        filesMatching("**/*.*") {
+            val exclusions = arrayOf(".png")
+            if (!exclusions.any { path.endsWith(it) })
+                expand(expandProperties)
         }
     }
 
