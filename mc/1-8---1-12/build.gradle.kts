@@ -23,7 +23,7 @@ dependencies {
     embed(project(":core"))
     embed(project(":mc:common"))
 
-    implementation("net.jafama", "jafama", jafamaVersion)
+    implementation("net.jafama:jafama:$jafamaVersion")
 }
 
 idea {

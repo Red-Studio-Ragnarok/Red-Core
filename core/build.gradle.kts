@@ -12,13 +12,14 @@ val log4jVersion = "2.17.1" // Forged
 val jUnitVersion = "5.14.1"
 
 dependencies {
-    embed("net.jafama", "jafama", jafamaVersion)
+    embed("net.jafama:jafama:$jafamaVersion")
 
-    compileOnly("org.apache.logging.log4j", "log4j-api", log4jVersion)
+    compileOnly("org.apache.logging.log4j:log4j-api:$log4jVersion")
 
-    testImplementation("org.junit.jupiter", "junit-jupiter", jUnitVersion)
-    testImplementation("org.apache.logging.log4j", "log4j-api", log4jVersion)
-    testImplementation("org.apache.logging.log4j", "log4j-core", log4jVersion)
+    testImplementation("org.junit.jupiter:junit-jupiter:$jUnitVersion")
+    testRuntimeOnly("org.junit.platform", "junit-platform-launcher")
+    testImplementation("org.apache.logging.log4j:log4j-api:$log4jVersion")
+    testImplementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
 }
 
 buildConfig {
