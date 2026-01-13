@@ -54,7 +54,7 @@ tasks {
     named<Jar>("jar") {
         manifest.attributes(
             "ModSide" to "BOTH",
-            "FMLCorePlugin" to "${project.group}.redcore.RedCorePlugin",
+            "FMLCorePlugin" to plugin,
             "FMLCorePluginContainsFMLMod" to "true",
             "ForceLoadAsMod" to "true",
         )

@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com),
 and this project follows the [Ragnarök Versioning Convention](https://github.com/Red-Studio-Ragnarok/Commons/blob/main/Ragnar%C3%B6k%20Versioning%20Convention.md).
 
+## Red Core Version 0.7.1 Changelog - 2026-01-13
+
+### Red Core MC
+
+#### Fixed
+
+- Fixed `RedCorePlugin` not being able to be found by the loader
+
 ## Red Core Version 0.7 Changelog - 2025-12-29
 
 ### Deprecated

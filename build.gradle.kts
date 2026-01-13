@@ -25,7 +25,7 @@ subprojects {
     apply(plugin = "java-library")
 
     group = "dev.redstudio"
-    version = "0.7" // Versioning must follow Ragnarök versioning convention: https://github.com/Red-Studio-Ragnarok/Commons/blob/main/Ragnar%C3%B6k%20Versioning%20Convention.md
+    version = "0.7.1" // Versioning must follow Ragnarök versioning convention: https://github.com/Red-Studio-Ragnarok/Commons/blob/main/Ragnar%C3%B6k%20Versioning%20Convention.md
 
     repositories {
         mavenCentral()
